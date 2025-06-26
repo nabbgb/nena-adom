@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aides financières - Nena Adom</title>
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="../index.html" class="logo">
+      <img src="../images/logo.png" alt="Nena Adom logo">
+    </a>
+
+    <nav class="nav-links">
+      <a href="aides.html">Aides Disponibles</a>
+      <form class="search-bar" action="" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="Rechercher...">
+        <button type="submit">🔍</button>
+      </form>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <a href="tel:0605873735" class="phone-number">
+      06.05.87.37.35
+    </a>
+  </header>
+
+  <!-- INTRO -->
+  <div class="container">
+    <section class="main-section">
+      <img src="photo-page-accueil-principales.webp" alt="Photo personnel soignant accompagnant un patient">
+      <div class="main-text">
+        <h1>TOUT SAVOIR SUR LES <strong>AIDES DISPONIBLES</strong> POUR VOUS OU VOS PROCHES</h1>
+        <p>
+          Message courtMessage courtMessage courtMessage courtMessage courtMessage courtMessage
+        </p>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- CONTENU -->
+  <section class="main-content">
+    <!-- SOMMAIRE -->
+    <aside class="toc">
+      <h2>Sommaire</h2>
+      <a href="#apa">Qu’est-ce que l’APA ?</a>
+      <a href="#caisses">Aides des caisses de retraite complémentaire</a>
+      <a href="#ardh">Aide au retour à domicile après hospitalisation (ARDH)</a>
+    </aside>
+
+    <!-- CONTENU DÉTAILLÉ -->
+    <div class="content-section" id="faqContent">
+
+      <div class="faq-item" id="apa">
+        <div class="faq-question-aides">
+          <h2>Qu’est-ce que l’APA ?</h2>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-answer">
+          L’Allocation Personnalisée d’Autonomie (APA) est une aide destinée aux personnes âgées en perte d’autonomie...
+        </div>
+      </div>
+
+      <div class="faq-item" id="caisses">
+        <div class="faq-question-aides">
+          <h2>Aides des caisses de retraite complémentaire</h2>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-answer">
+          Certaines caisses de retraite complémentaire proposent des aides pour le maintien à domicile ou l’aménagement du logement...
+        </div>
+      </div>
+
+      <div class="faq-item" id="ardh">
+        <div class="faq-question-aides">
+          <h2>Aide au retour à domicile après hospitalisation (ARDH)</h2>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-answer">
+          L’ARDH vise à soutenir les personnes âgées récemment hospitalisées afin de faciliter leur convalescence à domicile...
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACCORDÉON JS -->
+  <script>
+    document.querySelectorAll('.faq-question-aides').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) other.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+  <!-- RECHERCHE SUR LIGNE -->
+  <script>
+//Pour la barre de recherche
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  let openedFaqItems = new Set();
+
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+      // Ouvre la question si le mot est dans une réponse de l'accordéon
+      let faqAnswer = span.closest('.faq-answer');
+      if (faqAnswer) {
+        let faqItem = faqAnswer.closest('.faq-item');
+        if (faqItem && !openedFaqItems.has(faqItem)) {
+          faqItem.classList.add('active');
+          openedFaqItems.add(faqItem);
+        }
+      }
+    }
+  }
+  // Scroll vers la première occurrence surlignée
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => {
+      window.scrollBy({ top: 40, left: 0, behavior: "smooth" }); 
+    }, 400);
+  }
+}
+
+// Récupère le paramètre 'q' de l'URL
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+// Au chargement, surligne si besoin
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    document.getElementById('searchInput').value = term;
+    highlightTerm(term);
+  }
+});
+  </script>
+  
+<script>
+// Pour le sommaire   
+document.querySelectorAll('.toc a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').replace('#', '');
+    const faqItem = document.getElementById(targetId);
+    if (faqItem) {
+      // Ouvre la question
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      faqItem.classList.add('active');
+      // Scroll jusqu'à la question
+      faqItem.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+});
+</script>
+
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+  <p>© 2025 Nena Adom – Tous droits réservés</p>
+  <p>
+    SIRET : 95102803400019 – Site sans collecte de données<br>
+    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
+  </p>
+  <p>
+    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
+    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
+    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
+  </p>
+</footer>
+
+</body>
+</html>

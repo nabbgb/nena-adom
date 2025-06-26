@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Comprendre ma pathologie</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">
+      <img src="../images/logo.png" alt="Nena Adom logo">
+    </a>
+    <nav class="nav-links">
+      <a href="aides.html">Aides Disponibles</a>
+      <form class="search-bar" action="" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="Rechercher...">
+        <button type="submit">🔍</button>
+      </form>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="tel:0605873735" class="phone-number">06.05.87.37.35</a>
+  </header>
+
+  <div class="container">
+    <section class="main-section">
+      <img src="../images/photo-page-accueil-principales.webp" alt="Photo personnel soignant accompagnant un patient">
+      <div class="main-text">
+        <h1>COMPRENDRE MA PATHOLOGIE</h1>
+        <p>
+          Message courtMessage courtMessage courtMessage courtMessage courtMessage courtMessage
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <section class="pathology-section">
+    <div class="pathology-title">COMPRENDRE LA MALADIE DE PARKINSON</div>
+    <div class="pathology-block">
+      <p>MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage... MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage 4MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa geMessageMessageMessage MessageMessageMessageMes sageMessageMes sageMessageMessageMe ssageMessageMessag eMessageMessageMes sageMessageMessage MessageMessageMessageM essageMes sageMessageM essageMessageMessag eMessageMessageMe ssageMessa coucou search bar geMessageMessageMessage</p>
+      <img src="../images/patho_parkinson.png" alt="Médecin accompagnant un patient">
+    </div>
+  </section>
+
+<script>
+let lastScroll = window.scrollY;
+const header = document.querySelector('.site-header');
+let ticking = false;
+
+function onScroll() {
+  const currentScroll = window.scrollY;
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    // Scroll vers le bas : cache le header
+    header.classList.add('hide-header');
+  } else {
+    // Scroll vers le haut : montre le header
+    header.classList.remove('hide-header');
+  }
+  lastScroll = currentScroll;
+  ticking = false;
+}
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(onScroll);
+    ticking = true;
+  }
+});
+
+//Pour la barre de recherche
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+    }
+  }
+  // Scroll vers la première occurrence surlignée
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Décalage supplémentaire pour éviter le header
+    setTimeout(() => {
+      window.scrollBy({ top: 400, left: 0, behavior: "smooth" }); 
+    }, 400); // délai pour laisser le scrollIntoView s'effectuer
+  }
+}
+
+// Récupère le paramètre 'q' de l'URL
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+// Au chargement, surligne si besoin
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    document.getElementById('searchInput').value = term;
+    highlightTerm(term);
+  }
+});
+</script>  
+
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+  <p>© 2025 Nena Adom – Tous droits réservés</p>
+  <p>
+    SIRET : 95102803400019 – Site sans collecte de données<br>
+    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
+  </p>
+  <p>
+    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
+    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
+    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
+  </p>
+</footer>
+
+</body>
+</html>

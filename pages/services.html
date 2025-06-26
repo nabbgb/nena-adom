@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aide à domicile</title>
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="../index.html" class="logo">
+      <img src="../images/logo.png" alt="Nena Adom logo">
+    </a>
+
+    <nav class="nav-links">
+      <a href="aides.html">Aides Disponibles</a>
+      <form class="search-bar" action="" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="Rechercher...">
+        <button type="submit">🔍</button>
+      </form>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <a href="tel:0605873735" class="phone-number">
+      06.05.87.37.35
+    </a>
+  </header>
+
+  <!-- Chemin SVG en arrière-plan -->
+  <div class="svg-background-path">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="2200" viewBox="0 0 800 2200" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M1,1 L5,3 L1,5" fill="none" stroke="red" stroke-width="4"/>
+        </marker>
+      </defs>
+      <path
+        id="scrollPath" 
+        stroke-dasharray="10,5"
+        fill="none"
+        stroke="#d32f2f"
+        stroke-width="6"
+        d="M 400 270 C 400 400 300 500 400 650 S 500 900 400 1100 S 300 1350 400 1550 S 639 1742 584 1840"
+      />
+    </svg>
+  </div>
+
+  <div class="path-container">
+    <!-- Étape 1 -->
+    <div class="step">
+      <div class="step-image">
+        <img src="../images/services/aide-lever.png" alt="Aide au lever" class="img-aide-lever">
+      </div>
+      <div class="step-content">
+        <h3 class="bold-title">AIDE AU LEVER</h3>
+        <p>Nos professionnels vous assistent en douceur pour vous aider à sortir du lit le matin et à vous coucher le soir, en toute sécurité. Cette aide inclut aussi le soutien à la toilette et à l’habillement si nécessaire.</p>
+      </div>
+    </div>
+
+    <!-- Étape 2 -->
+    <div class="step">
+      <div class="step-image"> 
+        <img src="../images/services/menage.png" alt="Ménage" class="img-menage">
+      </div>
+      <div class="step-content">
+        <h3 class="bold-title">MÉNAGE</h3>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+    </div>
+
+    <!-- Étape 3 -->
+    <div class="step">
+      <div class="step-image">
+        <img src="../images/services/courses.png" alt="Courses" class="img-courses">
+      </div>
+      <div class="step-content">
+        <h3>COURSES</h3>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+    </div>
+
+    <!-- Étape 4 -->
+    <div class="step">
+      <div class="step-image"> 
+        <img src="../images/services/preparation-repas.png" alt="Ménage" class="img-repas">
+      </div>
+      <div class="step-content">
+        <h3 class="bold-title">PRÉPARATION DES REPAS</h3>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+    </div>
+
+    <!-- Étape 5 -->
+    <div class="step">
+      <div class="step-image"> 
+        <img src="../images/services/sorties.png" alt="Garde de nuit" class="img-accompagnement-sorties">
+      </div>
+      <div class="step-content">
+        <h3>ACCOMPAGNEMENT AUX SORTIES</h3>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+    </div>
+
+    <!-- Étape 6 -->
+    <div class="step">
+      <div class="step-image"> 
+        <img src="../images/services/garde-nuit.png" alt="Garde de nuit" class="img-garde-nuit">
+      </div>
+      <div class="step-content">
+        <h3>GARDE DE NUIT</h3>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="cta" id="appel">
+      <div class="cta-right-group"> 
+        <h2 class="cta-title">N'HÉSITEZ PLUS !</h2>
+        <a href="tel:0605873735" class="phone-button">
+          <img src="../images/services/call-button.png" alt="Appeler Nena Adom" class="img-call-button">
+        </a>
+      </div>
+        <p>Contactez-nous dès maintenant pour mettre en place un rendez-vous !</p>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const path = document.querySelector('#scrollPath');
+    const pathLength = path.getTotalLength();
+
+    const visiblePortion = 0.05; // 10% du chemin visible à la fois
+    const visibleLength = pathLength * visiblePortion;
+
+    path.style.strokeDasharray = `${visibleLength} ${pathLength - visibleLength}`;
+    path.style.strokeDashoffset = pathLength;
+    path.style.opacity = 1;
+
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.body.scrollHeight;
+      const startOffset = 100;
+
+      if (scrollTop > startOffset) {
+        const scrollPercent = (scrollTop - startOffset) / (docHeight - windowHeight - startOffset);
+        const easedPercent = Math.pow(scrollPercent, 1); // plus lent au début
+        const drawLength = pathLength * Math.min(easedPercent, 1);
+        path.style.strokeDashoffset = pathLength - drawLength;
+      } else {
+        path.style.strokeDashoffset = pathLength;
+      }
+    });
+  });
+
+let lastScroll = window.scrollY;
+const header = document.querySelector('.site-header');
+let ticking = false;
+
+function onScroll() {
+  const currentScroll = window.scrollY;
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    // Scroll vers le bas : cache le header
+    header.classList.add('hide-header');
+  } else {
+    // Scroll vers le haut : montre le header
+    header.classList.remove('hide-header');
+  }
+  lastScroll = currentScroll;
+  ticking = false;
+}
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(onScroll);
+    ticking = true;
+  }
+});
+
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+    }
+  }
+  // Scroll vers la première occurrence surlignée
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Décalage supplémentaire pour éviter le header
+    setTimeout(() => {
+      window.scrollBy({ top: 400, left: 0, behavior: "smooth" }); 
+    }, 400); // délai pour laisser le scrollIntoView s'effectuer
+  }
+}
+
+// Récupère le paramètre 'q' de l'URL
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+// Au chargement, surligne si besoin
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    document.getElementById('searchInput').value = term;
+    highlightTerm(term);
+  }
+});
+
+</script>
+
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+  <p>© 2025 Nena Adom – Tous droits réservés</p>
+  <p>
+    SIRET : 95102803400019 – Site sans collecte de données<br>
+    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
+  </p>
+  <p>
+    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
+    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
+    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
+  </p>
+</footer>
+
+</body>
+</html>

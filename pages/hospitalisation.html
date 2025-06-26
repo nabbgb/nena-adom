@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aide à domicile</title>
+  <style>
+  body {
+    margin: 0;
+    font-family: 'Glacial Indifference', sans-serif;
+    background-color: #fff;
+    color: #000;
+    scroll-behavior: smooth;
+  }
+  /* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 3px 8px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-style: italic;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+}
+
+  /* Section Hospitalisation */
+  .hospital-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .hospital-section h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .hospital-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #1c3069;
+    margin: 30px 0 10px;
+  }
+
+  .hospital-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hospital-img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  .hospital-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .hospital-columns > div {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .hospital-columns img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">
+      <img src="../images/logo.png" alt="Nena Adom logo">
+    </a>
+    <nav class="nav-links">
+      <a href="aides.html">Aides Disponibles</a>
+      <form class="search-bar" action="" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="Rechercher...">
+        <button type="submit">🔍</button>
+      </form>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="tel:0605873735" class="phone-number">06.05.87.37.35</a>
+  </header>
+
+  <section class="hospital-section">
+    <h1>ACCOMPAGNEMENT SUITE À UNE HOSPITALISATION</h1>
+    <img src="photo-page-accueil-principales.webp" alt="Accompagnement médical" class="hospital-img">
+    <h2>PRISE EN CHARGE DÈS LA SORTIE DE L’HOPITAL</h2>
+    <p>MessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessage...</p>
+
+    <div class="hospital-columns">
+      <div>
+        <h2>UNE ÉQUIPE MÉDICALE DIRECTEMENT À DOMICILE</h2>
+        <p>Dès la demande validée par le médecin, notre équipe coordonne l’ensemble des intervenants (infirmiers, kinésithérapeutes, matériel médical...) pour un démarrage rapide des soins à domicile.</p>
+
+        <h2>UN SUIVI CONTINU, COMPLET ET HUMAIN</h2>
+        <p>Nos équipes sont à l'écoute et disponibles à chaque étape. Nous vous accompagnons dans toutes les démarches administratives et médicales pour un retour à domicile en toute sérénité.</p>
+
+        <h2>UNE URGENCE ? AUCUN SOUCIS</h2>
+        <p>MessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessage...</p>
+      </div>
+      <div>
+        <img src="images/hospit2.png" alt="Soutien post hospitalisation">
+      </div>
+    </div>
+  </section>
+
+<script>
+//Pour la barre de recherche
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+    }
+  }
+  // Scroll vers la première occurrence surlignée
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Décalage supplémentaire pour éviter le header
+    setTimeout(() => {
+      window.scrollBy({ top: 400, left: 0, behavior: "smooth" }); 
+    }, 400); // délai pour laisser le scrollIntoView s'effectuer
+  }
+}
+
+// Récupère le paramètre 'q' de l'URL
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+// Au chargement, surligne si besoin
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    document.getElementById('searchInput').value = term;
+    highlightTerm(term);
+  }
+});
+</script>  
+
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+  <p>© 2025 Nena Adom – Tous droits réservés</p>
+  <p>
+    SIRET : 95102803400019 – Site sans collecte de données<br>
+    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
+  </p>
+  <p>
+    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
+    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
+    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
+  </p>
+</footer>
+
+</body>
+</html>
