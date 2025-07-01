@@ -457,6 +457,7 @@ header h2 {
   height: auto;
   display: block;
   margin: 0 auto;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,0.18); 
 }
 
 .contact-right {
@@ -1609,6 +1610,7 @@ header h2 {
   .contact-left img {
     width: 90vw;
     max-width: 350px;
+    box-shadow: 0 8px 24px rgb(0, 0, 0,1);
   }
   .contact-right {
     order: 2;
@@ -1647,3 +1649,54 @@ header h2 {
   }
 }
 
+/*===HOSPITALISATION===*/
+  .hospital-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .hospital-section h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .hospital-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #1c3069;
+    margin: 30px 0 10px;
+  }
+
+  .hospital-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hospital-img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  .hospital-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .hospital-columns > div {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .hospital-columns img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
