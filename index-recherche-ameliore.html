@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nena Adom - Aide à domicile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="center-header">
+      <h1>Nena Adom</h1>
+      <h2>SERVICES D’AIDE À DOMICILE</h2>
+    </header>
+
+    <section class="main-section">
+      <img src="images/accueil/slogan-accueil.jpg" alt="Photo d'une dame âgée et d'une jeune femme souriante">
+      <div class="main-text">
+        <h3>slogan slogan slogan slogan</h3>
+        <p>
+          Message courtMessage courtMessage courtMessage courtMessage courtMessage courtMessage
+        </p>
+      </div>
+    </section>
+
+    <div class="section-title center-title">QUI SOMMES NOUS:</div>
+
+    <section class="services-grid">
+
+      <a href="pages/services.html" class="service-link">
+        <div class="service-cell">
+          <div class="service-title-box">
+            <h2>Services d’aide à domicile aux personnes âgées</h2>
+          </div>
+          <div class="service-content-box">
+            <img src="images/aide-à-dom.png" alt="Aide à domicile">
+            <div class="service-text">
+              Nous proposons un accompagnement personnalisé pour aider les personnes âgées à rester chez elles en toute sécurité et dans le confort.
+              Nos aides à domicile interviennent pour :
+              L’aide à la toilette et à l’habillage
+              La préparation et la prise des repas
+              Le ménage et l’entretien du logement
+              L’accompagnement aux courses et aux rendez-vous médicaux
+              Une équipe bienveillante, formée et disponible 7j/7        
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="pages/aides.html" class="service-link">
+        <div class="service-cell">
+          <div class="service-title-box">
+            <h2>S’informer sur les aides financières </h2>
+          </div>
+          <div class="service-content-box">
+            <img src="images/aides.jpg" alt="Aides financières">
+            <div class="service-text">
+              Découvrez les aides financières existantes et comment les obtenir.
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="pages/hospitalisation.html" class="service-link">
+        <div class="service-cell">
+          <div class="service-title-box">
+            <h2> Accompagnement après une hospitalisation</h2>
+          </div>
+          <div class="service-content-box">
+            <img src="images/hospitalisation.jpg" alt="Hospitalisation">
+            <div class="service-text">
+              Nos services d'accompagnement post-hospitalisation à domicile.
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="pages/pathologie.html" class="service-link">
+        <div class="service-cell">
+          <div class="service-title-box">
+            <h2>Mieux comprendre ma pathologie</h2>
+          </div>
+          <div class="service-content-box">
+            <img src="images/pathologie.jpg" alt="Pathologie">
+            <div class="service-text">
+              Informations pédagogiques sur les pathologies accompagnées.
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- Barre de recherche -->
+    <section class="search-section center-title" style="margin-top:40px; text-align: center;">
+      <h2>Besoin d’un renseignement précis ?</h2>
+      <input type="text" id="searchInput" placeholder="Tapez un mot-clé..." style="padding:10px; width:60%; max-width:400px; border-radius:8px; border:1px solid #ccc; margin:10px auto;">
+      <button onclick="searchSite()" style="padding:10px 20px; border-radius:8px; background-color:#1c274c; color:white; border:none;">Rechercher</button>
+      <ul id="results" style="margin-top:15px; list-style:none; padding-left:0;"></ul>
+    </section>
+
+  </div>
+
+  <script>
+    const pagesToSearch = [
+      { title: "Aides financières", url: "pages/aides.html" },
+      { title: "Services à domicile", url: "pages/services.html" },
+      { title: "Hospitalisation", url: "pages/hospitalisation.html" },
+      { title: "Pathologies", url: "pages/pathologie.html" },
+      { title: "FAQ", url: "pages/faq.html" }
+    ];
+
+    function searchSite() {
+      const keyword = document.getElementById("searchInput").value.toLowerCase();
+      const resultsList = document.getElementById("results");
+      resultsList.innerHTML = "<li>Recherche en cours...</li>";
+
+      const promises = pagesToSearch.map(page =>
+        fetch(page.url)
+          .then(res => res.text())
+          .then(html => ({
+            title: page.title,
+            url: page.url,
+            found: html.toLowerCase().includes(keyword)
+          }))
+      );
+
+      Promise.all(promises).then(results => {
+        const filtered = results.filter(r => r.found);
+        if (filtered.length === 0) {
+          resultsList.innerHTML = "<li>Aucun résultat trouvé</li>";
+        } else {
+          resultsList.innerHTML = filtered.map(r => `<li><a href="${r.url}">${r.title}</a></li>`).join("");
+        }
+      });
+    }
+  </script>
+
+<!-- JS Recherche et surlignage amélioré -->
+<script>
+//Pour la barre de recherche cross-pages
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  let openedFaqItems = new Set();
+
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+      let faqAnswer = span.closest('.faq-answer');
+      if (faqAnswer) {
+        let faqItem = faqAnswer.closest('.faq-item');
+        if (faqItem && !openedFaqItems.has(faqItem)) {
+          faqItem.classList.add('active');
+          openedFaqItems.add(faqItem);
+        }
+      }
+    }
+  }
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => {
+      window.scrollBy({ top: 40, left: 0, behavior: "smooth" }); 
+    }, 400);
+  }
+}
+
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    const input = document.getElementById('searchInput');
+    if (input) input.value = term;
+    highlightTerm(term);
+  }
+});
+</script>
+
+</body>
+</html>

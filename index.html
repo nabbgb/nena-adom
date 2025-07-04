@@ -89,14 +89,16 @@
       </a>
 
     </section>
-    
+
 <!-- Barre de recherche -->
-    <section class="search-section center-title" style="margin-top:40px; text-align: center;">
-      <h2>Besoin d’un renseignement précis ?</h2>
-      <input type="text" id="searchInput" placeholder="Tapez un mot-clé..." style="padding:10px; width:60%; max-width:400px; border-radius:8px; border:1px solid #ccc; margin:10px auto;">
-      <button onclick="searchSite()" style="padding:10px 20px; border-radius:8px; background-color:#1c274c; color:white; border:none;">Rechercher</button>
-      <ul id="results" style="margin-top:15px; list-style:none; padding-left:0;"></ul>
-    </section>
+  <section class="search-section">
+    <h2 class="center-title">Besoin d’un renseignement précis ?</h2>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Tapez un mot-clé...">
+      <button onclick="searchSite()">Rechercher</button>
+    </div>
+    <ul id="results"></ul>
+  </section>
 
   </div>
   <section class="contact-section">
@@ -181,38 +183,46 @@
 </footer>
 
 <script>
-    const pagesToSearch = [
-      { title: "Aides financières", url: "pages/aides.html" },
-      { title: "Services à domicile", url: "pages/services.html" },
-      { title: "Hospitalisation", url: "pages/hospitalisation.html" },
-      { title: "Pathologies", url: "pages/pathologie.html" },
-      { title: "FAQ", url: "pages/faq.html" }
-    ];
+const pagesToSearch = [
+  { title: "Aides financières", url: "pages/aides.html" },
+  { title: "Services à domicile", url: "pages/services.html" },
+  { title: "Hospitalisation", url: "pages/hospitalisation.html" },
+  { title: "Pathologies", url: "pages/pathologie.html" },
+  { title: "FAQ", url: "pages/faq.html" }
+];
 
-    function searchSite() {
-      const keyword = document.getElementById("searchInput").value.toLowerCase();
-      const resultsList = document.getElementById("results");
-      resultsList.innerHTML = "<li>Recherche en cours...</li>";
+function searchSite() {
+  const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+  const resultsList = document.getElementById("results");
+  if (!keyword) {
+    resultsList.innerHTML = "<li>Veuillez entrer un mot-clé.</li>";
+    return;
+  }
 
-      const promises = pagesToSearch.map(page =>
-        fetch(page.url)
-          .then(res => res.text())
-          .then(html => ({
-            title: page.title,
-            url: page.url,
-            found: html.toLowerCase().includes(keyword)
-          }))
-      );
+  resultsList.innerHTML = "Recherche en cours...";
 
-      Promise.all(promises).then(results => {
-        const filtered = results.filter(r => r.found);
-        if (filtered.length === 0) {
-          resultsList.innerHTML = "<li>Aucun résultat trouvé</li>";
-        } else {
-          resultsList.innerHTML = filtered.map(r => `<li><a href="${r.url}">${r.title}</a></li>`).join("");
-        }
-      });
+  const promises = pagesToSearch.map(page =>
+    fetch(page.url)
+      .then(res => res.text())
+      .then(html => ({
+        title: page.title,
+        url: page.url,
+        found: html.toLowerCase().includes(keyword)
+      }))
+      .catch(() => ({ title: page.title, url: page.url, found: false }))
+  );
+
+  Promise.all(promises).then(results => {
+    const filtered = results.filter(r => r.found);
+    if (filtered.length === 0) {
+      resultsList.innerHTML = "<li>Aucun résultat trouvé</li>";
+    } else {
+      resultsList.innerHTML = filtered
+        .map(r => `<li><a href="${r.url}?q=${encodeURIComponent(keyword)}">${r.title}</a></li>`)
+        .join("");
     }
-  </script>
+  });
+}
+</script>
 </body>
 </html>
