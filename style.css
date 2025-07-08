@@ -133,19 +133,30 @@ mark {
 /* ===== FAQ ===== */
 /* === FAQ === */
 .faq-section {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-.faq-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.faq-item {
-  margin-bottom: 5px;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
+.faq-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.faq-item {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+
+ 
 .arrow {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -260,7 +271,7 @@ header h2 {
 .main-text {
   width: 50%;
   padding: 40px;
-  text-align: left;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -344,11 +355,17 @@ header h2 {
   display: block;
 }
 
-.service-link:hover .service-cell {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+.service-content-box {
+  /* ...existing code... */
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.service-content-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+
 
 .service-content-box img {
   width: 180px;
@@ -506,6 +523,7 @@ header h2 {
 
 .center-header h1 {
   margin-bottom: 30px; 
+  font-size: 45px;
 }
 
 .center-header h2 {
@@ -604,6 +622,7 @@ header h2 {
     }
     .bold-title {
         font-weight: bold;
+        font-size:22px;
 
     }
 
@@ -806,7 +825,7 @@ header h2 {
     }
 
     .intro-text h1 {
-      font-size: 28px;
+      font-size: 62px;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -1180,11 +1199,6 @@ header h2 {
       cursor: pointer;
     }
 
-    .faq-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
 
 
     .arrow {
@@ -1347,6 +1361,7 @@ header h2 {
       min-width: 300px;
       font-size: 14px;
       line-height: 1.5;
+      text-align: justify;
     }
 
     .pathology-block img {
@@ -1471,7 +1486,7 @@ header h2 {
 }
 
 .partners-track img {
-  height: 70px;
+  height: 120px;
   width: auto;
   vertical-align: middle;
   filter: grayscale(100%);
@@ -1517,6 +1532,8 @@ header h2 {
   .main-text {
     width: 100%;
     padding: 10px 0;
+    text-align:justify;
+
   }
   .main-text h3 {
     font-size: 1.2em;
@@ -1634,6 +1651,7 @@ header h2 {
   .hospital-section p {
     font-size: 15px;
     line-height: 1.6;
+    text-align: justify;
   }
 
   .hospital-img {
@@ -1663,14 +1681,6 @@ header h2 {
 
 
 
-  /* FAQ principale */
-.faq-container {
-  display: flex;
-  flex-direction: column; /* Affiche les questions en colonne */
-  gap: 20px;
-  margin: 40px auto;
-  max-width: 800px;
-}
 
 
 /* Style des cellules */
@@ -1698,7 +1708,7 @@ header h2 {
 }
 
 .faq-question h2 {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   margin: 0;
   font-weight: 600;
 }
@@ -1725,4 +1735,17 @@ header h2 {
 
 .faq-item.active .arrow {
   transform: rotate(180deg);
+}
+
+/* Uniformise la hauteur des blocs texte et images dans les services */
+.services-row,
+div[style*="display: flex"][style*="align-items: center"][style*="padding: 40px 0"] {
+  align-items: stretch !important;
+}
+
+div[style*="display: flex"][style*="align-items: center"][style*="padding: 40px 0"] > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
