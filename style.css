@@ -299,7 +299,7 @@ header h2 {
   flex-direction: column;
   align-items: center;
   max-width: 600px;      /* largeur max commune */
-  margin: 40px auto;
+  margin-bottom: 10px;
   width: 100%;
   transition: transform 0.2s, box-shadow 0.2s;
 
@@ -352,7 +352,8 @@ header h2 {
 .service-link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 .service-content-box {
