@@ -640,13 +640,13 @@ header h2 {
     .cta-right-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* tout est aligné à droite */
-    margin-right: 80px;    /* ajuste cette valeur pour l’ancrage */
+    align-items: center;      /* tout est aligné à droite */
+    margin-right: 0 auto;    /* ajuste cette valeur pour l’ancrage */
     }
 
     .cta-title {
     font-size: 24px;
-    margin: 0 0 0 0;    
+    margin: 0 0 20px 0;    
     font-weight: bold;
     text-align: center; /* permet de centrer le texte au-dessus du bouton */
     width: 100%;        /* nécessaire pour centrer horizontalement dans le bloc */
