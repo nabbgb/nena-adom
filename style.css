@@ -852,6 +852,21 @@ header h2 {
       margin-bottom: 20px;
     }
 
+    .faq-answer .short-answer {
+      max-height: 50px; /* Ajuste la hauteur pour n'afficher que les deux premières lignes */
+      overflow: hidden;
+    }
+
+    .faq-answer .full-answer {
+      display: none;
+    }
+
+    .faq-answer a.read-more {
+      color: #004aad;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
+    }
 
 
     .arrow {

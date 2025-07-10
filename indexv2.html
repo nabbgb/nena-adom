@@ -2,158 +2,126 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Nena Adom - Aide à domicile</title>
-  <link rel="stylesheet" href="style.css">
+  <title>FAQ Test - Nena Adom</title>
+  <style>
+    /* Style général */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .faq-section {
+      margin: 20px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      margin-top: 10px;
+    }
+
+    /* Pour la question avec "Lire plus" */
+    .faq-answer .short-answer {
+      display: block; /* Affiche les deux premières lignes */
+      max-height: 60px;
+      overflow: hidden;
+    }
+
+    .faq-answer .full-answer {
+      display: none; /* Cache la partie complète par défaut */
+    }
+
+    .faq-answer .read-more {
+      color: #0066cc;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    /* Styles pour la seconde question sans "Lire plus" */
+    .faq-item:last-child .faq-answer {
+      margin-top: 0;
+    }
+
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header class="center-header">
-      <h1>Nena Adom</h1>
-      <h2>SERVICES D’AIDE À DOMICILE</h2>
-    </header>
 
-    <section class="main-section">
-      <img src="photo-page-accueil-principales.webp" alt="Photo d'une dame âgée et d'une jeune femme souriante">
-      <div class="main-text">
-        <h3>slogan slogan slogan slogan</h3>
-        <p>
-          Message courtMessage courtMessage courtMessage courtMessage courtMessage courtMessage
+  <section class="faq-section">
+    <!-- Première question avec "Lire plus" -->
+    <div class="faq-item" id="faq1">
+      <div class="faq-question">
+        <h2>Suis-je impliqué dans la mise en place de l’accompagnement de mon proche ?</h2>
+      </div>
+      <div class="faq-answer">
+        <p class="short-answer">
+          Absolument, votre implication est essentielle. Nous travaillons en étroite collaboration avec vous et votre proche...
+          <a href="javascript:void(0);" class="read-more">Lire plus</a>
+        </p>
+        <p class="full-answer">
+          Nous travaillons en étroite collaboration avec vous et votre proche pour bien comprendre ses besoins, ses habitudes et ses attentes. Cela nous permet de personnaliser l’accompagnement et de garantir un service adapté et respectueux. Vous participez activement à l’élaboration du plan d’aide, à la sélection des intervenants, et vous êtes informé régulièrement de l’évolution des prestations. Notre objectif est de créer un vrai partenariat avec vous, pour assurer le bien-être et la sécurité de votre proche.
         </p>
       </div>
-    </section>
+    </div>
 
-    <div class="section-title center-title">QUI SOMMES NOUS:</div>
+    <!-- Deuxième question avec accordéon classique -->
+    <div class="faq-item" id="faq2">
+      <div class="faq-question">
+        <h2>Faut-il fournir du matériel ou des produits pour les interventions ?</h2>
+      </div>
+      <div class="faq-answer">
+        <p>
+          Dans la plupart des cas, nous utilisons le matériel et les produits déjà disponibles au domicile de la personne aidée, afin de garantir son confort et son environnement habituel. Cependant, selon la nature des prestations, il peut être utile ou nécessaire de prévoir certains produits spécifiques.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section class="services-grid">
+  <!-- Scripts JavaScript -->
+  <script>
+    // Script spécifique à la première question (Lire plus)
+    document.addEventListener('DOMContentLoaded', function() {
+      const faq1 = document.getElementById('faq1');
+      const shortAnswer = faq1.querySelector('.short-answer');
+      const fullAnswer = faq1.querySelector('.full-answer');
+      const readMoreLink = faq1.querySelector('.read-more');
 
-      <a href="services.html" class="service-link">
-        <div class="service-cell">
-          <div class="service-title-box">
-            <h2>Services d’aide à domicile aux personnes âgées</h2>
-          </div>
-          <div class="service-content-box">
-            <img src="images/aide-à-dom.png" alt="Aide à domicile">
-            <div class="service-text">
-              Nous proposons un accompagnement personnalisé pour aider les personnes âgées à rester chez elles en toute sécurité et dans le confort.
-              Nos aides à domicile interviennent pour :
-              L’aide à la toilette et à l’habillage
-              La préparation et la prise des repas
-              Le ménage et l’entretien du logement
-              L’accompagnement aux courses et aux rendez-vous médicaux
-              Une équipe bienveillante, formée et disponible 7j/7        
-            </div>
-          </div>
-        </div>
-      </a>
+      // Afficher les deux premières lignes de la réponse au chargement
+      shortAnswer.style.display = 'block';
 
-      <a href="aides.html" class="service-link">
-        <div class="service-cell">
-          <div class="service-title-box">
-            <h2>S’informer sur les aides financières </h2>
-          </div>
-          <div class="service-content-box">
-            <img src="images/aides.jpg" alt="Aides financières">
-            <div class="service-text">
-              Découvrez les aides financières existantes et comment les obtenir.
-            </div>
-          </div>
-        </div>
-      </a>
+      // Fonction "Lire plus"
+      readMoreLink.addEventListener('click', function() {
+        fullAnswer.style.display = 'block'; // Afficher la réponse complète
+        shortAnswer.style.display = 'none'; // Masquer la partie courte
+        readMoreLink.style.display = 'none'; // Masquer le lien "Lire plus"
+      });
+    });
 
-      <a href="hospitalisation.html" class="service-link">
-        <div class="service-cell">
-          <div class="service-title-box">
-            <h2> Accompagnement après une hospitalisation</h2>
-          </div>
-          <div class="service-content-box">
-            <img src="images/hospitalisation.jpg" alt="Hospitalisation">
-            <div class="service-text">
-              Nos services d'accompagnement post-hospitalisation à domicile.
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="pathologie.html" class="service-link">
-        <div class="service-cell">
-          <div class="service-title-box">
-            <h2> Mieux comprendre ma pathologie</h2>
-          </div>
-          <div class="service-content-box">
-            <img src="images/pathologie.jpg" alt="Pathologie">
-            <div class="service-text">
-              Informations pédagogiques sur les pathologies accompagnées.
-            </div>
-          </div>
-        </div>
-      </a>
-
-    </section>
-
-
-  </div>
-  <section class="contact-section">
-  <div class="contact-right">
-    <p class="contact-text">
-      Contactez-nous dès aujourd'hui pour discuter de la manière dont nous pouvons améliorer la qualité de vie de vos proches grâce à nos services d'aide à domicile
-    </p>
-
-    <a href="tel:0605873735" class="phone-button">
-      <img src="images/call-button.png" alt="Appeler Nena Adom">
-    </a>
-
-    <p>Prenez un rendez-vous par téléphone.</p>
-    <p>Nous intervenons directement <strong>chez vous !</strong></p>
-  </div>
-
-  <div class="contact-left">
-    <h2 class="contact-title">ENVIE D’ÉCHANGER ?</h2>
-    <img src="images/échange-tel.png" alt="Illustration échange téléphone">
-  </div>
-</section>
-
-<section class="partners-section">
-  <h2>NOS PARTENAIRES</h2>
-  <div class="partners-logos">
-    <a href="https://www.sosmedecins.fr/" target="_blank">
-      <img src="images/partenaires/sosmedecins.png" alt="SOS Médecins">
-    </a>
-    <a href="https://www.uber.com/" target="_blank">
-      <img src="images/partenaires/uber.png" alt="Uber">
-    </a>
-    <a href="#" target="_blank">
-      <img src="images/partenaires/partenaire1.png" alt="Partenaire médical 1">
-    </a>
-    <a href="#" target="_blank">
-      <img src="images/partenaires/partenaire2.png" alt="Partenaire médical 2">
-    </a>
-    <a href="#" target="_blank">
-      <img src="images/partenaires/partenaire3.png" alt="Partenaire médical 3">
-    </a>
-  </div>
-</section>
-
-
-<section class="map-section">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.7243927791994!2d2.300351115673216!3d48.86986757928898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc731d81b7d%3A0x9db9c7d6b73d8351!2s92%20Av.%20des%20Champs-%C3%89lys%C3%A9es%2C%2075018%20Paris!5e0!3m2!1sfr!2sfr!4v1718796584436!5m2!1sfr!2sfr"
-    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</section>
-
-<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
-  <p>© 2025 Nena Adom – Tous droits réservés</p>
-  <p>
-    SIRET : 95102803400019 – Site sans collecte de données<br>
-    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
-  </p>
-  <p>
-    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
-    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
-    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
-  </p>
-</footer>
+    // Script spécifique à la deuxième question (Accordéon classique)
+    document.querySelectorAll('#faq2 .faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active'); // Ouvre ou ferme la réponse
+        // Ferme toutes les autres questions (accordéon)
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) other.classList.remove('active');
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

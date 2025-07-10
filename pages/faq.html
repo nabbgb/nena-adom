@@ -4,6 +4,48 @@
   <meta charset="UTF-8">
   <title>FAQ - Nena Adom</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Styles pour les illustrations dans les marges */
+    .faq-section {
+      position: relative;
+      max-width: 800px; /* Largeur identique à votre version originale */
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .faq-illustration {
+      position: absolute;
+      width: 220px;
+      z-index: 1;
+      display: none; /* Caché par défaut */
+    }
+    
+    .faq-illustration.left {
+      left: -220px;
+    }
+    
+    .faq-illustration.right {
+      right: -220px;
+    }
+    
+    .faq-illustration img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    /* Afficher les illustrations uniquement sur grands écrans */
+    @media (min-width: 1200px) {
+      .faq-illustration {
+        display: block;
+      }
+    }
+    
+    /* Conteneur FAQ inchangé */
+    .faq-container {
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -40,7 +82,7 @@
         <p>
           Chez Nena Adom, nous savons que faire appel à une aide à domicile soulève souvent de nombreuses interrogations : démarches, coûts, services proposés, prise en charge médicale, aides financières, etc.<br><br>
           Cette page a été conçue pour vous apporter des réponses claires, simples et accessibles, que vous soyez une personne concernée, un proche aidant ou un professionnel de santé.<br><br>
-          Vous trouverez ici l’essentiel pour avancer sereinement dans votre projet d’accompagnement à domicile.
+          Vous trouverez ici l'essentiel pour avancer sereinement dans votre projet d'accompagnement à domicile.
         </p>
       </div>
     </section>
@@ -48,23 +90,32 @@
 
   <!-- FAQ -->
 <section class="faq-section">
+  <!-- Illustration 1 -->
+  <div class="faq-illustration left">
+    <img src="../images/faq/illustration1.jpg" alt="Illustration implication famille">
+  </div>
+  
   <div class="faq-container">
-
     <div class="faq-item">
       <div class="faq-question">
-        <h2>Suis-je impliqué dans la mise en place de l’accompagnement de mon proche ?</h2>
+        <h2>Suis-je impliqué dans la mise en place de l'accompagnement de mon proche ?</h2>
         <span class="arrow">▾</span>
       </div>
       <div class="faq-answer">
         <p>
           Absolument, votre implication est essentielle.<br><br>
-          Nous travaillons en étroite collaboration avec vous et votre proche pour bien comprendre ses besoins, ses habitudes et ses attentes. Cela nous permet de personnaliser l’accompagnement et de garantir un service adapté et respectueux.<br><br>
-          Vous participez activement à l’élaboration du plan d’aide, à la sélection des intervenants, et vous êtes informé régulièrement de l’évolution des prestations.<br><br>
+          Nous travaillons en étroite collaboration avec vous et votre proche pour bien comprendre ses besoins, ses habitudes et ses attentes. Cela nous permet de personnaliser l'accompagnement et de garantir un service adapté et respectueux.<br><br>
+          Vous participez activement à l'élaboration du plan d'aide, à la sélection des intervenants, et vous êtes informé régulièrement de l'évolution des prestations.<br><br>
           Notre objectif est de créer un vrai partenariat avec vous, pour assurer le bien-être et la sécurité de votre proche.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 2 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration2.jpg" alt="Illustration matériel médical">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Faut-il fournir du matériel ou des produits pour les interventions ?</h2>
@@ -73,12 +124,17 @@
       <div class="faq-answer">
         <p>
           Dans la plupart des cas, nous utilisons le matériel et les produits déjà disponibles au domicile de la personne aidée, afin de garantir son confort et son environnement habituel.<br><br>
-          Cependant, selon la nature des prestations, il peut être utile ou nécessaire de prévoir certains produits spécifiques (produits d’entretien, protections, équipements médicaux légers, etc.).<br><br>
+          Cependant, selon la nature des prestations, il peut être utile ou nécessaire de prévoir certains produits spécifiques (produits d'entretien, protections, équipements médicaux légers, etc.).<br><br>
           Nous vous accompagnons pour vous conseiller sur le matériel adapté si besoin, et nous nous adaptons toujours à votre situation.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 3 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration3.jpg" alt="Illustration services combinés">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Est-il possible de combiner plusieurs types de services (ménage + aide à la toilette, par exemple) ?</h2>
@@ -87,13 +143,18 @@
       <div class="faq-answer">
         <p>
           Oui, tout à fait !<br><br>
-          Nous proposons des services entièrement personnalisables pour répondre au mieux aux besoins de la personne aidée. Vous pouvez combiner différentes prestations comme le ménage, l’aide à la toilette, la préparation des repas, les courses, ou l’accompagnement lors de sorties.<br><br>
-          Cette flexibilité permet de créer un accompagnement global, adapté à chaque situation, et d’assurer un confort optimal au quotidien.<br><br>
-          N’hésitez pas à nous consulter pour établir ensemble un plan d’aide sur-mesure.
+          Nous proposons des services entièrement personnalisables pour répondre au mieux aux besoins de la personne aidée. Vous pouvez combiner différentes prestations comme le ménage, l'aide à la toilette, la préparation des repas, les courses, ou l'accompagnement lors de sorties.<br><br>
+          Cette flexibilité permet de créer un accompagnement global, adapté à chaque situation, et d'assurer un confort optimal au quotidien.<br><br>
+          N'hésitez pas à nous consulter pour établir ensemble un plan d'aide sur-mesure.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 4 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration4.jpg" alt="Illustration sécurité">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Comment garantir la sécurité de mon proche avec un intervenant extérieur ?</h2>
@@ -102,13 +163,18 @@
       <div class="faq-answer">
         <p>
           La sécurité de votre proche est notre priorité absolue.<br><br>
-          Chaque auxiliaire de vie bénéficie d’une formation continue, notamment sur les bonnes pratiques de sécurité et le respect de la confidentialité.<br><br>
+          Chaque auxiliaire de vie bénéficie d'une formation continue, notamment sur les bonnes pratiques de sécurité et le respect de la confidentialité.<br><br>
           De plus, nous assurons un suivi régulier des interventions grâce à des outils de contrôle (feuilles de présence, pointage téléphonique) et un contact permanent avec les familles.<br><br>
           Enfin, nous restons disponibles 24h/24 pour répondre à vos questions ou intervenir rapidement en cas de besoin.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 5 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration5.jpg" alt="Illustration pause service">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Peut-on suspendre temporairement les services si besoin (vacances, hospitalisation) ?</h2>
@@ -116,28 +182,38 @@
       </div>
       <div class="faq-answer">
         <p>
-          Oui, il est tout à fait possible de suspendre temporairement les interventions en cas de vacances, d’hospitalisation ou de tout autre motif.<br><br>
-          Nous vous invitons simplement à nous prévenir à l’avance afin que nous puissions organiser cette pause sans compromettre le suivi et la qualité du service.<br><br>
-          Cette flexibilité vous permet d’adapter l’aide à domicile à votre rythme et à vos besoins, en toute simplicité.
+          Oui, il est tout à fait possible de suspendre temporairement les interventions en cas de vacances, d'hospitalisation ou de tout autre motif.<br><br>
+          Nous vous invitons simplement à nous prévenir à l'avance afin que nous puissions organiser cette pause sans compromettre le suivi et la qualité du service.<br><br>
+          Cette flexibilité vous permet d'adapter l'aide à domicile à votre rythme et à vos besoins, en toute simplicité.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 6 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration6.jpg" alt="Illustration fin de vie">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
-        <h2>En quoi consiste le rôle de l’accompagnant en fin de vie ?</h2>
+        <h2>En quoi consiste le rôle de l'accompagnant en fin de vie ?</h2>
         <span class="arrow">▾</span>
       </div>
       <div class="faq-answer">
         <p>
-          L’accompagnant en fin de vie apporte un soutien humain, attentif et respectueux à la personne en phase terminale et à ses proches.<br><br>
-          Son rôle est d’être présent, d’écouter, d’aider à soulager les besoins quotidiens, et d’offrir réconfort et dignité jusqu’au dernier moment.<br><br>
+          L'accompagnant en fin de vie apporte un soutien humain, attentif et respectueux à la personne en phase terminale et à ses proches.<br><br>
+          Son rôle est d'être présent, d'écouter, d'aider à soulager les besoins quotidiens, et d'offrir réconfort et dignité jusqu'au dernier moment.<br><br>
           Il accompagne la personne dans ses gestes de la vie courante, facilite la communication avec les équipes médicales, et soutient aussi la famille face aux émotions difficiles.<br><br>
-          L’accompagnant agit avec bienveillance, discrétion, et dans le respect des souhaits de chacun, contribuant ainsi à une fin de vie apaisée et digne.
+          L'accompagnant agit avec bienveillance, discrétion, et dans le respect des souhaits de chacun, contribuant ainsi à une fin de vie apaisée et digne.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 7 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration7.jpg" alt="Illustration compréhension pathologie">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Comment puis-je mieux comprendre la pathologie de mon proche ?</h2>
@@ -148,11 +224,16 @@
           Comprendre la pathologie de votre proche est essentiel pour lui offrir un accompagnement adapté et bienveillant.<br><br>
           Nous mettons à votre disposition des articles dédiés et des ressources claires, fiables et accessibles qui expliquent la maladie, ses symptômes, et son évolution.<br><br>
           Nos intervenants sont également formés pour répondre à vos questions et vous orienter vers ces ressources ou vers des spécialistes si nécessaire.<br><br>
-          Cette meilleure compréhension vous permet de mieux gérer le quotidien, d’anticiper les besoins, et de soutenir efficacement votre proche.
+          Cette meilleure compréhension vous permet de mieux gérer le quotidien, d'anticiper les besoins, et de soutenir efficacement votre proche.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 8 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration8.jpg" alt="Illustration nuit à domicile">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Comment se déroule une nuit avec un intervenant à domicile ?</h2>
@@ -160,14 +241,19 @@
       </div>
       <div class="faq-answer">
         <p>
-          L’intervenant assure une présence attentive tout au long de la nuit pour veiller au bien-être et à la sécurité de la personne aidée.<br><br>
-          Selon les besoins, il peut rester auprès de la personne pour l’assister dans ses déplacements nocturnes, gérer les réveils, ou apporter un soutien en cas d’inconfort ou de malaise.<br><br>
-          Dans certains cas, l’intervenant reste en veille silencieuse, prêt à intervenir rapidement en cas de besoin, tout en respectant le repos de la personne.<br><br>
-          Chaque nuit est adaptée aux habitudes et exigences spécifiques du bénéficiaire, afin d’assurer un accompagnement rassurant et discret.
+          L'intervenant assure une présence attentive tout au long de la nuit pour veiller au bien-être et à la sécurité de la personne aidée.<br><br>
+          Selon les besoins, il peut rester auprès de la personne pour l'assister dans ses déplacements nocturnes, gérer les réveils, ou apporter un soutien en cas d'inconfort ou de malaise.<br><br>
+          Dans certains cas, l'intervenant reste en veille silencieuse, prêt à intervenir rapidement en cas de besoin, tout en respectant le repos de la personne.<br><br>
+          Chaque nuit est adaptée aux habitudes et exigences spécifiques du bénéficiaire, afin d'assurer un accompagnement rassurant et discret.
         </p>
       </div>
     </div>
 
+    <!-- Illustration 9 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration9.jpg" alt="Illustration matériel médical">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Est-ce que Nena Adom peut fournir du matériel médical à domicile ?</h2>
@@ -177,47 +263,59 @@
         <p>
           Oui. Si un professionnel de santé (médecin, hôpital…) prescrit du matériel médical (lit médicalisé, déambulateur, fauteuil roulant, etc.), Nena Adom peut faciliter sa mise à disposition.<br><br>
           Nous collaborons avec des pharmacies et des prestataires agréés :<br><br>
-          Nous transmettons l’ordonnance à la pharmacie,<br><br>
+          Nous transmettons l'ordonnance à la pharmacie,<br><br>
           Le matériel est livré et installé directement à votre domicile,<br><br>
-          Nous veillons à ce qu’il soit adapté à vos besoins.<br><br>
-          Vous n’avez aucune démarche à faire seul , nous nous occupons de tout.<br><br>
-
+          Nous veillons à ce qu'il soit adapté à vos besoins.<br><br>
+          Vous n'avez aucune démarche à faire seul , nous nous occupons de tout.<br><br>
         </p>
       </div>
     </div>
 
+    <!-- Illustration 10 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration10.jpg" alt="Illustration soins à domicile">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
-        <h2>Quels sont les soins à domicile pris en charge par l’Assurance Maladie ?</h2>
+        <h2>Quels sont les soins à domicile pris en charge par l'Assurance Maladie ?</h2>
         <span class="arrow">▾</span>
       </div>
       <div class="faq-answer">
         <p>
-          Les soins infirmiers, les soins de kinésithérapie et certains soins médicaux à domicile sont pris en charge par l’Assurance Maladie, à condition qu’ils soient prescrits par un médecin.<br><br>
+          Les soins infirmiers, les soins de kinésithérapie et certains soins médicaux à domicile sont pris en charge par l'Assurance Maladie, à condition qu'ils soient prescrits par un médecin.<br><br>
           Chez Nena Adom, nous facilitons la coordination de ces soins :<br><br>
-          Vous fournissez l’ordonnance,<br><br>
+          Vous fournissez l'ordonnance,<br><br>
           Nous contactons les professionnels de santé (infirmiers, kinés, etc.),les soins sont assurés à domicile, en lien avec votre parcours de santé.<br><br>
           Nous vous aidons à organiser les rendez-vous et à suivre le bon déroulement des soins.<br><br>
-
         </p>
       </div>
     </div>
 
+    <!-- Illustration 11 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration11.jpg" alt="Illustration après décès">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
-        <h2>Que se passe-t-il après le décès d’un bénéficiaire ?</h2>
+        <h2>Que se passe-t-il après le décès d'un bénéficiaire ?</h2>
         <span class="arrow">▾</span>
       </div>
       <div class="faq-answer">
         <p>
-          Après le décès d’un proche, Nena Adom prend en charge la récupération du matériel mis à disposition (lits médicalisés, fauteuils, aides techniques…).<br><br>
-          Lorsque cela est possible et selon les cas, ce matériel peut être remis en état et redistribué à d’autres personnes dans le besoin, en partenariat avec des structures solidaires.<br><br>
+          Après le décès d'un proche, Nena Adom prend en charge la récupération du matériel mis à disposition (lits médicalisés, fauteuils, aides techniques…).<br><br>
+          Lorsque cela est possible et selon les cas, ce matériel peut être remis en état et redistribué à d'autres personnes dans le besoin, en partenariat avec des structures solidaires.<br><br>
           Cela fait partie de notre engagement humain : accompagner les familles avec respect, même après la fin de la prise en charge.<br><br>
-
         </p>
       </div>
     </div>
 
+    <!-- Illustration 12 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration12.jpg" alt="Illustration téléassistance">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Proposez-vous un service de téléassistance à domicile ?</h2>
@@ -225,31 +323,39 @@
       </div>
       <div class="faq-answer">
         <p>
-          Oui. En complément de l’aide à domicile, Nena Adom peut vous orienter vers une solution de téléassistance fiable et adaptée à votre situation (bracelet, médaillon ou boîtier d’alerte).<br><br>
-          Ce service permet d’alerter rapidement un centre d’appel en cas de chute ou de problème à domicile, 24h/24 et 7j/7.<br><br>
-          Nous vous aidons à choisir un prestataire, à monter les éventuels dossiers d’aide financière, et à installer le dispositif.<br><br>
-
+          Oui. En complément de l'aide à domicile, Nena Adom peut vous orienter vers une solution de téléassistance fiable et adaptée à votre situation (bracelet, médaillon ou boîtier d'alerte).<br><br>
+          Ce service permet d'alerter rapidement un centre d'appel en cas de chute ou de problème à domicile, 24h/24 et 7j/7.<br><br>
+          Nous vous aidons à choisir un prestataire, à monter les éventuels dossiers d'aide financière, et à installer le dispositif.<br><br>
         </p>
       </div>
     </div>
 
+    <!-- Illustration 13 -->
+    <div class="faq-illustration left">
+      <img src="../images/faq/illustration13.jpg" alt="Illustration urgence">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
-        <h2>Que faire en cas d’urgence à domicile ?</h2>
+        <h2>Que faire en cas d'urgence à domicile ?</h2>
         <span class="arrow">▾</span>
       </div>
       <div class="faq-answer">
         <p>
-          En cas d’urgence, appelez immédiatement Nena Adom.<br>
-          Notre équipe évaluera la situation et, selon le degré d’urgence :<br>
+          En cas d'urgence, appelez immédiatement Nena Adom.<br>
+          Notre équipe évaluera la situation et, selon le degré d'urgence :<br>
           Contactera le médecin traitant ou la permanence médicale,<br>
           Ou fera appel directement au SAMU (15) en cas de danger vital.<br>
-          Notre priorité est d’agir rapidement et efficacement pour garantir votre sécurité ou celle de votre proche à domicile.<br>
-
+          Notre priorité est d'agir rapidement et efficacement pour garantir votre sécurité ou celle de votre proche à domicile.<br>
         </p>
       </div>
     </div>
 
+    <!-- Illustration 14 -->
+    <div class="faq-illustration right">
+      <img src="../images/faq/illustration14.jpg" alt="Illustration toilette mortuaire">
+    </div>
+    
     <div class="faq-item">
       <div class="faq-question">
         <h2>Adaptez vous la toilette mortuaire en fonction de nos besoins envers le défunt ?</h2>
@@ -259,15 +365,13 @@
         <p>
           Oui, nous assurons la toilette mortuaire dans le respect total de la dignité du défunt et des souhaits de la famille.<br><br>
           Nos équipes peuvent intervenir pour :<br><br>
-          - Une toilette complète (lavage, soins d’hygiène, coiffure),<br><br>
-          - L’habillage avec les vêtements choisis par les proches,<br><br>
+          - Une toilette complète (lavage, soins d'hygiène, coiffure),<br><br>
+          - L'habillage avec les vêtements choisis par les proches,<br><br>
           Nous opérons dans le respect des traditions culturelles, religieuses ou des volontés spécifiques exprimées.
-          Chaque geste est réalisé avec discrétion, bienveillance et professionnalisme, dans un moment délicat où l’humanité est essentielle.
-
+          Chaque geste est réalisé avec discrétion, bienveillance et professionnalisme, dans un moment délicat où l'humanité est essentielle.
         </p>
       </div>
     </div>
-    
   </div>
 </section>
 
