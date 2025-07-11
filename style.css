@@ -166,7 +166,7 @@ mark {
   transform: rotate(180deg);
 }
 .faq-answer {
-  background-color: #f6f6f6;
+  background-color: #fafafa;
   border-radius: 0 0 10px 10px;
   max-width: 90%;
   margin-left: 20px;
@@ -244,10 +244,12 @@ header {
 header h1 {
   font-size: 2em;
   margin: 0;
+  font-weight: normal;
+  font-family: Arimo;
 }
 
 header h2 {
-  font-size: 1em;
+  font-size: 1.7em;
   font-weight: normal;
   margin: 0;
 }
@@ -255,21 +257,23 @@ header h2 {
 .main-section {
   display: flex;
   align-items: stretch;
-  background-color: #f6f6f6;
+  background-color: #fafafa;
   margin-bottom: 40px;
   margin-top: 30px;
   overflow: hidden;
+  margin-right:60px;
+  margin-left:60px;
 }
 
 .main-section img {
-  width: 50%;
+  width: 70%;
   height: auto;
   object-fit: cover;
   display: block;
 }
 
 .main-text {
-  width: 50%;
+  width: 100%;
   padding: 40px;
   text-align: justify;
   display: flex;
@@ -278,12 +282,29 @@ header h2 {
 }
 
 .main-text h3 {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: normal;
   margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2; /* Espacement entre les lignes */
+  justify-content: center;
+  font-family: Arimo;
+  margin-top: 10px;
+}
+
+.main-text h2 {
+  text-align : center;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+
 }
 
 .main-text p {
   line-height: 1.5em;
+  margin-left: 28px;
+  margin-right: 28px;
 }
 
 .section-title {
@@ -880,7 +901,7 @@ header h2 {
     }
 
     .faq-answer {
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       border-radius: 10px;
       max-height: 0;
       overflow: hidden;
@@ -1135,7 +1156,7 @@ header h2 {
     }
 
     .faq-answer {
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       border-radius: 10px;
 
       max-width: 90%;
@@ -1359,7 +1380,7 @@ header h2 {
     }
 
     .faq-answer {
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       border-radius: 10px;
 
       max-width: 90%;
@@ -1449,7 +1470,7 @@ header h2 {
       padding: 0 20px;
       display: flex;
       gap: 30px;
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       border-radius: 10px;
       align-items: center;
     }
@@ -1497,7 +1518,7 @@ header h2 {
     .pathology-block {
       display: flex;
       flex-wrap: wrap;
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       border-radius: 0 0 10px 10px;
       padding: 20px;
       gap: 30px;
@@ -1683,7 +1704,9 @@ header h2 {
 
   }
   .main-text h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    text-align:justify;
+
   }
   .main-text p {
     font-size: 1em;
@@ -1847,7 +1870,7 @@ header h2 {
 }
 
 .faq-item:hover {
-  background-color: #f4f4f4; /* gris clair */
+  background-color: #fafafa; /* gris clair */
 }
 
 .faq-question {
@@ -1898,4 +1921,3 @@ div[style*="display: flex"][style*="align-items: center"][style*="padding: 40px 
   justify-content: center;
   height: 100%;
 }
-
