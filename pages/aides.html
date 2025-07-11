@@ -72,11 +72,24 @@
     <!-- CONTENU DÉTAILLÉ REGROUPÉ -->
     <div class="content-section" id="faqContent">
 
-      <div class="faq-item" id="credit-impot">
+      <div class="faq-item first-item" id="credit-impot">
         <div class="faq-question">
           <h2>Le Crédit d'impôt</h2>
           <span class="arrow">▾</span>
         </div>
+
+        <!-- Aperçu visible par défaut -->
+      <div class="faq-preview">
+        <div class="faq-preview-text">
+          <h3>Qu’est-ce que le crédit d’impôt ?</h3>
+          <p>
+            Le crédit d’impôt est une aide fiscale accordée par l’État pour soutenir les particuliers qui emploient un service à la personne à leur domicile. Il vous permet de récupérer 50 % des sommes dépensées pour des prestations comme le ménage, l’aide à la toilette, les courses, la préparation des repas ou l’accompagnement.
+          </p>
+        </div>
+        <button class="read-more-btn" onclick="expandFirstQuestion()">Lire plus...</button>
+      </div>
+
+
         <div class="faq-answer" style="text-align: justify;">
           <h3>Qu’est-ce que le crédit d’impôt ?</h3>
           <p>
@@ -378,6 +391,16 @@
       </div>
     </div>
   </section>
+
+
+
+    <!-- JS pour la première question -->
+  <script>
+    function expandFirstQuestion() {
+      const firstItem = document.querySelector('.faq-item.first-item');
+      firstItem.classList.add('active');
+    }
+  </script>
 
   <!-- ACCORDÉON JS -->
   <script>
