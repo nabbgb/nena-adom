@@ -5,6 +5,79 @@
   <title>Nena Adom - Aide à domicile</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: normal;
+  font-family: Arimo;
+}
+
+header h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.main-section {
+  display: flex;
+  align-items: stretch;
+  background-color: #fafafa;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  overflow: hidden;
+  margin-right:60px;
+  margin-left:60px;
+}
+
+.main-section img {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.main-text {
+  width: 100%;
+  padding: 40px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-text h3 {
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2; /* Espacement entre les lignes */
+  justify-content: center;
+  font-family: Arimo;
+  margin-top: 10px;
+}
+
+.main-text h2 {
+  text-align : center;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+
+}
+
+.main-text p {
+  line-height: 1.5em;
+  margin-left: 28px;
+  margin-right: 28px;
+}
+</style>
 <body>
   <div class="container">
     <header class="center-header">
@@ -35,8 +108,7 @@
             <div class="service-content-box">
               <img src="images/accueil/pres-services.jpg" alt="Aide à domicile">
               <div class="service-text">
-                Afin d'assurer leur autonomie et leur dignité et d’offrir une tranquillité d'esprit totale aux proches aidants, nous proposons une gamme de services complète pour les tâches quotidiennes, y compris <strong>la toilette, l'aide au lever et au coucher, courses et préparation des repas, le ménage et le repassage.</strong>
-                <br>En savoir plus
+                Afin d'assurer leur autonomie et leur dignité et d’offrir une tranquillité d'esprit totale aux proches aidants, nous proposons une gamme de services complète pour les tâches quotidiennes, y compris la toilette, l'aide au lever et au coucher, courses et préparation des repas, le ménage et le repassage.
               </div>
             </div>
           </a>
@@ -51,8 +123,8 @@
             <div class="service-content-box">
               <img src="images/accueil/aides.jpg" alt="Aides financières">
               <div class="service-text">
-                Différentes aides financières existent pour rendre les services d’aide à domicile accessibles et offrir aux personnes âgées la possibilité de continuer à vivre chez elles malgré une perte d'autonomie. Notre équipe vous accompagne étape par étape afin que vous puissiez bénéficier pleinement de vos droits. 
-                En savoir plus
+                Différentes aides financières existent pour rendre les services d’aide à domicile accessibles et offrir aux personnes âgées la possibilité de continuer à vivre chez elles malgré une perte
+                d'autonomie. Notre équipe vous accompagne afin que vous puissiez bénéficier pleinement de vos droits. 
               </div>
             </div>
           </a>
@@ -67,7 +139,7 @@
             <div class="service-content-box">
               <img src="images/accueil/hospitalisation.jpg" alt="Hospitalisation">
               <div class="service-text">
-                Notre objectif est de favoriser l'hospitalisation à domicile. Nous comprenons que de nombreux patients aspirent à passer leurs derniers jours entourés de leurs proches, dans le cadre familier de leur maison. Notre équipe prend entièrement en charge le patient, créant un environnement calme et adapté à ses besoins uniques. 
+                Notre objectif est de favoriser le retour à domicile des patients. Notre équipe pluridisciplinaire prend entièrement en charge le patient, créant un environnement calme et adapté à ses besoins uniques. Facilitant également la logistique, Nena Adom s'occupe de la livraison du matériel médical. 
               </div>
             </div>
           </a>
@@ -82,8 +154,7 @@
             <div class="service-content-box">
               <img src="images/accueil/pathologie.jpg" alt="Pathologie">
               <div class="service-text">
-                Parce que bien vivre avec une maladie passe avant tout par une bonne compréhension, vous trouverez ici à votre disposition des ressources claires et accessibles sur les pathologies les plus courantes chez les personnes âgées. Cette page a pour but de vous accompagner pour mieux appréhender les symptômes.
-
+                Pour les patients tout comme leurs proches aidants, bien vivre avec la maladie, passe avant tout par une bonne compréhension, vous trouverez ici à votre disposition des ressources claires et accessibles sur les pathologies les plus courantes chez les personnes âgées (Parkinson, Alzheimer…) 
               </div>
             </div>
           </a>
@@ -122,7 +193,6 @@
 
 <section class="partners-section">
   <h2>NOS PARTENAIRES</h2>
-  <div class="partners-slider">
     <div class="partners-track">
       <a href="https://www.sosmedecins.fr/" target="_blank">
         <img src="images/partenaires/sosmedecins.png" alt="SOS Médecins">
@@ -139,24 +209,7 @@
       <a href="#" target="_blank">
         <img src="images/partenaires/partenaire3.png" alt="Partenaire médical 3">
       </a>
-      <!-- On répète pour la boucle fluide -->
-      <a href="https://www.sosmedecins.fr/" target="_blank">
-        <img src="images/partenaires/sosmedecins.png" alt="SOS Médecins">
-      </a>
-      <a href="https://www.uber.com/" target="_blank">
-        <img src="images/partenaires/uber.png" alt="Uber">
-      </a>
-      <a href="#" target="_blank">
-        <img src="images/partenaires/partenaire1.png" alt="Partenaire médical 1">
-      </a>
-      <a href="#" target="_blank">
-        <img src="images/partenaires/partenaire2.png" alt="Partenaire médical 2">
-      </a>
-      <a href="#" target="_blank">
-        <img src="images/partenaires/partenaire3.png" alt="Partenaire médical 3">
-      </a>
     </div>
-  </div>
 </section>
 
 
