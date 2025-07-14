@@ -1625,7 +1625,6 @@ header h2 {
 .partners-track {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollPartners 20s linear infinite;
 }
 
 .partners-track a {
@@ -1639,7 +1638,6 @@ header h2 {
   vertical-align: middle;
   filter: grayscale(100%);
   border-radius: 15px;
-  transition: filter 0.3s;
 }
 
 .partners-track img:hover {
