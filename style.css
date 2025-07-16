@@ -508,10 +508,7 @@ header h2 {
   object-fit: cover; 
 }
 
-.partners-section {
-  text-align: center;
-  padding: 50px 20px 30px;
-}
+
 
 .partners-section h2 {
   font-size: 22px;
@@ -1896,4 +1893,170 @@ div[style*="display: flex"][style*="align-items: center"][style*="padding: 40px 
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+
+.partners-section {
+padding: 40px 20px; /* padding-bottom augmenté pour laisser la place aux tooltips */
+background-color: #fff;
+border-radius: 10px;
+min-height: 300px;
+overflow: hidden; /* évite le scroll vertical inutile */
+}
+
+.partners-section h2 {
+text-align: center;
+color: #000000;
+font-size: 2rem;
+}
+
+.partners-track {
+display: flex;
+gap: 30px;
+overflow-x: auto;
+overflow-y: visible;
+padding: 80px 40px 40px 40px;
+scroll-behavior: smooth;
+scrollbar-width: none;
+min-height: 200px;
+}
+
+.partners-track::-webkit-scrollbar {
+display: none;
+}
+
+.partner-tooltipv2 {
+position: relative;
+display: inline-block;
+flex: 0 0 auto;
+transition: transform 0.3s ease;
+overflow: visible;
+}
+
+.partner-tooltipv2:hover {
+transform: translateY(-5px);
+}
+
+.partner-tooltipv2 img {
+height: 100px;
+width: auto;
+cursor: pointer;
+border-radius: 8px;
+transition: box-shadow 0.3s ease;
+}
+
+.partner-tooltipv2 img:hover {
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.tooltip-textv2 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(10px);
+background-color: white;
+color: black;
+padding: 15px 18px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, transform 0.3s ease;
+width: max-content;
+max-width: 280px;
+min-width: 200px;
+white-space: normal;
+line-height: 1.6em;
+text-align: left;
+z-index: 1000;
+font-size: 0.9rem;
+}
+
+.partner-tooltipv2:nth-last-child(-n+2) .tooltip-textv2 {
+left: auto;
+right: 0;
+transform: translateX(0) translateY(10px);
+}
+
+.partner-tooltipv2:nth-last-child(-n+2):hover .tooltip-textv2 {
+transform: translateX(0) translateY(0);
+}
+
+.partner-tooltipv2:nth-child(-n+2) .tooltip-textv2 {
+left: 0;
+right: auto;
+transform: translateX(0) translateY(10px);
+}
+
+.partner-tooltipv2:nth-child(-n+2):hover .tooltip-textv2 {
+transform: translateX(0) translateY(0);
+}
+
+.tooltip-textv2::after {
+content: '';
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%) translateY(-100%);
+border: 8px solid transparent;
+border-bottom-color: white;
+}
+
+.partner-tooltipv2:nth-last-child(-n+2) .tooltip-textv2::after {
+left: auto;
+right: 20px;
+transform: translateX(0) translateY(-100%);
+}
+
+.partner-tooltipv2:nth-child(-n+2) .tooltip-textv2::after {
+left: 20px;
+right: auto;
+transform: translateX(0) translateY(-100%);
+}
+
+.partner-tooltipv2:hover .tooltip-textv2 {
+opacity: 1;
+visibility: visible;
+transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+.partners-track {
+gap: 20px;
+padding: 60px 20px 30px 20px;
+}
+
+.partner-tooltipv2 img {
+height: 50px;
+}
+
+.tooltip-textv2 {
+max-width: 240px;
+min-width: 180px;
+font-size: 0.85rem;
+padding: 12px 15px;
+}
+
+.partners-section {
+min-height: 250px;
+padding-bottom: 200px;
+}
+
+.partner-tooltipv2:nth-last-child(-n+2) .tooltip-textv2,
+.partner-tooltipv2:nth-child(-n+2) .tooltip-textv2 {
+left: 50%;
+right: auto;
+transform: translateX(-50%) translateY(10px);
+}
+
+.partner-tooltipv2:nth-last-child(-n+2):hover .tooltip-textv2,
+.partner-tooltipv2:nth-child(-n+2):hover .tooltip-textv2 {
+transform: translateX(-50%) translateY(0);
+}
+
+.partner-tooltipv2:nth-last-child(-n+2) .tooltip-textv2::after,
+.partner-tooltipv2:nth-child(-n+2) .tooltip-textv2::after {
+left: 50%;
+right: auto;
+transform: translateX(-50%) translateY(-100%);
+}
 }
