@@ -1633,7 +1633,6 @@ header h2 {
   height: 120px;
   width: auto;
   vertical-align: middle;
-  filter: grayscale(100%);
   border-radius: 15px;
 }
 
