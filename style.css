@@ -480,33 +480,50 @@ header h2 {
 }
 
 .contact-text {
+  margin-top: 80px;
   margin-bottom: 20px;
   line-height: 1.5;
   text-align:justify;
   margin-right: 100px;
 }
 
-.phone-button {
-  background: none;
-  border: none;
-  padding: 0;
-  display: inline-block;
-  box-shadow: none;
+.contact-text-1 {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align:justify;
+  margin-right: 100px;
 }
 
-.phone-button img {
-  height: 200px;
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  object-fit: cover; 
+
+.phone-call-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #f8e878;
+  color: #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* centrage sans étirer */
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+
+.phone-call-button:hover {
+  background-color: #ffe93d;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .phone-call-button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
