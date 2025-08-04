@@ -3,205 +3,368 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Services d'aide à domicile aux personnes âgées</title>
   <style>
+
+    @font-face {
+      font-family: 'Glacial Indifference';
+      src: url('../fonts/glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Arimo';
+      src: url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Comfortaa';
+      src: url('../fonts/comfortaa/Comfortaa-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Playfair Display';
+      src: url('../fonts/Playfair-Display/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    }
+
+
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      text-align: justify;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Glacial Indifference', sans-serif;
+    }
+
+    .intro-text h2 {
+      font-family: 'Arimo', sans-serif;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    .service-sectionv2 {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-top: 20px;
+    .header {
+      margin: 0;
+      padding: 0;
     }
 
-    .service-sectionv2:nth-child(even) {
-      flex-direction: row-reverse;
-      background-color: #fafafa;
+    .container {
+      max-width: 1000px;
+      margin: 5px auto 0; /* Réduit de 80px à 10px */
+      padding: 0 10px;
+      background-color: white;
+      min-height: calc(100vh - 280px);
     }
 
-    .service-imagev2 {
-        flex: 0 0 auto;
-    }
-
-    .service-imagev2 img {
-        width: 25vw;
-        height: auto;
-        object-fit: cover;
-        display: block;
-    }
-
-
-    .service-contentv2 {
-      flex: 1;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      text-align: justify;
-    }
-
-    .service-titlev2 {
+    .main-title {
+      font-family:'Playfair Display', sans-serif ;
+      color: #15167b;
+      font-size: 28px;
       font-weight: bold;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    .cta-sectionv2 {
       text-align: center;
-      padding: 60px 20px;
-      background-color: #ffffff;
+      margin: 5px 0 30px; /* Réduit de 40px à 15px en haut */
     }
 
-    .cta-sectionv2 h2 {
-      font-style: italic;
-      font-weight: normal;
-      font-size: 1.6em;
-      margin-bottom: 10px;
-    }
-
-    .cta-sectionv2 p {
-      margin-bottom: 20px;
-    }
-
-    .cta-buttonv2 {
-      background-color: #1f2d4d;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
+    .intro-text {
+      text-align: justify;
+      margin-bottom: 40px;
       font-size: 14px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
+      line-height: 1.8;
+      color: #333;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    @media (max-width: 768px) {
-      .service-sectionv2 {
-        flex-direction: column !important;
-      }
-
-      .service-contentv2 {
-        text-align: center;
-        padding: 20px;
-      }
-
-      .service-titlev2 {
-        text-align: center;
-      }
+    .service-section {
+      margin-bottom: 50px;
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
     }
+
+    .service-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .service-number {
+      font-family:'Playfair Display', sans-serif ;
+      color: #15167b;
+      font-size: 120px;
+      font-weight: bold;
+      line-height: 0.8;
+      flex-shrink: 0;
+      margin-right: -10px;
+      margin-top: -15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .service-section.reverse .service-number {
+      margin-left: -10px;
+      margin-right: 0;
+    }
+
+    .service-content {
+      flex: 1;
+      position: relative;
+    }
+
+    .service-title {
+      font-family:'Playfair Display', sans-serif ;
+      color: #15167b;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      padding-left: 10px; /* Alignement avec le texte */
+    }
+
+    .service-section.reverse .service-title {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      margin-left: -30px; /* Compensation pour l'alignement */
+    }
+
+    .service-section.reverse .content-wrapper {
+      flex-direction: row-reverse;
+      margin-left: 0;
+      margin-right: -30px;
+    }
+
+    .service-image {
+      width: 180px;
+      height: 200px;
+      flex-shrink: 0;
+      border-radius: 5px;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 5px;
+    }
+
+    .service-text {
+      flex: 1;
+      text-align: justify;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+      margin-left: 15px;
+      margin-right:21px;
+      padding-top: 0;
+      padding-left: 20px;
+      margin-top: 0; /* Assure l'alignement parfait avec l'image */
+    }
+
+    .service-section.reverse .service-text {
+      margin-right: 15px;
+      margin-left: 20px;
+      padding-right: 20px;
+      padding-left: 0;
+      padding-top: 0;
+      margin-top: 0; /* Assure l'alignement parfait avec l'image */
+    }
+
+    .service-section.reverse .service-title {
+      color: #15167b;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      padding-left: 10px; /* Alignement avec le texte */
+      margin-left: 520px;
+    }
+
+    .section-3 {
+      margin-bottom: 80px;
+    }
+
+    .search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 3px 8px;
+  }
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+  }
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <a href="../index.html" class="logo">
-      <img src="../images/logo.png" alt="Nena Adom logo">
-    </a>
-
-    <nav class="nav-links">
-      <a href="aides.html">Aides Disponibles</a>
-      <form class="search-bar" action="" method="get">
-        <input type="text" id="searchInput" name="q" placeholder="Rechercher...">
-        <button type="submit">🔍</button>
-      </form>
-      <a href="faq.html">FAQ</a>
-    </nav>
-
-    <a href="tel:0605873735" class="phone-number">
-      06.05.87.37.35
-    </a>
+  <header class="header">
+    <img src="../images/services/header.png" alt="Bannière" style="width: 100%; height: auto; display: block;">
   </header>
 
-    <!-- INTRO -->
   <div class="container">
-    <section class="main-section">
-      <img src="../images/aides-financieres/solgan-aides.png" alt="Photo slogan pour la présentation des services">
-      <div class="main-text">
-        <h1>SERVICES D'AIDE À DOMICILE AUX PERSONNES ÂGÉES</h1>
-        <p>
-          <br>L’accompagnement de la personne est assuré par notre équipe de manière entièrement personnalisée. En fonction de ses besoins spécifiques et de son niveau d’autonomie, une routine quotidienne adaptée ainsi qu’une organisation structurée sont mises en place pour soutenir le patient tout au long de la journée. 
-          L’objectif est de favoriser le maintien de son autonomie en l’encourageant activement à réaliser les gestes de la vie quotidienne par lui-même, tout en bénéficiant d’une présence bienveillante et sécurisante.
-        </p>
+    <h1 class="main-title">Services d'aide à domicile aux personnes âgées</h1>
+    
+    <div class="intro-text">
+      L'accompagnement de la personne est assuré par notre équipe de moniteurs entièrement personnalisé.
+      Par facilitation d'aide à la motivation de l'envie à domicile d'autonomie, une routine quotidienne adaptée ainsi
+      qu'une organisation structurée sont mises en place pour soutenir le patient tout au long de la journée.
+      <br><br>
+      L'objectif est de favoriser le maintien de son autonomie en l'encourageant activement à réaliser les gestes de
+      la vie quotidienne par lui-même, tout en bénéficiant d'une présence bienveillante et sécurisante.
+    </div>
+
+    <div class="service-section">
+      <div class="service-number" style="margin-top: -40px;">1</div>
+      <div class="service-content">
+        <h2 class="service-title">Aide au lever, toilette, petit déjeuner</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="../images/services/service-1.png" alt="Aide au lever">
+          </div>
+          <div class="service-text">
+            La journée débute par l'intervention de l'auxiliaire de vie au domicile
+            du patient, qui l'assiste dans sa toilette (douche en salle de bain ou
+            toilette complète au lit et change si nécessaire), ainsi que pour se
+            coiffer, s'habiller, mettre ses appareils auditifs, etc.
+            <br><br>
+            Elle procède ensuite le petit-déjeuner et veille à ce que le patient
+            s'alimente correctement et prend bien ses médicaments. Ce moment
+            privilégié permet aussi d'échanger, de stimuler, et de renforcer le lien
+            social, tout en soutenant l'autonomie de la personne.
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div class="service-section reverse">
+      <div class="service-number" style="margin-top: -35px;">2</div>
+      <div class="service-content">
+        <h2 class="service-title" style="margin-left: 500px;">Courses, préparation du repas, ménage</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="../images/services/service-2 .png" alt="Courses">
+          </div>
+          <div class="service-text">
+            Un menu hebdomadaire personnalisé est élaboré en tenant compte
+            du régime alimentaire, des préférences et des besoins nutritionnels
+            du patient. L'objectif est de stimuler l'appétit, de maintenir une
+            alimentation équilibrée et de lui redonner l'énergie nécessaire pour
+            ses activités quotidiennes.
+            <br><br>
+            L'intervenante prépare les repas à domicile, veille à leur qualité et à
+            leur présentation. Elle peut également assurer l'entretien du logement
+            et effectuer les courses, afin de garantir un environnement propre,
+            sain et adapté au bien-être de la personne accompagnée.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section section-3">
+      <div class="service-number" style="margin-top: -40px;">3</div>
+      <div class="service-content">
+        <h2 class="service-title">Présence, accompagnement aux RDV</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="service-1.png" alt="Accompagnement RDV">
+          </div>
+          <div class="service-text">
+            Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.<br>
+            - RDV à l'hôpital : un ambulancier partenaire accompagne le patient avec un bon de transport.<br>
+            - RDV en cabinet : une auxiliaire prépare le dossier médical, aide à l'habillage et accompagne le patient. <br>
+            Après chaque rendez-vous, les informations sont partagées avec les proches, les auxiliaires et le médecin traitant. <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section reverse">
+      <div class="service-number" style="margin-top: -40px;">4</div>
+      <div class="service-content">
+        <h2 class="service-title" style="margin-left:390px;">Présence, stimulation : santé mentale et vie sociale</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="../images/services/service-4.png" alt="Courses">
+          </div>
+          <div class="service-text">
+            Notre équipe veille à la santé physique du patient mais nous savons que la stimulation mentale et sociale est tout aussi essentielle. 
+            C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation cognitive : jeux de mémoire, mots croisés, peinture, bridge… ainsi que des sorties adaptées comme des promenades au parc (activité physique douce), des visites culturelles ou encore des repas au restaurant.
+            Chaque élément est réfléchi pour maintenir le bien-être global de la personne, dans le respect de son rythme, de ses envies et de ses capacités physiques.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section section-3">
+      <div class="service-number" style="margin-top: -40px;">5</div>
+      <div class="service-content">
+        <h2 class="service-title">Aide au coucher, toilette du soir, dîner</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="../images/services/service-5.png" alt="Accompagnement RDV">
+          </div>
+          <div class="service-text">
+            En soirée, l’auxiliaire prépare un repas léger, aide à la prise des médicaments, puis accompagne le patient dans sa toilette du soir, le change de protection si nécessaire, et l’habillage en tenue de nuit.
+            Pour garantir sa sécurité, une chaise percée peut être installée à proximité du lit afin d’éviter les déplacements nocturnes et prévenir les risques de chute.
+            Avant de quitter le domicile, l’auxiliaire s’assure que le patient est prêt à passer une nuit sereine, dans le confort et en toute sécurité.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section reverse">
+      <div class="service-number">6</div>
+      <div class="service-content">
+        <h2 class="service-title" style="margin-left: 760px;">Garde de nuit</h2>
+        <div class="content-wrapper">
+          <div class="service-image">
+            <img src="../images/services/service-1.png" alt="Courses">
+          </div>
+          <div class="service-text">
+            Selon le souhait du patient et son état de santé. Une présence rassurante est assurée tout au long de la nuit, dans un environnement calme et sécurisé. 
+            L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever nocturne, de besoin d’aller aux toilette ou de faire un change au lit, de besoin d’aide ou d’urgence. 
+            Elle surveille l’état de santé, apaise les angoisses et assure un accompagnement adapté, dans le respect du rythme et de l’intimité du patient. 
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- SECTION SERVICES -->
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/aide-lever.png" alt="Aide au lever">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">AIDE AU LEVER, TOILETTE, PETIT DÉJEUNER</div>
-      <p>La journée débute par l’intervention de l’auxiliaire de vie au domicile du patient, qui l’assiste dans sa toilette (douche en salle de bain ou toilette complète au lit avec change si nécessaire), ainsi que pour se coiffer, s’habiller, mettre ses appareils auditifs, etc.
-        Elle prépare ensuite le petit-déjeuner et veille à ce que le patient s’alimente correctement et prend bien ses médicaments. Ce moment privilégié permet aussi d’échanger, de stimuler, et de renforcer le lien social, tout en soutenant l’autonomie de la personne.</p>
-    </div>
-  </div>
 
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/menage.png" alt="Ménage">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">COURSES, PRÉPARATION DU REPAS, MÉNAGE</div>
-      <p>Un menu hebdomadaire personnalisé est élaboré en tenant compte du régime alimentaire, des préférences et des besoins nutritionnels du patient. L’objectif est de stimuler l’appétit, de maintenir une alimentation équilibrée et de lui redonner l’énergie nécessaire pour ses activités quotidiennes.
-        L’intervenante prépare les repas à domicile, veille à leur qualité et à leur présentation. Elle peut également assurer l’entretien du logement  et effectuer les courses, afin de garantir un environnement propre, sain et adapté au bien-être de la personne accompagnée.</p>
-    </div>
-  </div>
 
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/courses.png" alt="Courses">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">PRÉSENCE ET ACCOMPAGNEMENT AUX RDV</div>
-      <p>Nous proposons un accompagnement bienveillant et personnalisé dans les gestes essentiels du quotidien, tels que l'aide à l'hygiène, l'habillage et la mobilité. Ces services favorisent le maintien à domicile dans des conditions de confort et de sécurité optimales.Nous proposons un accompagnement bienveillant et personnalisé dans les gestes essentiels du quotidien, tels que l'aide à l'hygiène, l'habillage et la mobilité. Ces services favorisent le maintien à domicile dans </p>
-    </div>
-  </div>
-
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/preparation-repas.png" alt="Préparation des repas">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">PRÉPARATION DES REPAS</div>
-      <p>Nous préparons des repas variés, équilibrés et adaptés aux besoins de chacun : respect des régimes médicaux, des allergies ou des préférences alimentaires.<br><br>Nos auxiliaires veillent à la présentation et à la saveur des plats, pour allier plaisir et santé.</p>
-    </div>
-  </div>
-
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/sorties.png" alt="Accompagnement aux sorties">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">ACCOMPAGNEMENT AUX SORTIES</div>
-      <p>Sortir, prendre l'air, se rendre à un rendez-vous médical ou faire une promenade... ces moments du quotidien sont essentiels au bien-être.<br><br>C'est pourquoi nous proposons un accompagnement sécurisé et bienveillant, incluant une collaboration avec DJEK Service, notre partenaire transport spécialisé.</p>
-    </div>
-  </div>
-
-  <div class="service-sectionv2">
-    <div class="service-imagev2">
-      <img src="../images/services/garde-nuit.png" alt="Garde de nuit">
-    </div>
-    <div class="service-contentv2">
-      <div class="service-titlev2">GARDE DE NUIT</div>
-      <p>La nuit peut représenter un moment d'inquiétude ou de fragilité. Nos auxiliaires de vie assurent une présence de nuit sécurisante pour :<br><br>• Répondre rapidement en cas d'urgence<br>• Accompagner les levers nocturnes<br>• Surveiller l'état de santé<br>• Apaiser l'anxiété<br>• Veiller toute la nuit</p>
-    </div>
-  </div>
-
-  <!-- SECTION CTA -->
-  <div class="cta-sectionv2">
-    <h2>N’HÉSITEZ PLUS !</h2>
-    <p>Contactez-nous dès maintenant pour mettre en place un rendez-vous !</p>
-    <a href="tel:0605873735" class="cta-buttonv2">06.05.87.37.35</a>
-  </div>
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+  <p>© 2025 Nena Adom – Tous droits réservés</p>
+  <p>
+    SIRET : 95102803400019 – Site sans collecte de données<br>
+    Hébergement : IONOS – 7 Place de la Gare, 57200 Sarreguemines, France
+  </p>
+  <p>
+    <a href="mailto:contact@nenaadom.fr" style="color: #000000; text-decoration: underline;">contact@nenaadom.fr</a> |
+    <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
+    <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
+  </p>
+</footer>
 
 </body>
 </html>
+
+
