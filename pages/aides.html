@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <title>Aides financières - Nena Adom</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<!-- HEADER MOBILE (affiché uniquement sur mobile) -->
+<header class="mobile-header">
+  <button class="mobile-menu-btn" aria-label="Ouvrir le menu">&#9776;</button>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../images/logo.png" alt="Nena Adom logo">
+  </a>
+  <form class="mobile-search-bar" action="" method="get" style="position:relative;">
+    <input type="text" id="mobileSearchInput" name="q" placeholder="Rechercher..." style="display:none; position:absolute; right:40px; top:50%; transform:translateY(-50%); width:140px; border-radius:20px; border:1px solid #ccc; padding:4px 10px; font-size:15px;">
+    <button type="button" class="mobile-search-btn" aria-label="Recherche" style="background:none; border:none;">
+      <img src="../images/search.png" alt="Recherche" style="width:28px;height:28px;">
+    </button>
+  </form>
+</header>
+
+<!-- MENU LATERAL MOBILE -->
+<nav class="mobile-side-menu" id="mobileSideMenu">
+  <button class="mobile-close-btn" aria-label="Fermer le menu">&times;</button>
+  <ul>
+    <li><a href="aides.html">AIDES</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="services.html">SERVICES</a></li>
+    <li><a href="hospitalisation.html">ACCOMPAGNEMENT APRÈS UNE HOSPITALISATION</a></li>
+    <li><a href="pathologie.html">COMPRENDRE MA PATHOLOGIE</a></li>
+  </ul>
+</nav>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -491,6 +516,60 @@
     });
   });
   </script>
+
+<script>
+  document.querySelector('.mobile-menu-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.add('open');
+  };
+  document.querySelector('.mobile-close-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.remove('open');
+  };
+  // Optionnel : fermer le menu si on clique en dehors
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileSideMenu');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+
+<script>
+  // Ouvre le menu mobile
+  document.querySelector('.mobile-menu-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.add('open');
+  };
+  // Ferme le menu mobile
+  document.querySelector('.mobile-close-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.remove('open');
+  };
+  // Ferme le menu si on clique en dehors
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileSideMenu');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Affiche le champ de recherche mobile au clic sur la loupe
+  const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+  const mobileSearchInput = document.getElementById('mobileSearchInput');
+  const mobileSearchForm = document.querySelector('.mobile-search-bar');
+  mobileSearchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (mobileSearchInput.style.display === 'none' || mobileSearchInput.style.display === '') {
+      mobileSearchInput.style.display = 'block';
+      mobileSearchInput.focus();
+    } else if (mobileSearchInput.value.trim() !== '') {
+      mobileSearchForm.submit();
+    }
+  });
+  // Permet la recherche au "Entrée"
+  mobileSearchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      mobileSearchForm.submit();
+    }
+  });
+</script>
 
   <footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
     <p>© 2025 Nena Adom – Tous droits réservés</p>

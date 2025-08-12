@@ -2128,5 +2128,112 @@ transform: translateX(-50%) translateY(-100%);
     padding: 0 8px;
     font-size: 1.7em;
   }  
+}
 
+@media (max-width: 700px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 18px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+  .mobile-menu-btn,
+  .mobile-close-btn {
+    background: none;
+    border: none;
+    font-size: 38px;
+    cursor: pointer;
+    color: #111;
+    padding: 0 8px;
+    line-height: 1;
+  }
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  .mobile-logo img {
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+  }
+  .mobile-search-btn {
+    background: none;
+    border: none;
+    padding: 0 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-side-menu {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 85vw;
+    max-width: 400px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.10);
+    z-index: 3000;
+    transition: left 0.3s cubic-bezier(.4,1.6,.4,1);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 0 24px;
+  }
+  .mobile-side-menu.open {
+    left: 0;
+  }
+  .mobile-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 38px;
+    z-index: 10;
+  }
+  .mobile-side-menu ul {
+    list-style: none;
+    padding: 60px 0 0 0;
+    margin: 0;
+  }
+  .mobile-side-menu li {
+    margin-bottom: 22px;
+  }
+  .mobile-side-menu a {
+    font-size: 1.35em;
+    color: #111;
+    text-decoration: none;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .mobile-side-menu a:hover {
+    color: #004aad;
+  }
+  .mobile-search-bar input[type="text"] {
+    transition: width 0.2s;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    margin-left: 0;
+  }
+  /* Masque le header desktop sur mobile */
+  .site-header {
+    display: none !important;
+  }
+}
+/* Affiche le header mobile uniquement sur mobile */
+@media (min-width: 701px) {
+  .mobile-header,
+  .mobile-side-menu {
+    display: none !important;
+  }
 }
