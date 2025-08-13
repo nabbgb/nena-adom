@@ -5,6 +5,16 @@
   <title>Aides financières - Nena Adom</title>
   <link rel="stylesheet" href="../style.css">
 </head>
+<style>
+  .faq-container{
+    margin-left:200px;
+  }
+  @media (max-width: 768px) {
+    .faq-container{
+    margin:0;
+  }
+  }
+</style>
 <body>
 <!-- HEADER MOBILE (affiché uniquement sur mobile) -->
 <header class="mobile-header">
@@ -51,6 +61,7 @@
     </a>
   </header>
 
+
   <!-- INTRO -->
   <div class="container">
     <section class="main-section">
@@ -81,8 +92,7 @@
   </div>
 
   <!-- CONTENU -->
-  <section class="main-content">
-    <!-- SOMMAIRE SIMPLIFIÉ -->
+    <!-- SOMMAIRE VERSION PC -->
     <aside class="toc">
       <h2>Sommaire</h2>
       <a href="#credit-impot">Crédit d'impôt</a>
@@ -97,351 +107,356 @@
       <a href="#caisses">Caisses de retraite complémentaire</a>
     </aside>
 
+<!-- SOMMAIRE MOBILE -->
+<details id="toc" class="mf-article-anchors">
+  <summary>
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="none" d="M0 0h24v24H0z"></path>
+      <path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z"></path>
+    </svg>
+    Sommaire
+  </summary>
+  <nav class="anchors">
+    <ul>
+      <li><a href="#credit-impot">Crédit d'impôt</a></li>
+      <li><a href="#cmi-invalidite">Carte mobilité Inclusion mention « invalidité »</a></li>
+      <li><a href="#apa">Allocation Personnalisée d'Autonomie</a></li>
+      <li><a href="#pch">Prestation de Compensation du Handicap</a></li>
+      <li><a href="#asd">Aide Sociale à Domicile (ASD)</a></li>
+      <li><a href="#mutuelles">Aides des mutuelles</a></li>
+      <li><a href="#aides-locales">Aides locales</a></li>
+      <li><a href="#aide-menagere">Aide-ménagère (caisse de retraite)</a></li>
+      <li><a href="#ardh">L'Aide au Retour à Domicile après Hospitalisation</a></li>
+      <li><a href="#caisses">Caisses de retraite complémentaire</a></li>
+    </ul>
+  </nav>
+</details>
+
     <!-- CONTENU DÉTAILLÉ REGROUPÉ -->
-    <div class="content-section" id="faqContent">
-
-      <div class="faq-item first-item" id="credit-impot">
-        <div class="faq-question">
-          <h2>Le Crédit d'impôt</h2>
-          <span class="arrow">▾</span>
-        </div>
-
-        <!-- Aperçu visible par défaut -->
+<section class="faq-section">
+  <div class="faq-container">
+    <div class="faq-item first-item" id="credit-impot">
+      <div class="faq-question">
+        <h2>Le Crédit d'impôt</h2>
+        <span class="arrow">▾</span>
+      </div>
+      
+      <!-- Aperçu visible par défaut -->
       <div class="faq-preview">
         <div class="faq-preview-text">
-          <h3>Qu’est-ce que le crédit d’impôt ?</h3>
+          <h3>Qu'est-ce que le crédit d'impôt ?</h3>
           <p>
-            Le crédit d’impôt est une aide fiscale accordée par l’État pour soutenir les particuliers qui emploient un service à la personne à leur domicile. Il vous permet de récupérer 50 % des sommes dépensées pour des prestations comme le ménage, l’aide à la toilette, les courses, la préparation des repas ou l’accompagnement.
+            Le crédit d'impôt est une aide fiscale accordée par l'État pour soutenir les particuliers qui emploient un service à la personne à leur domicile. Il vous permet de récupérer 50 % des sommes dépensées pour des prestations comme le ménage, l'aide à la toilette, les courses, la préparation des repas ou l'accompagnement.
           </p>
         </div>
         <button class="read-more-btn" onclick="expandFirstQuestion()">Lire plus...</button>
       </div>
-
-
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Qu’est-ce que le crédit d’impôt ?</h3>
-          <p>
-            Le crédit d’impôt est une aide fiscale accordée par l’État pour soutenir les particuliers qui emploient un service à la personne à leur domicile. Il vous permet de récupérer 50 % des sommes dépensées pour des prestations comme le ménage, l’aide à la toilette, les courses, la préparation des repas ou l’accompagnement.
-          </p>
-          <h3>Qui peut en bénéficier ?</h3>
-          <p>
-            Bonne nouvelle : tout le monde peut en profiter !<br>
-            Seule condition : les services doivent être réalisés à votre résidence principale ou secondaire située en France, et effectués par un organisme agréé.
-          </p>
-          <h3>Quelles prestations sont éligibles ?</h3>
-          <p>
-            Voici quelques exemples de services d’aide à domicile concernés :<br>
-            • Ménage et repassage<br>
-            • Aide au lever, au coucher ou à la toilette<br>
-            • Préparation et prise des repas<br>
-            • Accompagnement aux courses ou aux rendez-vous<br>
-            • Garde de personnes âgées ou dépendantes<br>
-            • Assistance administrative à domicile
-          </p>
-          <h3>Comment ça fonctionne concrètement ?</h3>
-          <p>
-            Vous recevez chaque mois une facture détaillée de nos interventions.<br>
-            En début d’année, nous vous remettons une attestation fiscale annuelle à joindre à votre déclaration d’impôt.<br>
-            L’administration fiscale applique automatiquement le crédit de 50 % sur vos dépenses déclarées.
-          </p>
-          <h3>L’Avance Immédiate du crédit d’impôt : payez seulement 50 %</h3>
-          <p>
-            Grâce au service « Avance immédiate » de l’Urssaf, mis en place par l’État, vous pouvez bénéficier du crédit d’impôt en temps réel.<br>
-            Avec ce dispositif :<br>
-            • Vous ne payez que la moitié du montant de la prestation dès la facturation.<br>
-            • L’autre moitié est directement prise en charge par l’État.<br>
-            • Aucune avance de frais, aucun délai d’attente.<br>
-            <br>
-            <b>Exemple :</b> une intervention à 80 € ne vous coûte que 40 €.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="cmi-invalidite">
-        <div class="faq-question">
-          <h2>La Carte mobilité Inclusion mention « invalidité »</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <p>
-            La Carte Mobilité Inclusion (CMI) avec mention invalidité ouvre droit à plusieurs avantages fiscaux, notamment si vous faites appel à des services d’aide à domicile.<br><br>
-            <b>Les principaux avantages fiscaux :</b><br>
-            • Crédit d’impôt majoré pour l’aide à domicile :<br>
-            En tant que titulaire d’une CMI invalidité, vous bénéficiez du crédit d’impôt à 50 % sur les dépenses engagées pour l’emploi d’un service d’aide à domicile, d’un plafond de dépenses majoré, pouvant aller jusqu’à 20 000 € par an, au lieu de 12 000 € habituellement.<br>
-            • Exonération des cotisations patronales :<br>
-            Si vous êtes employeur direct d’un salarié à domicile, vous pouvez être exonéré des cotisations patronales de Sécurité sociale, sous conditions de ressources.<br>
-            • Réduction de taxe d'habitation ou d’impôt local :<br>
-            Certaines communes ou départements accordent des allègements de taxe d’habitation ou de taxe foncière pour les personnes titulaires d’une CMI, selon leur situation.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="apa">
-        <div class="faq-question">
-          <h2>L'Allocation Personnalisée d'Autonomie</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Qu’est-ce que l’Allocation Personnalisée d'Autonomie (APA) ?</h3>
-          <p>
-            L’Allocation Personnalisée d’Autonomie (APA) est une aide financière dédiée aux personnes âgées de 60 ans et plus rencontrant des difficultés pour accomplir les gestes essentiels du quotidien. Elle permet de financer tout ou partie des services d’aide à domicile, afin de favoriser le maintien à domicile en toute sécurité et dignité.
-          </p>
-          <h3>À qui s’adresse l’APA ?</h3>
-          <p>
-            L’APA est ouverte aux personnes âgées en perte d’autonomie, évaluée par un professionnel de santé selon un niveau de dépendance appelé GIR (Groupe Iso-Ressources). Cette aide s’adresse notamment aux personnes dont la perte d’autonomie correspond aux GIR 1 à 4, c’est-à-dire celles qui ont besoin d’une aide régulière pour leurs activités quotidiennes.
-          </p>
-          <h3>Quels services sont pris en charge ?</h3>
-          <p>
-            Grâce à l’APA, il est possible de financer plusieurs types d’aides à domicile :<br>
-            • Aide pour les gestes essentiels (toilette, habillage, repas…)<br>
-            • Aide ménagère (ménage, courses, préparation des repas)<br>
-            • Accompagnement à l’extérieur (promenades, rendez-vous médicaux)<br>
-            • Aides techniques et aménagement du logement
-          </p>
-          <h3>Comment bénéficier de l’APA et en quoi Nena Adom peut vous aider ?</h3>
-          <p>
-            Pour bénéficier de l’Allocation Personnalisée d’Autonomie (APA) à domicile, la première étape consiste à faire une demande auprès du Conseil départemental de votre lieu de résidence. Un professionnel mandaté par les services du département se déplacera alors à votre domicile pour évaluer votre autonomie (selon la grille AGGIR) et déterminer vos besoins d’accompagnement.<br>
-            Mais ces démarches peuvent parfois sembler complexes, longues ou administrativement lourdes.<br>
-            C’est pourquoi on vous accompagne de A à Z pour simplifier cette procédure.<br>
-            Nous vous aidons à :<br>
-            • Constituer et transmettre le dossier APA à votre département<br>
-            • Préparer la visite d’évaluation à domicile<br>
-            • Mettre en place, dès validation, un plan d’aide personnalisé avec des interventions adaptées à votre rythme, vos habitudes et vos besoins.<br>
-            Notre équipe est à vos côtés pour vous éviter les tracas administratifs et vous permettre de bénéficier plus rapidement de l’aide à laquelle vous avez droit.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="pch">
-        <div class="faq-question">
-          <h2>La Prestation de Compensation du Handicap</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>La PCH : Prestation de Compensation du Handicap</h3>
-          <p>
-            La PCH est une aide destinée aux personnes en situation de handicap qui nécessitent un soutien pour accomplir les actes essentiels de la vie quotidienne. Elle peut couvrir tout ou partie des dépenses liées à ce handicap.
-          </p>
-          <h3>À qui s’adresse la PCH ?</h3>
-          <p>
-            La PCH s’adresse :<br>
-            • Aux personnes en situation de handicap résidant en France de manière stable et régulière, dont le handicap entraîne une limitation absolue ou grave dans au moins une activité essentielle de la vie quotidienne (se laver, se déplacer, s’habiller, communiquer…).<br>
-            L’attribution dépend également des ressources, mais il n’y a pas de condition de revenus pour en faire la demande. Les ressources influencent simplement le montant pris en charge.
-          </p>
-          <h3>Que peut financer la PCH ?</h3>
-          <p>
-            La PCH peut prendre en charge :<br>
-            • L’aide humaine (intervenant à domicile pour les actes essentiels du quotidien)<br>
-            • L’aide technique (fauteuil roulant, lit médicalisé…)<br>
-            • L’aménagement du logement ou du véhicule<br>
-            • Les surcoûts de transport<br>
-            • Une aide animalière (ex. : chien d’assistance)
-          </p>
-          <h3>Comment faire une demande de PCH et en quoi Nena Adom peut vous accompagner ?</h3>
-          <p>
-            La Prestation de Compensation du Handicap (PCH) est une aide destinée à soutenir les personnes en situation de handicap dans les gestes essentiels de la vie quotidienne. Pour en bénéficier, il faut déposer une demande auprès de la Maison Départementale des Personnes Handicapées (MDPH) de votre département. Après étude de votre dossier, un plan personnalisé d’aide est élaboré en fonction de vos besoins et de votre situation.<br>
-            Nous savons que ces démarches peuvent être complexes et parfois difficiles à gérer seul. C’est pourquoi nous vous accompagnons pas à pas, depuis la constitution de votre dossier jusqu’à la mise en place d’une aide à domicile adaptée, humaine et respectueuse. Notre objectif est de favoriser votre autonomie dans un environnement sécurisé et bienveillant, tout en vous déchargeant des contraintes administratives.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="asd">
-        <div class="faq-question">
-          <h2>L'Aide Sociale à Domicile (ASD)</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Qu’est-ce que l’ASD ?</h3>
-          <p>
-            L’Aide Sociale à Domicile (ASD) est une aide financière attribuée par le Conseil départemental aux personnes âgées ou en situation de handicap ayant de faibles ressources et qui ont besoin d’une aide pour accomplir les gestes de la vie quotidienne.<br>
-            Elle permet de financer partiellement ou totalement l’intervention d’une aide à domicile pour les actes essentiels comme l’entretien du logement, la toilette, la préparation des repas ou encore les courses.
-          </p>
-          <h3>À qui s’adresse l’ASD ?</h3>
-          <p>
-            Cette aide est destinée :<br>
-            • Aux personnes âgées de plus de 65 ans (ou 60 ans si inaptitude au travail)<br>
-            • Aux personnes en situation de handicap<br>
-            • Aux personnes non éligibles à l’APA ou à la PCH<br>
-            • Et ayant des ressources inférieures à un certain plafond, fixé par le département.
-          </p>
-          <h3>Quels services sont pris en charge ?</h3>
-          <p>
-            L’ASD permet de financer :<br>
-            • Une aide ménagère à domicile (ménage, repassage, courses…)<br>
-            • Une aide pour les actes simples du quotidien (repas, accompagnement…)<br>
-            • Une assistance ponctuelle ou régulière, selon les besoins évalués.
-          </p>
-          <h3>Comment en faire la demande ?</h3>
-          <p>
-            La demande se fait auprès de votre Centre Communal d’Action Sociale (CCAS) ou directement auprès du Conseil départemental. Un dossier est à remplir et une évaluation des besoins peut être réalisée à domicile.<br><br>
-            <b>Bon à savoir :</b> récupération sur succession : Contrairement à certaines aides comme l’APA, l’ASD peut être récupérable sur la succession du bénéficiaire après son décès, en fonction des sommes versées.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="mutuelles">
-        <div class="faq-question">
-          <h2>Les Aides des mutuelles</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Pour qui ?</h3>
-          <p>
-            Les aides des mutuelles s’adressent :<br>
-            • Aux adhérents en convalescence après une hospitalisation ou un accident<br>
-            • Aux personnes âgées ou fragilisées<br>
-            • Aux aidants familiaux ayant besoin d’un relais temporaire à domicile<br>
-            • Aux familles confrontées à une situation difficile ou imprévue (immobilisation, grossesse à risque, perte d’autonomie…)
-          </p>
-          <h3>Que peuvent financer les mutuelles ?</h3>
-          <p>
-            Selon les contrats, les mutuelles peuvent prendre en charge :<br>
-            • Des heures d’aide à domicile (ménage, repas, courses…)<br>
-            • Le retour à domicile après une hospitalisation (aide pour les actes du quotidien)<br>
-            • Des services de garde à domicile pour personnes dépendantes ou malades<br>
-            • Parfois, des équipements de sécurité (barres d’appui, rehausseurs WC…)<br>
-            Ces prestations sont souvent plafonnées (ex. : 10 à 40 heures), mais peuvent être renouvelées selon la situation.
-          </p>
-          <h3>Comment faire la demande ?</h3>
-          <p>
-            Il faut contacter directement votre mutuelle ou consulter les conditions de votre contrat pour vérifier les services inclus. La demande se fait en général sur présentation d’un justificatif médical (certificat, compte-rendu d’hospitalisation…).<br>
-            Certaines mutuelles travaillent avec des prestataires agréés.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="aides-locales">
-        <div class="faq-question">
-          <h2>Les Aides locales (CCAS, communes, départements)</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Qui peut en bénéficier ?</h3>
-          <p>
-            Les aides locales s’adressent :<br>
-            • Aux personnes âgées ou handicapées résidant dans la commune ou le département<br>
-            • Aux personnes isolées ou en situation de précarité<br>
-            • À ceux qui ont besoin d’une aide ponctuelle ou régulière pour faire face à une situation difficile (maladie, hospitalisation, perte d’autonomie…)
-          </p>
-          <h3>Quels types d’aides sont proposés ?</h3>
-          <p>
-            Selon les territoires, il peut s’agir de :<br>
-            • Aide financière pour payer une aide à domicile<br>
-            • Participation à l’achat de matériel médical ou d’aménagement du logement<br>
-            • Aide pour la livraison de repas à domicile<br>
-            • Mise à disposition d’un portage de courses ou d’un service de téléassistance<br>
-            • Soutien ponctuel en cas de situation d'urgence ou de rupture sociale
-          </p>
-          <h3>Comment faire une demande ?</h3>
-          <p>
-            Les démarches se font généralement auprès de :<br>
-            • Votre Centre Communal d’Action Sociale (CCAS) ou mairie<br>
-            • Le service social de votre département<br>
-            • Ou par l’intermédiaire de votre assistante sociale.<br>
-            Chaque collectivité fixe ses propres critères (ressources, âge, autonomie…), il est donc important de vous renseigner localement.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="aide-menagere">
-        <div class="faq-question">
-          <h2>L'Aide-ménagère à domicile (via la caisse de retraite)</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>À qui s’adresse cette aide</h3>
-          <p>
-            Cette aide concerne :<br>
-            • Les personnes âgées de 65 ans et plus (ou dès 60 ans en cas d’inaptitude au travail)<br>
-            • Retraitées du régime général ou d’un autre régime de base (CARSAT, MSA, etc.)<br>
-            • Autonomes (non éligibles à l’APA)<br>
-            • Ayant des ressources modestes, selon les plafonds définis par chaque caisse.
-          </p>
-          <h3>Quelles prestations sont couvertes ?</h3>
-          <p>
-            La caisse de retraite peut financer :<br>
-            • Des heures d’aide à domicile pour l’entretien du logement (ménage, repassage, vaisselle)<br>
-            • L’aide aux courses et à la préparation des repas<br>
-            • Un soutien temporaire en cas de fragilité passagère (hospitalisation, chute…)<br>
-            Le nombre d’heures accordées et le montant pris en charge varient selon votre situation personnelle et les critères de votre caisse.
-          </p>
-          <h3>Comment faire la demande ?</h3>
-          <p>
-            La demande d’aide-ménagère se fait directement auprès de votre caisse de retraite principale. Vous devrez remplir un dossier et fournir quelques justificatifs (revenus, composition du foyer, etc.). Une évaluation de vos besoins peut être réalisée à domicile.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="ardh">
-        <div class="faq-question">
-          <h2>L'Aide financière en cas de retour d’hospitalisation (ARDH)</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <h3>Qui peut en bénéficier ?</h3>
-          <p>
-            • Les personnes âgées de 60 ans et plus<br>
-            • Les personnes en situation de handicap ou de perte d’autonomie<br>
-            • Après une hospitalisation d’au moins 3 jours consécutifs (selon les critères de la caisse d’assurance maladie)
-          </p>
-          <h3>Quelles prestations sont prises en charge ?</h3>
-          <p>
-            L’ARDH peut financer, sur une durée limitée (généralement quelques semaines) :<br>
-            • L’aide à la toilette, à l’habillage et aux déplacements<br>
-            • L’aide au ménage et à la préparation des repas<br>
-            • L’accompagnement aux courses ou aux rendez-vous médicaux<br>
-            • Toute prestation permettant d’assurer la sécurité et le bien-être à domicile
-          </p>
-          <h3>Comment faire la demande ?</h3>
-          <p>
-            La demande doit être faite auprès de votre caisse d’assurance maladie, idéalement avant la sortie d’hospitalisation ou dès le retour à domicile. Un dossier médical et une évaluation des besoins peuvent être nécessaires pour valider la prise en charge.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item" id="caisses">
-        <div class="faq-question">
-          <h2>Les Caisses de retraite complémentaire</h2>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="faq-answer" style="text-align: justify;">
-          <p>
-            Certaines caisses de retraite complémentaire proposent des aides financières pour le maintien à domicile, l’aménagement du logement ou le soutien aux aidants.<br><br>
-            Exemples d’aides possibles :<br>
-            • Prise en charge d’heures d’aide à domicile<br>
-            • Participation à l’achat de matériel adapté<br>
-            • Soutien psychologique ou accompagnement des aidants<br><br>
-            <b>Comment en bénéficier ?</b><br>
-            Il faut contacter sa caisse de retraite complémentaire (Agirc-Arrco, IRCANTEC, etc.) pour connaître les dispositifs existants et constituer un dossier.<br><br>
-            Bon à savoir : ces aides sont souvent cumulables avec l’APA ou d’autres dispositifs publics.
-          </p>
-        </div>
+      
+      <!-- Réponse complète cachée -->
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Qu'est-ce que le crédit d'impôt ?</h3>
+        <p>
+          Le crédit d'impôt est une aide fiscale accordée par l'État pour soutenir les particuliers qui emploient un service à la personne à leur domicile. Il vous permet de récupérer 50 % des sommes dépensées pour des prestations comme le ménage, l'aide à la toilette, les courses, la préparation des repas ou l'accompagnement.
+        </p>
+        <h3>Qui peut en bénéficier ?</h3>
+        <p>
+          Bonne nouvelle : tout le monde peut en profiter !<br>
+          Seule condition : les services doivent être réalisés à votre résidence principale ou secondaire située en France, et effectués par un organisme agréé.
+        </p>
+        <h3>Quelles prestations sont éligibles ?</h3>
+        <p>
+          Voici quelques exemples de services d'aide à domicile concernés :<br>
+          • Ménage et repassage<br>
+          • Aide au lever, au coucher ou à la toilette<br>
+          • Préparation et prise des repas<br>
+          • Accompagnement aux courses ou aux rendez-vous<br>
+          • Garde de personnes âgées ou dépendantes<br>
+          • Assistance administrative à domicile
+        </p>
+        <h3>Comment ça fonctionne concrètement ?</h3>
+        <p>
+          Vous recevez chaque mois une facture détaillée de nos interventions.<br>
+          En début d'année, nous vous remettons une attestation fiscale annuelle à joindre à votre déclaration d'impôt.<br>
+          L'administration fiscale applique automatiquement le crédit de 50 % sur vos dépenses déclarées.
+        </p>
+        <h3>L'Avance Immédiate du crédit d'impôt : payez seulement 50 %</h3>
+        <p>
+          Grâce au service « Avance immédiate » de l'Urssaf, mis en place par l'État, vous pouvez bénéficier du crédit d'impôt en temps réel.<br>
+          Avec ce dispositif :<br>
+          • Vous ne payez que la moitié du montant de la prestation dès la facturation.<br>
+          • L'autre moitié est directement prise en charge par l'État.<br>
+          • Aucune avance de frais, aucun délai d'attente.<br>
+          <br>
+          <b>Exemple :</b> une intervention à 80 € ne vous coûte que 40 €.
+        </p>
       </div>
     </div>
-  </section>
+
+    <div class="faq-item" id="cmi-invalidite">
+      <div class="faq-question">
+        <h2>La Carte mobilité Inclusion mention « invalidité »</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <p>
+          La Carte Mobilité Inclusion (CMI) avec mention invalidité ouvre droit à plusieurs avantages fiscaux, notamment si vous faites appel à des services d'aide à domicile.<br><br>
+          <b>Les principaux avantages fiscaux :</b><br>
+          • Crédit d'impôt majoré pour l'aide à domicile :<br>
+          En tant que titulaire d'une CMI invalidité, vous bénéficiez du crédit d'impôt à 50 % sur les dépenses engagées pour l'emploi d'un service d'aide à domicile, d'un plafond de dépenses majoré, pouvant aller jusqu'à 20 000 € par an, au lieu de 12 000 € habituellement.<br>
+          • Exonération des cotisations patronales :<br>
+          Si vous êtes employeur direct d'un salarié à domicile, vous pouvez être exonéré des cotisations patronales de Sécurité sociale, sous conditions de ressources.<br>
+          • Réduction de taxe d'habitation ou d'impôt local :<br>
+          Certaines communes ou départements accordent des allégements de taxe d'habitation ou de taxe foncière pour les personnes titulaires d'une CMI, selon leur situation.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="apa">
+      <div class="faq-question">
+        <h2>L'Allocation Personnalisée d'Autonomie</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Qu'est-ce que l'Allocation Personnalisée d'Autonomie (APA) ?</h3>
+        <p>
+          L'Allocation Personnalisée d'Autonomie (APA) est une aide financière dédiée aux personnes âgées de 60 ans et plus rencontrant des difficultés pour accomplir les gestes essentiels du quotidien. Elle permet de financer tout ou partie des services d'aide à domicile, afin de favoriser le maintien à domicile en toute sécurité et dignité.
+        </p>
+        <h3>À qui s'adresse l'APA ?</h3>
+        <p>
+          L'APA est ouverte aux personnes âgées en perte d'autonomie, évaluée par un professionnel de santé selon un niveau de dépendance appelé GIR (Groupe Iso-Ressources). Cette aide s'adresse notamment aux personnes dont la perte d'autonomie correspond aux GIR 1 à 4, c'est-à-dire celles qui ont besoin d'une aide régulière pour leurs activités quotidiennes.
+        </p>
+        <h3>Quels services sont pris en charge ?</h3>
+        <p>
+          Grâce à l'APA, il est possible de financer plusieurs types d'aides à domicile :<br>
+          • Aide pour les gestes essentiels (toilette, habillage, repas…)<br>
+          • Aide ménagère (ménage, courses, préparation des repas)<br>
+          • Accompagnement à l'extérieur (promenades, rendez-vous médicaux)<br>
+          • Aides techniques et aménagement du logement
+        </p>
+        <h3>Comment bénéficier de l'APA et en quoi Nena Adom peut vous aider ?</h3>
+        <p>
+          Pour bénéficier de l'Allocation Personnalisée d'Autonomie (APA) à domicile, la première étape consiste à faire une demande auprès du Conseil départemental de votre lieu de résidence. Un professionnel mandaté par les services du département se déplacera alors à votre domicile pour évaluer votre autonomie (selon la grille AGGIR) et déterminer vos besoins d'accompagnement.<br>
+          Mais ces démarches peuvent parfois sembler complexes, longues ou administrativement lourdes.<br>
+          C'est pourquoi on vous accompagne de A à Z pour simplifier cette procédure.<br>
+          Nous vous aidons à :<br>
+          • Constituer et transmettre le dossier APA à votre département<br>
+          • Préparer la visite d'évaluation à domicile<br>
+          • Mettre en place, dès validation, un plan d'aide personnalisé avec des interventions adaptées à votre rythme, vos habitudes et vos besoins.<br>
+          Notre équipe est à vos côtés pour vous éviter les tracas administratifs et vous permettre de bénéficier plus rapidement de l'aide à laquelle vous avez droit.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="pch">
+      <div class="faq-question">
+        <h2>La Prestation de Compensation du Handicap</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>La PCH : Prestation de Compensation du Handicap</h3>
+        <p>
+          La PCH est une aide destinée aux personnes en situation de handicap qui nécessitent un soutien pour accomplir les actes essentiels de la vie quotidienne. Elle peut couvrir tout ou partie des dépenses liées à ce handicap.
+        </p>
+        <h3>À qui s'adresse la PCH ?</h3>
+        <p>
+          La PCH s'adresse :<br>
+          • Aux personnes en situation de handicap résidant en France de manière stable et régulière, dont le handicap entraîne une limitation absolue ou grave dans au moins une activité essentielle de la vie quotidienne (se laver, se déplacer, s'habiller, communiquer…).<br>
+          L'attribution dépend également des ressources, mais il n'y a pas de condition de revenus pour en faire la demande. Les ressources influencent simplement le montant pris en charge.
+        </p>
+        <h3>Que peut financer la PCH ?</h3>
+        <p>
+          La PCH peut prendre en charge :<br>
+          • L'aide humaine (intervenant à domicile pour les actes essentiels du quotidien)<br>
+          • L'aide technique (fauteuil roulant, lit médicalisé…)<br>
+          • L'aménagement du logement ou du véhicule<br>
+          • Les surcoûts de transport<br>
+          • Une aide animalière (ex. : chien d'assistance)
+        </p>
+        <h3>Comment faire une demande de PCH et en quoi Nena Adom peut vous accompagner ?</h3>
+        <p>
+          La Prestation de Compensation du Handicap (PCH) est une aide destinée à soutenir les personnes en situation de handicap dans les gestes essentiels de la vie quotidienne. Pour en bénéficier, il faut déposer une demande auprès de la Maison Départementale des Personnes Handicapées (MDPH) de votre département. Après étude de votre dossier, un plan personnalisé d'aide est élaboré en fonction de vos besoins et de votre situation.<br>
+          Nous savons que ces démarches peuvent être complexes et parfois difficiles à gérer seul. C'est pourquoi nous vous accompagnons pas à pas, depuis la constitution de votre dossier jusqu'à la mise en place d'une aide à domicile adaptée, humaine et respectueuse. Notre objectif est de favoriser votre autonomie dans un environnement sécurisé et bienveillant, tout en vous déchargeant des contraintes administratives.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="asd">
+      <div class="faq-question">
+        <h2>L'Aide Sociale à Domicile (ASD)</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Qu'est-ce que l'ASD ?</h3>
+        <p>
+          L'Aide Sociale à Domicile (ASD) est une aide financière attribuée par le Conseil départemental aux personnes âgées ou en situation de handicap ayant de faibles ressources et qui ont besoin d'une aide pour accomplir les gestes de la vie quotidienne.<br>
+          Elle permet de financer partiellement ou totalement l'intervention d'une aide à domicile pour les actes essentiels comme l'entretien du logement, la toilette, la préparation des repas ou encore les courses.
+        </p>
+        <h3>À qui s'adresse l'ASD ?</h3>
+        <p>
+          Cette aide est destinée :<br>
+          • Aux personnes âgées de plus de 65 ans (ou 60 ans si inaptitude au travail)<br>
+          • Aux personnes en situation de handicap<br>
+          • Aux personnes non éligibles à l'APA ou à la PCH<br>
+          • Et ayant des ressources inférieures à un certain plafond, fixé par le département.
+        </p>
+        <h3>Quels services sont pris en charge ?</h3>
+        <p>
+          L'ASD permet de financer :<br>
+          • Une aide ménagère à domicile (ménage, repassage, courses…)<br>
+          • Une aide pour les actes simples du quotidien (repas, accompagnement…)<br>
+          • Une assistance ponctuelle ou régulière, selon les besoins évalués.
+        </p>
+        <h3>Comment en faire la demande ?</h3>
+        <p>
+          La demande se fait auprès de votre Centre Communal d'Action Sociale (CCAS) ou directement auprès du Conseil départemental. Un dossier est à remplir et une évaluation des besoins peut être réalisée à domicile.<br><br>
+          <b>Bon à savoir :</b> récupération sur succession : Contrairement à certaines aides comme l'APA, l'ASD peut être récupérable sur la succession du bénéficiaire après son décès, en fonction des sommes versées.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="mutuelles">
+      <div class="faq-question">
+        <h2>Les Aides des mutuelles</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Pour qui ?</h3>
+        <p>
+          Les aides des mutuelles s'adressent :<br>
+          • Aux adhérents en convalescence après une hospitalisation ou un accident<br>
+          • Aux personnes âgées ou fragilisées<br>
+          • Aux aidants familiaux ayant besoin d'un relais temporaire à domicile<br>
+          • Aux familles confrontées à une situation difficile ou imprévue (immobilisation, grossesse à risque, perte d'autonomie…)
+        </p>
+        <h3>Que peuvent financer les mutuelles ?</h3>
+        <p>
+          Selon les contrats, les mutuelles peuvent prendre en charge :<br>
+          • Des heures d'aide à domicile (ménage, repas, courses…)<br>
+          • Le retour à domicile après une hospitalisation (aide pour les actes du quotidien)<br>
+          • Des services de garde à domicile pour personnes dépendantes ou malades<br>
+          • Parfois, des équipements de sécurité (barres d'appui, rehausseurs WC…)<br>
+          Ces prestations sont souvent plafonnées (ex. : 10 à 40 heures), mais peuvent être renouvelées selon la situation.
+        </p>
+        <h3>Comment faire la demande ?</h3>
+        <p>
+          Il faut contacter directement votre mutuelle ou consulter les conditions de votre contrat pour vérifier les services inclus. La demande se fait en général sur présentation d'un justificatif médical (certificat, compte-rendu d'hospitalisation…).<br>
+          Certaines mutuelles travaillent avec des prestataires agréés.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="aides-locales">
+      <div class="faq-question">
+        <h2>Les Aides locales (CCAS, communes, départements)</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Qui peut en bénéficier ?</h3>
+        <p>
+          Les aides locales s'adressent :<br>
+          • Aux personnes âgées ou handicapées résidant dans la commune ou le département<br>
+          • Aux personnes isolées ou en situation de précarité<br>
+          • À ceux qui ont besoin d'une aide ponctuelle ou régulière pour faire face à une situation difficile (maladie, hospitalisation, perte d'autonomie…)
+        </p>
+        <h3>Quels types d'aides sont proposés ?</h3>
+        <p>
+          Selon les territoires, il peut s'agir de :<br>
+          • Aide financière pour payer une aide à domicile<br>
+          • Participation à l'achat de matériel médical ou d'aménagement du logement<br>
+          • Aide pour la livraison de repas à domicile<br>
+          • Mise à disposition d'un portage de courses ou d'un service de téléassistance<br>
+          • Soutien ponctuel en cas de situation d'urgence ou de rupture sociale
+        </p>
+        <h3>Comment faire une demande ?</h3>
+        <p>
+          Les démarches se font généralement auprès de :<br>
+          • Votre Centre Communal d'Action Sociale (CCAS) ou mairie<br>
+          • Le service social de votre département<br>
+          • Ou par l'intermédiaire de votre assistante sociale.<br>
+          Chaque collectivité fixe ses propres critères (ressources, âge, autonomie…), il est donc important de vous renseigner localement.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="aide-menagere">
+      <div class="faq-question">
+        <h2>L'Aide-ménagère à domicile (via la caisse de retraite)</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>À qui s'adresse cette aide</h3>
+        <p>
+          Cette aide concerne :<br>
+          • Les personnes âgées de 65 ans et plus (ou dès 60 ans en cas d'inaptitude au travail)<br>
+          • Retraitées du régime général ou d'un autre régime de base (CARSAT, MSA, etc.)<br>
+          • Autonomes (non éligibles à l'APA)<br>
+          • Ayant des ressources modestes, selon les plafonds définis par chaque caisse.
+        </p>
+        <h3>Quelles prestations sont couvertes ?</h3>
+        <p>
+          La caisse de retraite peut financer :<br>
+          • Des heures d'aide à domicile pour l'entretien du logement (ménage, repassage, vaisselle)<br>
+          • L'aide aux courses et à la préparation des repas<br>
+          • Un soutien temporaire en cas de fragilité passagère (hospitalisation, chute…)<br>
+          Le nombre d'heures accordées et le montant pris en charge varient selon votre situation personnelle et les critères de votre caisse.
+        </p>
+        <h3>Comment faire la demande ?</h3>
+        <p>
+          La demande d'aide-ménagère se fait directement auprès de votre caisse de retraite principale. Vous devrez remplir un dossier et fournir quelques justificatifs (revenus, composition du foyer, etc.). Une évaluation de vos besoins peut être réalisée à domicile.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="ardh">
+      <div class="faq-question">
+        <h2>L'Aide financière en cas de retour d'hospitalisation (ARDH)</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <h3>Qui peut en bénéficier ?</h3>
+        <p>
+          • Les personnes âgées de 60 ans et plus<br>
+          • Les personnes en situation de handicap ou de perte d'autonomie<br>
+          • Après une hospitalisation d'au moins 3 jours consécutifs (selon les critères de la caisse d'assurance maladie)
+        </p>
+        <h3>Quelles prestations sont prises en charge ?</h3>
+        <p>
+          L'ARDH peut financer, sur une durée limitée (généralement quelques semaines) :<br>
+          • L'aide à la toilette, à l'habillage et aux déplacements<br>
+          • L'aide au ménage et à la préparation des repas<br>
+          • L'accompagnement aux courses ou aux rendez-vous médicaux<br>
+          • Toute prestation permettant d'assurer la sécurité et le bien-être à domicile
+        </p>
+        <h3>Comment faire la demande ?</h3>
+        <p>
+          La demande doit être faite auprès de votre caisse d'assurance maladie, idéalement avant la sortie d'hospitalisation ou dès le retour à domicile. Un dossier médical et une évaluation des besoins peuvent être nécessaires pour valider la prise en charge.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="caisses">
+      <div class="faq-question">
+        <h2>Les Caisses de retraite complémentaire</h2>
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-answer" style="text-align: justify;">
+        <p>
+          Certaines caisses de retraite complémentaire proposent des aides financières pour le maintien à domicile, l'aménagement du logement ou le soutien aux aidants.<br><br>
+          Exemples d'aides possibles :<br>
+          • Prise en charge d'heures d'aide à domicile<br>
+          • Participation à l'achat de matériel adapté<br>
+          • Soutien psychologique ou accompagnement des aidants<br><br>
+          <b>Comment en bénéficier ?</b><br>
+          Il faut contacter sa caisse de retraite complémentaire (Agirc-Arrco, IRCANTEC, etc.) pour connaître les dispositifs existants et constituer un dossier.<br><br>
+          Bon à savoir : ces aides sont souvent cumulables avec l'APA ou d'autres dispositifs publics.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
-    <!-- JS pour la première question -->
-  <script>
-    function expandFirstQuestion() {
-      const firstItem = document.querySelector('.faq-item.first-item');
-      firstItem.classList.add('active');
-    }
-  </script>
-
-  <!-- ACCORDÉON JS -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const item = question.parentElement;
-        document.querySelectorAll('.faq-item').forEach(other => {
-          if (other !== item) other.classList.remove('active');
-        });
-        item.classList.toggle('active');
-      });
-    });
-  </script>
 
   <!-- RECHERCHE SUR LIGNE -->
   <script>
@@ -574,7 +589,91 @@
   });
 </script>
 
-  <footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
+    <!-- JS pour la première question -->
+  <script>
+    function expandFirstQuestion() {
+      const firstItem = document.querySelector('.faq-item.first-item');
+      firstItem.classList.add('active');
+    }
+  </script>
+
+  <!-- ACCORDÉON JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          document.querySelectorAll('.faq-item').forEach(other => {
+            if (other !== item) other.classList.remove('active');
+          });
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+
+<script>
+  // Smooth scroll + referme <details> après clic
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('#toc a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const det = document.getElementById('toc');
+    if (det && det.open) det.open = false;
+  });
+
+  // Active link selon section visible
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = Array.from(document.querySelectorAll('#toc a[href^="#"]'));
+    const map = new Map(
+      links.map(a => [a.getAttribute('href').slice(1), a])
+    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const a = map.get(entry.target.id);
+        if (!a) return;
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('toc-active'));
+          a.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+    // Observe toutes les sections référencées
+    map.forEach((a, id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  });
+</script>
+
+<script>
+  // Ouvre la question correspondante quand on clique sur le sommaire mobile
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('#toc a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    const faqItem = document.getElementById(id);
+    if (faqItem && faqItem.classList.contains('faq-item')) {
+      // Ferme toutes les autres questions
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      // Ouvre la question ciblée
+      faqItem.classList.add('active');
+      // Scroll jusqu'à la question
+      faqItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Referme le sommaire mobile si ouvert
+      const det = document.getElementById('toc');
+      if (det && det.open) det.open = false;
+      e.preventDefault();
+    }
+  });
+</script>
+
+<footer style="background-color: #ffffff; padding: 20px 0; text-align: center; font-size: 14px; color: #000000; border-top: 1px solid #ddd;">
     <p>© 2025 Nena Adom – Tous droits réservés</p>
     <p>
       SIRET : 95102803400019 – Site sans collecte de données<br>
@@ -585,3 +684,6 @@
       <a href="mentions-legales.html" style="color: #000000; text-decoration: underline;">Mentions légales</a> |
       <a href="faq.html" style="color: #000000; text-decoration: underline;">FAQ</a>
     </p>
+</footer>
+</body>
+</html>
