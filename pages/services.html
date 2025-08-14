@@ -244,6 +244,59 @@
       text-decoration: underline;
     }
 
+    @media (max-width: 600px) {
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0;
+    gap: 0;
+  }
+  .service-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0;
+  }
+  .service-text {
+    width: auto;
+  }
+  .service-text.long {
+    display: block;
+    width: 100%;
+    padding: 0 0 0 0;
+  }
+  .service-section,
+  .service-section.reverse {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .service-number {
+    font-size: 60px;
+    margin: 0 0 10px 0;
+    text-align: left;
+  }
+  .content-wrapper,
+  .service-section.reverse .content-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .service-title,
+  .service-section.reverse .service-title {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+    .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .service-text,
+  .service-text.long {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
   </style>
 </head>
 <body>
@@ -278,15 +331,16 @@
           </div>
           <div class="service-text">
             La journée débute par l'intervention de l'auxiliaire de vie au domicile
-            du patient, qui l'assiste dans sa toilette (douche en salle de bain ou
-            toilette complète au lit et change si nécessaire), ainsi que pour se
-            coiffer, s'habiller, mettre ses appareils auditifs, etc.
-            <br><br>
-            Elle procède ensuite le petit-déjeuner et veille à ce que le patient
-            s'alimente correctement et prend bien ses médicaments. Ce moment
-            privilégié permet aussi d'échanger, de stimuler, et de renforcer le lien
-            social, tout en soutenant l'autonomie de la personne.
+            du patient, qui l'assiste dans sa toilette (douche en salle de bain ou toilette
           </div>
+        </div>
+        <div class="service-text long">
+           complète au lit et change si nécessaire), ainsi que pour se
+          coiffer, s'habiller, mettre ses appareils auditifs, etc.<br><br>
+          Elle procède ensuite le petit-déjeuner et veille à ce que le patient
+          s'alimente correctement et prend bien ses médicaments. Ce moment
+          privilégié permet aussi d'échanger, de stimuler, et de renforcer le lien
+          social, tout en soutenant l'autonomie de la personne.
         </div>
       </div>
     </div>
@@ -305,12 +359,13 @@
             du patient. L'objectif est de stimuler l'appétit, de maintenir une
             alimentation équilibrée et de lui redonner l'énergie nécessaire pour
             ses activités quotidiennes.
-            <br><br>
-            L'intervenante prépare les repas à domicile, veille à leur qualité et à
-            leur présentation. Elle peut également assurer l'entretien du logement
-            et effectuer les courses, afin de garantir un environnement propre,
-            sain et adapté au bien-être de la personne accompagnée.
           </div>
+        </div>
+        <div class="service-text long">
+          L'intervenante prépare les repas à domicile, veille à leur qualité et à
+          leur présentation. Elle peut également assurer l'entretien du logement
+          et effectuer les courses, afin de garantir un environnement propre,
+          sain et adapté au bien-être de la personne accompagnée.
         </div>
       </div>
     </div>
@@ -324,11 +379,13 @@
             <img src="service-1.png" alt="Accompagnement RDV">
           </div>
           <div class="service-text">
-            Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.<br>
-            - RDV à l'hôpital : un ambulancier partenaire accompagne le patient avec un bon de transport.<br>
-            - RDV en cabinet : une auxiliaire prépare le dossier médical, aide à l'habillage et accompagne le patient. <br>
-            Après chaque rendez-vous, les informations sont partagées avec les proches, les auxiliaires et le médecin traitant. <br>
+            Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.
           </div>
+        </div>
+        <div class="service-text long">
+          - RDV à l'hôpital : un ambulancier partenaire accompagne le patient avec un bon de transport.<br>
+          - RDV en cabinet : une auxiliaire prépare le dossier médical, aide à l'habillage et accompagne le patient. <br>
+          Après chaque rendez-vous, les informations sont partagées avec les proches, les auxiliaires et le médecin traitant. <br>
         </div>
       </div>
     </div>
@@ -343,9 +400,11 @@
           </div>
           <div class="service-text">
             Notre équipe veille à la santé physique du patient mais nous savons que la stimulation mentale et sociale est tout aussi essentielle. 
-            C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation cognitive : jeux de mémoire, mots croisés, peinture, bridge… ainsi que des sorties adaptées comme des promenades au parc (activité physique douce), des visites culturelles ou encore des repas au restaurant.
-            Chaque élément est réfléchi pour maintenir le bien-être global de la personne, dans le respect de son rythme, de ses envies et de ses capacités physiques.
           </div>
+        </div>
+        <div class="service-text long">
+          C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation cognitive : jeux de mémoire, mots croisés, peinture, bridge… ainsi que des sorties adaptées comme des promenades au parc (activité physique douce), des visites culturelles ou encore des repas au restaurant.
+          Chaque élément est réfléchi pour maintenir le bien-être global de la personne, dans le respect de son rythme, de ses envies et de ses capacités physiques.
         </div>
       </div>
     </div>
@@ -360,9 +419,11 @@
           </div>
           <div class="service-text">
             En soirée, l’auxiliaire prépare un repas léger, aide à la prise des médicaments, puis accompagne le patient dans sa toilette du soir, le change de protection si nécessaire, et l’habillage en tenue de nuit.
-            Pour garantir sa sécurité, une chaise percée peut être installée à proximité du lit afin d’éviter les déplacements nocturnes et prévenir les risques de chute.
-            Avant de quitter le domicile, l’auxiliaire s’assure que le patient est prêt à passer une nuit sereine, dans le confort et en toute sécurité.
           </div>
+        </div>
+        <div class="service-text long">
+          Pour garantir sa sécurité, une chaise percée peut être installée à proximité du lit afin d’éviter les déplacements nocturnes et prévenir les risques de chute.
+          Avant de quitter le domicile, l’auxiliaire s’assure que le patient est prêt à passer une nuit sereine, dans le confort et en toute sécurité.
         </div>
       </div>
     </div>
@@ -377,9 +438,11 @@
           </div>
           <div class="service-text">
             Selon le souhait du patient et son état de santé. Une présence rassurante est assurée tout au long de la nuit, dans un environnement calme et sécurisé. 
-            L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever nocturne, de besoin d’aller aux toilette ou de faire un change au lit, de besoin d’aide ou d’urgence. 
-            Elle surveille l’état de santé, apaise les angoisses et assure un accompagnement adapté, dans le respect du rythme et de l’intimité du patient. 
           </div>
+        </div>
+        <div class="service-text long">
+          L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever nocturne, de besoin d’aller aux toilette ou de faire un change au lit, de besoin d’aide ou d’urgence. 
+          Elle surveille l’état de santé, apaise les angoisses et assure un accompagnement adapté, dans le respect du rythme et de l’intimité du patient. 
         </div>
       </div>
     </div>
