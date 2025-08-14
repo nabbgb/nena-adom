@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services d'aide à domicile aux personnes âgées</title>
   <style>
@@ -9,17 +9,14 @@
       font-family: 'Glacial Indifference';
       src: url('../fonts/glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
     }
-
     @font-face {
       font-family: 'Arimo';
       src: url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Comfortaa';
       src: url('../fonts/comfortaa/Comfortaa-Regular.ttf') format('truetype');
     }
-
     @font-face {
       font-family: 'Playfair Display';
       src: url('../fonts/Playfair-Display/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
@@ -31,26 +28,13 @@
       margin: 0;
       padding: 0;
     }
-    
-    h1, h2, h3 {
-      font-family: 'Glacial Indifference', sans-serif;
-    }
 
-    .intro-text h2 {
-      font-family: 'Arimo', sans-serif;
-    }
+    h1, h2, h3 { font-family: 'Glacial Indifference', sans-serif; }
+    .intro-text h2 { font-family: 'Arimo', sans-serif; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .header {
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
+    .header { margin: 0; padding: 0; position: relative; }
 
     .search-bar {
       position: absolute;
@@ -61,7 +45,6 @@
       width: 80%;
       max-width: 400px;
     }
-
     .search-bar input {
       width: 100%;
       padding: 10px;
@@ -71,11 +54,7 @@
       font-size: 16px;
       color:#000000;
     }
-
-    .search-bar input::placeholder{
-      color:#000000;
-    }
-
+    .search-bar input::placeholder { color:#000000; }
     .search-bar button {
       background: none;
       border: none;
@@ -119,10 +98,7 @@
       align-items: flex-start;
       gap: 0;
     }
-
-    .service-section.reverse {
-      flex-direction: row-reverse;
-    }
+    .service-section.reverse { flex-direction: row-reverse; }
 
     .service-number {
       font-family: 'Playfair Display', sans-serif;
@@ -136,16 +112,12 @@
       z-index: 0;
       position: relative;
     }
-
     .service-section.reverse .service-number {
       margin-left: -10px;
       margin-right: 0;
     }
 
-    .service-content {
-      flex: 1;
-      position: relative;
-    }
+    .service-content { flex: 1; position: relative; }
 
     .service-title {
       font-family: 'Playfair Display', sans-serif;
@@ -155,7 +127,6 @@
       margin-bottom: 15px;
       padding-left: 10px;
     }
-
     .service-section.reverse .service-title {
       padding-left: 0;
       padding-right: 10px;
@@ -167,7 +138,6 @@
       gap: 0;
       margin-left: -30px;
     }
-
     .service-section.reverse .content-wrapper {
       flex-direction: row-reverse;
       margin-left: 0;
@@ -179,10 +149,9 @@
       height: 200px;
       flex-shrink: 0;
       border-radius: 5px;
-      position: relative; /* Ajouté */
-      z-index: 2; /* Ajouté - plus élevé que le numéro */
+      position: relative;
+      z-index: 2;
     }
-
     .service-image img {
       width: 100%;
       height: 100%;
@@ -203,7 +172,6 @@
       padding-left: 20px;
       margin-top: 0;
     }
-
     .service-section.reverse .service-text {
       margin-right: 15px;
       margin-left: 20px;
@@ -213,18 +181,7 @@
       margin-top: 0;
     }
 
-    .service-section.reverse .service-title {
-      color: #15167b;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      padding-left: 10px;
-      margin-left: 520px;
-    }
-
-    .section-3 {
-      margin-bottom: 80px;
-    }
+    .section-3 { margin-bottom: 80px; }
 
     footer {
       background-color: #ffffff;
@@ -234,83 +191,85 @@
       color: #000000;
       border-top: 1px solid #ddd;
     }
+    footer p { margin: 5px 0; }
+    footer a { color: #000000; text-decoration: underline; }
 
-    footer p {
-      margin: 5px 0;
-    }
-
-    footer a {
-      color: #000000;
-      text-decoration: underline;
-    }
-
+    /* ===========================
+       VERSION MOBILE (float wrap)
+       =========================== */
     @media (max-width: 600px) {
-  .content-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 0;
-    gap: 0;
-  }
-  .service-image {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 0;
-  }
-  .service-text {
-    width: auto;
-  }
-  .service-text.long {
-    display: block;
-    width: 100%;
-    padding: 0 0 0 0;
-  }
-  .service-section,
-  .service-section.reverse {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .service-number {
-    font-size: 60px;
-    margin: 0 0 10px 0;
-    text-align: left;
-  }
-  .content-wrapper,
-  .service-section.reverse .content-wrapper {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .service-title,
-  .service-section.reverse .service-title {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0;
-    padding-right: 0;
-  }
-    .container {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .service-text,
-  .service-text.long {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-}
+      /* Le wrapper devient un bloc qui contient les floats */
+      .content-wrapper {
+        display: flow-root;   /* crée un BFC pour contenir les floats */
+        margin: 0;
+        gap: 0;
+      }
+
+      /* Image à gauche par défaut */
+      .service-image {
+        float: left;
+        width: 120px;
+        height: 120px;        /* hauteur = “fenêtre” de wrap du texte */
+        margin: 0 8px 8px 0;  /* espace entre image et texte */
+      }
+      /* Pour les sections inversées, image à droite */
+      .service-section.reverse .service-image {
+        float: right;
+        margin: 0 0 8px 8px;
+      }
+
+      /* Le texte se met à côté tant que l'image a de la hauteur,
+         puis reprend toute la largeur naturellement */
+      .service-text {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: justify;
+      }
+
+      .service-section,
+      .service-section.reverse {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .service-number {
+        font-size: 60px;
+        margin: 0 0 10px 0;
+        text-align: left;
+      }
+
+      .content-wrapper,
+      .service-section.reverse .content-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .service-title,
+      .service-section.reverse .service-title {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .container { padding-left: 8px; padding-right: 8px; }
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <form class="search-bar" action="" method="get">
       <input type="text" id="searchInput" name="q" placeholder="🔍 Rechercher...">
-
     </form>
     <img src="../images/services/header.png" alt="Bannière" style="width: 100%; height: auto; display: block;">
   </header>
 
   <div class="container">
     <h1 class="main-title">Services d'aide à domicile aux personnes âgées</h1>
-    
+
     <div class="intro-text">
       L'accompagnement de la personne est assuré par notre équipe de moniteurs entièrement personnalisé.
       Par facilitation d'aide à la motivation de l'envie à domicile d'autonomie, une routine quotidienne adaptée ainsi
@@ -320,7 +279,7 @@
       la vie quotidienne par lui-même, tout en bénéficiant d'une présence bienveillante et sécurisante.
     </div>
 
-    <!-- Section Services -->
+    <!-- Section 1 -->
     <div class="service-section">
       <div class="service-number" style="margin-top: -40px;">1</div>
       <div class="service-content">
@@ -330,185 +289,170 @@
             <img src="../images/services/service-1.png" alt="Aide au lever">
           </div>
           <div class="service-text">
-            La journée débute par l'intervention de l'auxiliaire de vie au domicile
-            du patient, qui l'assiste dans sa toilette (douche en salle de bain ou toilette
+            La journée débute par l'intervention de l'auxiliaire de vie au domicile du patient, qui l'assiste dans sa toilette
+            (douche en salle de bain ou toilette complète au lit et change si nécessaire), ainsi que pour se coiffer, s'habiller,
+            mettre ses appareils auditifs, etc. Elle procède ensuite au petit-déjeuner et veille à ce que le patient s'alimente
+            correctement et prenne bien ses médicaments. Ce moment privilégié permet aussi d'échanger, de stimuler, et de
+            renforcer le lien social, tout en soutenant l'autonomie de la personne.
           </div>
-        </div>
-        <div class="service-text long">
-           complète au lit et change si nécessaire), ainsi que pour se
-          coiffer, s'habiller, mettre ses appareils auditifs, etc.<br><br>
-          Elle procède ensuite le petit-déjeuner et veille à ce que le patient
-          s'alimente correctement et prend bien ses médicaments. Ce moment
-          privilégié permet aussi d'échanger, de stimuler, et de renforcer le lien
-          social, tout en soutenant l'autonomie de la personne.
         </div>
       </div>
     </div>
 
+    <!-- Section 2 -->
     <div class="service-section reverse">
       <div class="service-number" style="margin-top: -35px;">2</div>
       <div class="service-content">
-        <h2 class="service-title" style="margin-left: 500px;">Courses, préparation du repas, ménage</h2>
+        <h2 class="service-title">Courses, préparation du repas, ménage</h2>
         <div class="content-wrapper">
           <div class="service-image">
-            <img src="../images/services/service-2 .png" alt="Courses">
+            <img src="../images/services/service-2.png" alt="Courses">
           </div>
           <div class="service-text">
-            Un menu hebdomadaire personnalisé est élaboré en tenant compte
-            du régime alimentaire, des préférences et des besoins nutritionnels
-            du patient. L'objectif est de stimuler l'appétit, de maintenir une
-            alimentation équilibrée et de lui redonner l'énergie nécessaire pour
-            ses activités quotidiennes.
+            Un menu hebdomadaire personnalisé est élaboré en tenant compte du régime alimentaire, des préférences et des besoins
+            nutritionnels du patient. L'objectif est de stimuler l'appétit, de maintenir une alimentation équilibrée et de lui
+            redonner l'énergie nécessaire pour ses activités quotidiennes. L'intervenante prépare les repas à domicile, veille à
+            leur qualité et à leur présentation. Elle peut également assurer l'entretien du logement et effectuer les courses,
+            afin de garantir un environnement propre, sain et adapté au bien-être de la personne accompagnée.
           </div>
-        </div>
-        <div class="service-text long">
-          L'intervenante prépare les repas à domicile, veille à leur qualité et à
-          leur présentation. Elle peut également assurer l'entretien du logement
-          et effectuer les courses, afin de garantir un environnement propre,
-          sain et adapté au bien-être de la personne accompagnée.
         </div>
       </div>
     </div>
 
+    <!-- Section 3 -->
     <div class="service-section section-3">
       <div class="service-number" style="margin-top: -40px;">3</div>
       <div class="service-content">
         <h2 class="service-title">Présence, accompagnement aux RDV</h2>
         <div class="content-wrapper">
           <div class="service-image">
+            <!-- Vérifie le chemin si besoin -->
             <img src="service-1.png" alt="Accompagnement RDV">
           </div>
           <div class="service-text">
-            Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.
+            Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses
+            RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.
+            <br><br>
+            • RDV à l'hôpital : un ambulancier partenaire accompagne le patient avec un bon de transport. <br>
+            • RDV en cabinet : une auxiliaire prépare le dossier médical, aide à l'habillage et accompagne le patient. <br>
+            Après chaque rendez-vous, les informations sont partagées avec les proches, les auxiliaires et le médecin traitant.
           </div>
-        </div>
-        <div class="service-text long">
-          - RDV à l'hôpital : un ambulancier partenaire accompagne le patient avec un bon de transport.<br>
-          - RDV en cabinet : une auxiliaire prépare le dossier médical, aide à l'habillage et accompagne le patient. <br>
-          Après chaque rendez-vous, les informations sont partagées avec les proches, les auxiliaires et le médecin traitant. <br>
         </div>
       </div>
     </div>
 
+    <!-- Section 4 -->
     <div class="service-section reverse">
       <div class="service-number" style="margin-top: -40px;">4</div>
       <div class="service-content">
-        <h2 class="service-title" style="margin-left:390px;">Présence, stimulation : santé mentale et vie sociale</h2>
+        <h2 class="service-title">Présence, stimulation : santé mentale et vie sociale</h2>
         <div class="content-wrapper">
           <div class="service-image">
-            <img src="../images/services/service-4.png" alt="Courses">
+            <img src="../images/services/service-4.png" alt="Stimulation">
           </div>
           <div class="service-text">
-            Notre équipe veille à la santé physique du patient mais nous savons que la stimulation mentale et sociale est tout aussi essentielle. 
+            Notre équipe veille à la santé physique du patient mais nous savons que la stimulation mentale et sociale est tout aussi
+            essentielle. C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation
+            cognitive : jeux de mémoire, mots croisés, peinture, bridge… ainsi que des sorties adaptées comme des promenades au parc
+            (activité physique douce), des visites culturelles ou encore des repas au restaurant. Chaque élément est réfléchi pour
+            maintenir le bien-être global de la personne, dans le respect de son rythme, de ses envies et de ses capacités physiques.
           </div>
-        </div>
-        <div class="service-text long">
-          C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation cognitive : jeux de mémoire, mots croisés, peinture, bridge… ainsi que des sorties adaptées comme des promenades au parc (activité physique douce), des visites culturelles ou encore des repas au restaurant.
-          Chaque élément est réfléchi pour maintenir le bien-être global de la personne, dans le respect de son rythme, de ses envies et de ses capacités physiques.
         </div>
       </div>
     </div>
 
+    <!-- Section 5 -->
     <div class="service-section section-3">
       <div class="service-number" style="margin-top: -40px;">5</div>
       <div class="service-content">
         <h2 class="service-title">Aide au coucher, toilette du soir, dîner</h2>
         <div class="content-wrapper">
           <div class="service-image">
-            <img src="../images/services/service-5.png" alt="Accompagnement RDV">
+            <img src="../images/services/service-5.png" alt="Toilette du soir">
           </div>
           <div class="service-text">
-            En soirée, l’auxiliaire prépare un repas léger, aide à la prise des médicaments, puis accompagne le patient dans sa toilette du soir, le change de protection si nécessaire, et l’habillage en tenue de nuit.
+            En soirée, l’auxiliaire prépare un repas léger, aide à la prise des médicaments, puis accompagne le patient dans sa
+            toilette du soir, le change de protection si nécessaire, et l’habillage en tenue de nuit. Pour garantir sa sécurité,
+            une chaise percée peut être installée à proximité du lit afin d’éviter les déplacements nocturnes et prévenir les risques
+            de chute. Avant de quitter le domicile, l’auxiliaire s’assure que le patient est prêt à passer une nuit sereine, dans le
+            confort et en toute sécurité.
           </div>
-        </div>
-        <div class="service-text long">
-          Pour garantir sa sécurité, une chaise percée peut être installée à proximité du lit afin d’éviter les déplacements nocturnes et prévenir les risques de chute.
-          Avant de quitter le domicile, l’auxiliaire s’assure que le patient est prêt à passer une nuit sereine, dans le confort et en toute sécurité.
         </div>
       </div>
     </div>
 
+    <!-- Section 6 -->
     <div class="service-section reverse">
       <div class="service-number">6</div>
       <div class="service-content">
-        <h2 class="service-title" style="margin-left: 760px;">Garde de nuit</h2>
+        <h2 class="service-title">Garde de nuit</h2>
         <div class="content-wrapper">
           <div class="service-image">
-            <img src="../images/services/service-1.png" alt="Courses">
+            <!-- Vérifie le chemin si besoin -->
+            <img src="../images/services/service-1.png" alt="Garde de nuit">
           </div>
           <div class="service-text">
-            Selon le souhait du patient et son état de santé. Une présence rassurante est assurée tout au long de la nuit, dans un environnement calme et sécurisé. 
+            Selon le souhait du patient et son état de santé, une présence rassurante est assurée tout au long de la nuit, dans un
+            environnement calme et sécurisé. L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever
+            nocturne, de besoin d’aller aux toilettes ou de change au lit, de besoin d’aide ou d’urgence. Elle surveille l’état de
+            santé, apaise les angoisses et assure un accompagnement adapté, dans le respect du rythme et de l’intimité du patient.
           </div>
-        </div>
-        <div class="service-text long">
-          L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever nocturne, de besoin d’aller aux toilette ou de faire un change au lit, de besoin d’aide ou d’urgence. 
-          Elle surveille l’état de santé, apaise les angoisses et assure un accompagnement adapté, dans le respect du rythme et de l’intimité du patient. 
         </div>
       </div>
     </div>
 
   </div>
 
-  </div>
+  <script>
+    // Pour la barre de recherche
+    function highlightTerm(term) {
+      if (!term) return;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      let node;
+      const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')})`, 'gi');
+      let firstMark = null;
+      let openedFaqItems = new Set();
 
-<script>
-  //Pour la barre de recherche
-  function highlightTerm(term) {
-    if (!term) return;
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    let firstMark = null;
-    let openedFaqItems = new Set();
-
-    while (node = walker.nextNode()) {
-      if (
-        node.parentNode &&
-        !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
-        node.nodeValue.match(regex)
-      ) {
-        const span = document.createElement('span');
-        span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
-        node.parentNode.replaceChild(span, node);
-        if (!firstMark) {
-          firstMark = span.querySelector('mark');
-        }
-        // Ouvre la question si le mot est dans une réponse de l'accordéon
-        let faqAnswer = span.closest('.faq-answer');
-        if (faqAnswer) {
-          let faqItem = faqAnswer.closest('.faq-item');
-          if (faqItem && !openedFaqItems.has(faqItem)) {
-            faqItem.classList.add('active');
-            openedFaqItems.add(faqItem);
+      while (node = walker.nextNode()) {
+        if (
+          node.parentNode &&
+          !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+          node.nodeValue.match(regex)
+        ) {
+          const span = document.createElement('span');
+          span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+          node.parentNode.replaceChild(span, node);
+          if (!firstMark) { firstMark = span.querySelector('mark'); }
+          // Ouvre la question si le mot est dans une réponse de l'accordéon
+          let faqAnswer = span.closest('.faq-answer');
+          if (faqAnswer) {
+            let faqItem = faqAnswer.closest('.faq-item');
+            if (faqItem && !openedFaqItems.has(faqItem)) {
+              faqItem.classList.add('active');
+              openedFaqItems.add(faqItem);
+            }
           }
         }
       }
+      if (firstMark) {
+        firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => { window.scrollBy({ top: 200, left: 0, behavior: "smooth" }); }, 400);
+      }
     }
-    // Scroll vers la première occurrence surlignée
-    if (firstMark) {
-      firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
-      setTimeout(() => {
-        window.scrollBy({ top: 200, left: 0, behavior: "smooth" }); 
-      }, 400);
-    }
-  }
 
-  // Récupère le paramètre 'q' de l'URL
-  function getSearchTerm() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('q');
-  }
-
-  // Au chargement, surligne si besoin
-  document.addEventListener('DOMContentLoaded', function() {
-    const term = getSearchTerm();
-    if (term) {
-      document.getElementById('searchInput').value = term;
-      highlightTerm(term);
+    function getSearchTerm() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('q');
     }
-  });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const term = getSearchTerm();
+      if (term) {
+        document.getElementById('searchInput').value = term;
+        highlightTerm(term);
+      }
+    });
   </script>
-
 
   <footer>
     <p>© 2025 Nena Adom – Tous droits réservés</p>
@@ -522,6 +466,5 @@
       <a href="faq.html">FAQ</a>
     </p>
   </footer>
-
 </body>
 </html>
