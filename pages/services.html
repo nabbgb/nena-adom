@@ -5,267 +5,454 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services d'aide à domicile aux personnes âgées</title>
   <style>
-    @font-face {
-      font-family: 'Glacial Indifference';
-      src: url('../fonts/glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
-    }
-    @font-face {
-      font-family: 'Arimo';
-      src: url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Comfortaa';
-      src: url('../fonts/comfortaa/Comfortaa-Regular.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Playfair Display';
-      src: url('../fonts/Playfair-Display/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
-    }
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('../fonts/glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Arimo';
+  src: url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('../fonts/comfortaa/Comfortaa-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/Playfair-Display/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
 
-    body {
-      font-family: 'Comfortaa', sans-serif;
-      text-align: justify;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: 'Comfortaa', sans-serif;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
 
-    h1, h2, h3 { font-family: 'Glacial Indifference', sans-serif; }
-    .intro-text h2 { font-family: 'Arimo', sans-serif; }
+h1, h2, h3 {
+  font-family: 'Glacial Indifference', sans-serif;
+}
+.intro-text h2 {
+  font-family: 'Arimo', sans-serif;
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .header { margin: 0; padding: 0; position: relative; }
+.header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
-    .search-bar {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      width: 80%;
-      max-width: 400px;
-    }
-    .search-bar input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 30px;
-      background: none;
-      font-size: 16px;
-      color:#000000;
-    }
-    .search-bar input::placeholder { color:#000000; }
-    .search-bar button {
-      background: none;
-      border: none;
-      font-size: 18px;
-      color: #000000;
-      vertical-align: middle;
-      padding-top: 2px;
-    }
+.search-bar {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 80%;
+  max-width: 400px;
+}
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background: none;
+  font-size: 16px;
+  color: #000;
+}
+.search-bar input::placeholder {
+  color: #000;
+}
+.search-bar button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #000;
+  vertical-align: middle;
+  padding-top: 2px;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 5px auto 0;
-      padding: 0 10px;
-      background-color: white;
-      min-height: calc(100vh - 280px);
-    }
+.container {
+  max-width: 1000px;
+  margin: 5px auto 0;
+  padding: 0 10px;
+  background-color: white;
+  min-height: calc(100vh - 280px);
+}
 
-    .main-title {
-      font-family: 'Playfair Display', sans-serif;
-      color: #15167b;
-      font-size: 28px;
-      font-weight: bold;
-      text-align: center;
-      margin: 5px 0 30px;
-    }
+.main-title {
+  font-family: 'Playfair Display', sans-serif;
+  color: #15167b;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0 30px;
+}
 
-    .intro-text {
-      text-align: justify;
-      margin-bottom: 40px;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #333;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.intro-text {
+  text-align: justify;
+  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .service-section {
-      margin-bottom: 50px;
-      display: flex;
-      align-items: flex-start;
-      gap: 0;
-    }
-    .service-section.reverse { flex-direction: row-reverse; }
+.service-section {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-left: 10px;
+}
+.service-section.reverse {
+  flex-direction: row-reverse;
+}
 
-    .service-number {
-      font-family: 'Playfair Display', sans-serif;
-      color: #15167b;
-      font-size: 120px;
-      font-weight: bold;
-      line-height: 0.8;
-      flex-shrink: 0;
-      margin-right: -10px;
-      margin-top: -15px;
-      z-index: 0;
-      position: relative;
-    }
-    .service-section.reverse .service-number {
-      margin-left: -10px;
-      margin-right: 0;
-    }
+.service-number {
+  font-family: 'Playfair Display', sans-serif;
+  color: #15167b;
+  font-size: 120px;
+  font-weight: bold;
+  line-height: 0.8;
+  flex-shrink: 0;
+  margin-right: -10px;
+  margin-top: -15px;
+  z-index: 0;
+  position: relative;
+}
+.service-section.reverse .service-number {
+  margin-left: -10px;
+  margin-right: 0;
+}
 
-    .service-content { flex: 1; position: relative; }
+.service-content {
+  flex: 1;
+  position: relative;
+}
 
-    .service-title {
-      font-family: 'Playfair Display', sans-serif;
-      color: #15167b;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      padding-left: 10px;
-    }
-    .service-section.reverse .service-title {
-      padding-left: 0;
-      padding-right: 10px;
-    }
+.service-title {
+  font-family: 'Playfair Display', sans-serif;
+  color: #15167b;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.service-section.reverse .service-title {
+  padding-left: 0;
+  padding-right: 10px;
+}
 
-    .content-wrapper {
-      display: flex;
-      align-items: flex-start;
-      gap: 0;
-      margin-left: -30px;
-    }
-    .service-section.reverse .content-wrapper {
-      flex-direction: row-reverse;
-      margin-left: 0;
-      margin-right: -30px;
-    }
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-left: -30px;
+}
+.service-section.reverse .content-wrapper {
+  flex-direction: row-reverse;
+  margin-left: 0;
+  margin-right: -30px;
+}
 
-    .service-image {
-      width: 180px;
-      height: 200px;
-      flex-shrink: 0;
-      border-radius: 5px;
-      position: relative;
-      z-index: 2;
-    }
-    .service-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 5px;
-    }
+.service-image {
+  width: 180px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+}
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
 
-    .service-text {
-      flex: 1;
-      text-align: justify;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #333;
-      margin-left: 15px;
-      margin-right: 21px;
-      padding-top: 0;
-      padding-left: 20px;
-      margin-top: 0;
-    }
-    .service-section.reverse .service-text {
-      margin-right: 15px;
-      margin-left: 20px;
-      padding-right: 20px;
-      padding-left: 0;
-      padding-top: 0;
-      margin-top: 0;
-    }
+.service-text {
+  flex: 1;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-left: 15px;
+  margin-right: 21px;
+  padding-top: 0;
+  padding-left: 20px;
+  margin-top: 0;
+}
+.service-section.reverse .service-text {
+  margin-right: 15px;
+  margin-left: 20px;
+  padding-right: 20px;
+  padding-left: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
 
-    .section-3 { margin-bottom: 80px; }
+.section-3 {
+  margin-bottom: 80px;
+}
 
-    footer {
-      background-color: #ffffff;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 14px;
-      color: #000000;
-      border-top: 1px solid #ddd;
-    }
-    footer p { margin: 5px 0; }
-    footer a { color: #000000; text-decoration: underline; }
+footer {
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  border-top: 1px solid #ddd;
+}
+footer p {
+  margin: 5px 0;
+}
+footer a {
+  color: #000;
+  text-decoration: underline;
+}
 
-    /* ===========================
-       VERSION MOBILE (float wrap)
-       =========================== */
-    @media (max-width: 600px) {
-      /* Le wrapper devient un bloc qui contient les floats */
-      .content-wrapper {
-        display: flow-root;   /* crée un BFC pour contenir les floats */
-        margin: 0;
-        gap: 0;
-      }
+/* ===========================
+   VERSION MOBILE
+   =========================== */
+@media (max-width: 600px) {
+  /* 1) Annule les décalages desktop qui rognent le layout mobile */
+  .service-section { margin-left: 0 !important; margin-right: 0 !important; }
+  .content-wrapper { display: flow-root; margin: 0 !important; gap: 0; }
 
-      /* Image à gauche par défaut */
-      .service-image {
-        float: left;
-        width: 120px;
-        height: 120px;        /* hauteur = “fenêtre” de wrap du texte */
-        margin: 0 8px 8px 0;  /* espace entre image et texte */
-      }
-      /* Pour les sections inversées, image à droite */
-      .service-section.reverse .service-image {
-        float: right;
-        margin: 0 0 8px 8px;
-      }
+  /* 2) Images : même largeur, marge DES DEUX CÔTÉS (y compris à droite pour .reverse) */
+  .service-image {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 0 12px 12px 12px !important; /* marge droite + gauche */
+  }
+  /* *** IMPORTANT : cette règle DOIT venir APRÈS la précédente *** */
+  .service-section.reverse .service-image {
+    float: right;
+    width: 120px;
+    height: 120px;
+    margin: 0 12px 12px 12px !important; /* marge à droite restaurée */
+  }
 
-      /* Le texte se met à côté tant que l'image a de la hauteur,
-         puis reprend toute la largeur naturellement */
-      .service-text {
-        width: auto;
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
-        line-height: 1.7;
-        text-align: justify;
-      }
+  /* 3) L’image ne doit pas être “coupée” visuellement */
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ou 'contain' si tu veux zéro recadrage */
+    display: block;
+    border-radius: 5px;
+  }
 
-      .service-section,
-      .service-section.reverse {
-        flex-direction: column;
-        align-items: stretch;
-      }
+  /* 4) Texte : supprime les marges/paddings qui élargissent la ligne */
+  .service-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .service-section.reverse .service-text {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-      .service-number {
-        font-size: 60px;
-        margin: 0 0 10px 0;
-        text-align: left;
-      }
+  /* 5) Titre sans décalage latéral parasite */
+  .service-title,
+  .service-section.reverse .service-title {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
-      .content-wrapper,
-      .service-section.reverse .content-wrapper {
-        margin-left: 0;
-        margin-right: 0;
-      }
+  /* 6) Optionnel : éviter tout scroll horizontal */
+  .container { padding-left: 12px; padding-right: 12px; overflow-x: hidden; }
 
-      .service-title,
-      .service-section.reverse .service-title {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0;
-        padding-right: 0;
-      }
+  /* 7) Si tu caches les chiffres en mobile */
+  .service-number { display: none; }
+}
 
-      .container { padding-left: 8px; padding-right: 8px; }
-    }
+/* ===========================
+   HEADER MOBILE
+   =========================== */
+@media (max-width: 700px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 18px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+  .mobile-menu-btn,
+  .mobile-close-btn {
+    background: none;
+    border: none;
+    font-size: 38px;
+    cursor: pointer;
+    color: #111;
+    padding: 0 8px;
+    line-height: 1;
+  }
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  .mobile-logo img {
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+  }
+  .mobile-search-btn {
+    background: none;
+    border: none;
+    padding: 0 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-side-menu {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 85vw;
+    max-width: 400px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.10);
+    z-index: 3000;
+    transition: left 0.3s cubic-bezier(.4,1.6,.4,1);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 0 24px;
+  }
+  .mobile-side-menu.open {
+    left: 0;
+  }
+  .mobile-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 38px;
+    z-index: 10;
+  }
+  .mobile-side-menu ul {
+    list-style: none;
+    padding: 60px 0 0 0;
+    margin: 0;
+  }
+  .mobile-side-menu li {
+    margin-bottom: 22px;
+  }
+  .mobile-side-menu a {
+    font-size: 1.35em;
+    color: #111;
+    text-decoration: none;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .mobile-side-menu a:hover {
+    color: #004aad;
+  }
+  .mobile-search-bar input[type="text"] {
+    transition: width 0.2s;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    margin-left: 0;
+  }
+  .site-header {
+    display: none !important;
+  }
+  .mobile-call-link {
+    display: block;
+    margin-top: auto;
+    margin-bottom: 24px;
+    padding: 14px 0;
+    text-align: justify;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .intro-text-aides {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  .intro-text {
+    margin : 12px;
+  }
+}
+
+/* Cacher le header mobile sur desktop */
+@media (min-width: 701px) {
+  .mobile-header,
+  .mobile-side-menu {
+    display: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
-  <header class="header">
-    <form class="search-bar" action="" method="get">
-      <input type="text" id="searchInput" name="q" placeholder="🔍 Rechercher...">
-    </form>
+  <!-- HEADER MOBILE (affiché uniquement sur mobile) -->
+<header class="mobile-header">
+  <button class="mobile-menu-btn" aria-label="Ouvrir le menu">&#9776;</button>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../images/logo.png" alt="Nena Adom logo">
+  </a>
+  <form class="mobile-search-bar" action="" method="get" style="position:relative;">
+    <input type="text" id="mobileSearchInput" name="q" placeholder="Rechercher..." style="display:none; position:absolute; right:40px; top:50%; transform:translateY(-50%); width:140px; border-radius:20px; border:1px solid #ccc; padding:4px 10px; font-size:15px;">
+    <button type="button" class="mobile-search-btn" aria-label="Recherche" style="background:none; border:none;">
+      <img src="../images/search.png" alt="Recherche" style="width:28px;height:28px;">
+    </button>
+  </form>
+</header>
+
+<!-- MENU LATERAL MOBILE -->
+<nav class="mobile-side-menu" id="mobileSideMenu">
+  <button class="mobile-close-btn" aria-label="Fermer le menu">&times;</button>
+  <ul>
+    <li><a href="services.html">NOS SERVICES</a></li>
+    <li><a href="hospitalisation.html">MON SUIVI APRÈS UNE HOSPITALISATION</a></li>
+    <li><a href="pathologie.html">COMPRENDRE MA PATHOLOGIE</a></li>
+    <li><a href="aides.html">AIDES FINANCIÈRES</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="tel:0605873735" class="mobile-call-link">06.05.87.37.35</a></li>
+  </ul>
+</nav>
+
+<header class="header">
+  <picture>
+    <!-- Version mobile -->
+    <source srcset="../images/services/header-v2.png" media="(max-width: 700px)">
+    <!-- Version desktop -->
     <img src="../images/services/header.png" alt="Bannière" style="width: 100%; height: auto; display: block;">
-  </header>
+  </picture>
+</header>
 
   <div class="container">
     <h1 class="main-title">Services d'aide à domicile aux personnes âgées</h1>
@@ -453,6 +640,109 @@
       }
     });
   </script>
+
+
+<script>
+//Pour la barre de recherche
+function highlightTerm(term) {
+  if (!term) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  let firstMark = null;
+  while (node = walker.nextNode()) {
+    if (
+      node.parentNode &&
+      !['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'MARK'].includes(node.parentNode.tagName) &&
+      node.nodeValue.match(regex)
+    ) {
+      const span = document.createElement('span');
+      span.innerHTML = node.nodeValue.replace(regex, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+      if (!firstMark) {
+        firstMark = span.querySelector('mark');
+      }
+    }
+  }
+  // Scroll vers la première occurrence surlignée
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Décalage supplémentaire pour éviter le header
+    setTimeout(() => {
+      window.scrollBy({ top: 400, left: 0, behavior: "smooth" }); 
+    }, 400); // délai pour laisser le scrollIntoView s'effectuer
+  }
+}
+
+// Récupère le paramètre 'q' de l'URL
+function getSearchTerm() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('q');
+}
+
+// Au chargement, surligne si besoin
+document.addEventListener('DOMContentLoaded', function() {
+  const term = getSearchTerm();
+  if (term) {
+    document.getElementById('searchInput').value = term;
+    highlightTerm(term);
+  }
+});
+</script>  
+
+<script>
+  document.querySelector('.mobile-menu-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.add('open');
+  };
+  document.querySelector('.mobile-close-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.remove('open');
+  };
+  // Optionnel : fermer le menu si on clique en dehors
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileSideMenu');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+
+<script>
+  // Ouvre le menu mobile
+  document.querySelector('.mobile-menu-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.add('open');
+  };
+  // Ferme le menu mobile
+  document.querySelector('.mobile-close-btn').onclick = function() {
+    document.getElementById('mobileSideMenu').classList.remove('open');
+  };
+  // Ferme le menu si on clique en dehors
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileSideMenu');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.classList.contains('mobile-menu-btn')) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Affiche le champ de recherche mobile au clic sur la loupe
+  const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+  const mobileSearchInput = document.getElementById('mobileSearchInput');
+  const mobileSearchForm = document.querySelector('.mobile-search-bar');
+  mobileSearchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (mobileSearchInput.style.display === 'none' || mobileSearchInput.style.display === '') {
+      mobileSearchInput.style.display = 'block';
+      mobileSearchInput.focus();
+    } else if (mobileSearchInput.value.trim() !== '') {
+      mobileSearchForm.submit();
+    }
+  });
+  // Permet la recherche au "Entrée"
+  mobileSearchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      mobileSearchForm.submit();
+    }
+  });
+</script>
 
   <footer>
     <p>© 2025 Nena Adom – Tous droits réservés</p>
