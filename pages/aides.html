@@ -108,13 +108,14 @@
     </aside>
 
 <!-- SOMMAIRE MOBILE -->
-<details id="toc" class="mf-article-anchors">
+<details id="toc" class="mf-article-anchors" open>
   <summary>
     <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
       <path fill="none" d="M0 0h24v24H0z"></path>
       <path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z"></path>
     </svg>
     Sommaire
+    <button type="button" id="close-toc" aria-label="Fermer le sommaire">&times;</button>                   
   </summary>
   <nav class="anchors">
     <ul>
@@ -652,6 +653,11 @@
 </script>
 
 <script>
+    // Ferme le sommaire via la croix
+  document.getElementById("close-toc").addEventListener("click", function (e) {
+    e.stopPropagation();
+    document.getElementById("toc").removeAttribute("open");
+  });
   // Ouvre la question correspondante quand on clique sur le sommaire mobile
   document.addEventListener('click', function (e) {
     const a = e.target.closest('#toc a[href^="#"]');

@@ -2332,6 +2332,24 @@ transform: translateX(-50%) translateY(-100%);
     padding: 8px 10px;
     font-size: 14px;
   }
+  /* Bouton croix : caché par défaut */
+  #toc #close-toc {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #333;
+    margin-left: auto; /* pousse la croix complètement à droite */
+  }
+
+  /* Affiche la croix uniquement quand le sommaire est ouvert */
+  #toc[open] #close-toc {
+    display: inline;
+  }
+
+
 }
 /* Optionnel: masquer sur desktop si tu veux un autre sommaire */
 @media (min-width: 769px) {
