@@ -1872,7 +1872,7 @@ header h2 {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-bottom: 4px solid #004aad; /* bleu foncé */
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   display: flex;
