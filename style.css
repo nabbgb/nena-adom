@@ -1404,7 +1404,7 @@ header h2 {
       margin-top: 0px;
 
       /* garde la largeur étroite */
-      max-height: 800px; /* suffisant pour 5–10 lignes */
+      max-height: 8000px; /* suffisant pour 5–10 lignes */
       border-radius: 0 0 10px 10px; /* arrondi en bas uniquement */
 
     }
