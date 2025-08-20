@@ -7,6 +7,33 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <style>
+
+  @media (min-width: 769px) {
+  /* Sommaire en colonne gauche */
+  .toc {
+    float: left;
+    width: 400px;           /* ajuste si besoin */
+    margin-right: 24px;
+    position: sticky;
+    top: 100px;             /* hauteur sous le header ; ajuste si besoin */
+  }
+
+  /* Le conteneur FAQ prend toute la place restante */
+  .faq-container {
+    margin: 0;              /* override le margin-left:200px */
+  }
+
+  /* Empêche l’affichage du sommaire mobile sur PC */
+  #toc.mf-article-anchors { 
+    display: none; 
+  }
+
+  /* Évite que le footer remonte à côté du sommaire flottant */
+  footer { 
+    clear: both; 
+  }
+}
+
   .faq-container{
     margin-left:200px;
   }
