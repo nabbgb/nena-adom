@@ -460,7 +460,7 @@ header h2 {
 }
 
 .contact-left img {
-  width: 400px;
+  width: 500px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -1751,10 +1751,10 @@ header h2 {
   }
   .contact-left {
     order: 1;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .contact-left img {
-    width: 90vw;
+    width: 100vw;
     max-width: 350px;
   }
   .contact-right {
@@ -1869,7 +1869,7 @@ header h2 {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-bottom: 4px solid #004aad; /* bleu foncé */
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   display: flex;
@@ -2277,7 +2277,7 @@ transform: translateX(-50%) translateY(-100%);
 }
 
 /* Mobile uniquement */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   #toc.mf-article-anchors {
     top: 0;
     z-index: 50;
