@@ -2097,6 +2097,20 @@ transform: translateX(-50%) translateY(-100%);
 }
 }
 
+/* Desktop : centrer les logos si la ligne est trop courte */
+@media (min-width: 769px){
+  .partners-track{
+    justify-content: center;   /* ← centre tous les items */
+  }
+}
+
+/* Mobile : éviter toute interpolation qui parasite le rAF */
+@media (max-width: 768px){
+  .partners-track{
+    scroll-behavior: auto; /* override de "smooth" pour le script */
+  }
+}
+
 @media (max-width: 700px) {
   body{
     font-size: 14px !important;

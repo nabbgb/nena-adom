@@ -545,5 +545,117 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
   }
 });
 </script>
+
+<script>
+(function(){
+  const track = document.querySelector('.partners-track');
+  if (!track) return;
+
+  const mq = window.matchMedia('(max-width: 768px)');
+  let running = false, rafId = null, lastTs = 0;
+  const SPEED = 40; // px/s – ajuste à ton goût
+  let originalWidth = 0;
+
+  function itemTotalWidth(el){
+    const cs = getComputedStyle(el);
+    return el.getBoundingClientRect().width
+         + parseFloat(cs.marginLeft) + parseFloat(cs.marginRight);
+  }
+
+  function measureOriginalWidth(){
+    const items = Array.from(track.children).filter(n => !n.hasAttribute('data-clone'));
+    return items.reduce((w, el) => w + itemTotalWidth(el), 0);
+  }
+
+  function cloneOnce(){
+    // Retire d’anciens clones si réinit
+    Array.from(track.querySelectorAll('[data-clone="1"]')).forEach(n => n.remove());
+
+    const items = Array.from(track.children);
+    originalWidth = items.reduce((w, el) => w + itemTotalWidth(el), 0);
+
+    // Si pas assez d’éléments, on duplique une fois la liste pour pouvoir boucler sans coupure
+    const originals = Array.from(track.children);
+    originals.forEach(el => {
+      const clone = el.cloneNode(true);
+      clone.setAttribute('data-clone', '1');
+      track.appendChild(clone);
+    });
+
+    // Re-mesure la largeur originale (seulement les non-clones)
+    originalWidth = measureOriginalWidth();
+  }
+
+  function shouldRun(){
+    return mq.matches && track.scrollWidth > track.clientWidth;
+  }
+
+  function step(ts){
+    if (!running) return;
+    if (!lastTs) lastTs = ts;
+    const dt = (ts - lastTs) / 1000;
+    lastTs = ts;
+
+    track.scrollLeft += SPEED * dt;
+
+    // Boucle sans “saut” : on retire la largeur originale quand on l’a dépassée
+    if (track.scrollLeft >= originalWidth) {
+      track.scrollLeft -= originalWidth;
+    }
+
+    rafId = requestAnimationFrame(step);
+  }
+
+  function start(){
+    if (running) return;
+    if (!mq.matches) { stop(); return; }
+
+    cloneOnce();
+
+    // Si la ligne ne dépasse pas la largeur, inutile de défiler
+    if (originalWidth <= track.clientWidth) { stop(); return; }
+
+    running = true;
+    lastTs = 0;
+    rafId = requestAnimationFrame(step);
+  }
+
+  function stop(){
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  // Pause pendant l’interaction tactile, reprise après un court délai
+  let touchTimer = null;
+  track.addEventListener('touchstart', () => {
+    if (touchTimer) clearTimeout(touchTimer);
+    stop();
+  }, {passive:true});
+
+  track.addEventListener('touchend', () => {
+    if (touchTimer) clearTimeout(touchTimer);
+    touchTimer = setTimeout(() => { start(); }, 800);
+  }, {passive:true});
+
+  // Visibilité onglet
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  // Réagir aux changements de viewport
+  if (mq.addEventListener) {
+    mq.addEventListener('change', () => { stop(); track.scrollLeft = 0; start(); });
+  } else {
+    // fallback anciens navigateurs
+    window.addEventListener('resize', () => { stop(); track.scrollLeft = 0; start(); });
+  }
+
+  // Go
+  start();
+})();
+</script>
+
 </body>
 </html>
