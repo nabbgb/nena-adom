@@ -7,7 +7,13 @@
 </head>
 
 <style>
+/* ====== Variables couleurs Nena Adom ====== */
+:root{
+  --na-blue: #004AAD;
+  --na-yellow: #FFEBA4; /* jaune pastel */
+}
 
+/* ====== Base existante ====== */
 header {
   margin-bottom: 30px;
 }
@@ -34,6 +40,8 @@ header h2 {
   overflow: hidden;
   margin-right:60px;
   margin-left:60px;
+  position: relative;           /* ← nécessaire pour les formes */
+  isolation: isolate;           /* empêche les z-index de fuir */
 }
 
 .main-section img {
@@ -41,6 +49,8 @@ header h2 {
   height: auto;
   object-fit: cover;
   display: block;
+  position: relative;           /* passe au-dessus des blobs */
+  z-index: 1;
 }
 
 .main-text {
@@ -50,6 +60,8 @@ header h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;           /* passe au-dessus des blobs */
+  z-index: 1;
 }
 
 .main-text h3 {
@@ -69,7 +81,6 @@ header h2 {
   font-size: 1em;
   font-weight: normal;
   margin: 0;
-
 }
 
 .main-text p {
@@ -77,7 +88,239 @@ header h2 {
   margin-left: 28px;
   margin-right: 28px;
 }
+
+/* ====== Blobs décoratifs sur toute la page ====== */
+/* 1) Blob HÉRO : gros ovale bleu + pastille jaune */
+.main-section::before{
+  content:"";
+  position:absolute;
+  left:-22vw;
+  top:-12vw;
+  width:65vw;
+  height:65vw;
+  max-width:920px;
+  max-height:920px;
+  background: var(--na-blue);
+  opacity:.08;                  /* douceur */
+  border-radius: 50% 45% 55% 50% / 55% 50% 45% 50%;
+  transform: rotate(-12deg);
+  z-index:0;
+  pointer-events:none;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.06));
+}
+
+.main-section::after{
+  content:"";
+  position:absolute;
+  right:-8vw;
+  bottom:-6vw;
+  width:18vw;
+  height:18vw;
+  max-width:260px;
+  max-height:260px;
+  background: var(--na-yellow);
+  opacity:.35;
+  border-radius:50%;
+  transform: rotate(8deg);
+  z-index:0;
+  pointer-events:none;
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.06));
+}
+
+/* 2) SECTION “DE QUOI AVEZ-VOUS BESOIN ?” / grille des services */
+.services-grid{
+  position:relative;
+  isolation:isolate;
+}
+
+.services-grid::before{
+  content:"";
+  position:absolute;
+  top:-60px;
+  left:50%;
+  transform: translateX(-50%) rotate(-6deg);
+  width:min(1100px, 88vw);
+  height:360px;
+  background: radial-gradient(120% 120% at 15% 30%, rgba(0,74,173,.10) 0%, rgba(0,74,173,0) 60%),
+              radial-gradient(120% 120% at 85% 70%, rgba(255,235,164,.55) 0%, rgba(255,235,164,0) 60%);
+  border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
+  z-index:0;
+  pointer-events:none;
+  filter: blur(0.2px);
+}
+
+/* 3) Barre de recherche – petit accent jaune derrière le titre */
+.search-section{
+  position:relative;
+  isolation:isolate;
+}
+.search-section::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-14px;
+  transform:translateX(-50%) rotate(-3deg);
+  width:280px;
+  height:28px;
+  background: var(--na-yellow);
+  opacity:.35;
+  border-radius: 999px;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* 4) Section contact – grand ruban bleu en arrière-plan */
+.contact-section{
+  position:relative;
+  isolation:isolate;
+  overflow: hidden;
+}
+.contact-section::before{
+  content:"";
+  position:absolute;
+  right:-25vw;
+  top:-8vw;
+  width:58vw;
+  height:58vw;
+  max-width:900px;
+  max-height:900px;
+  background: var(--na-blue);
+  opacity:.07;
+  border-radius: 46% 54% 50% 50% / 54% 46% 50% 50%;
+  transform: rotate(14deg);
+  z-index:0;
+  pointer-events:none;
+}
+
+/* 5) Section partenaires – halo bicolore doux */
+.partners-section{
+  position:relative;
+  isolation:isolate;
+}
+.partners-section::before{
+  content:"";
+  position:absolute;
+  left:-10vw;
+  bottom:-6vw;
+  width:40vw;
+  height:40vw;
+  max-width:520px;
+  max-height:520px;
+  background: radial-gradient(100% 100% at 50% 50%, rgba(0,74,173,.12) 0%, rgba(0,74,173,0) 70%),
+              radial-gradient(100% 100% at 70% 30%, rgba(255,235,164,.45) 0%, rgba(255,235,164,0) 70%);
+  border-radius:50%;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* 6) Carte – petite pastille bleue pour rappeler la charte */
+.map-section{
+  position:relative;
+  isolation:isolate;
+}
+.map-section::after{
+  content:"";
+  position:absolute;
+  right:6vw;
+  top:-24px;
+  width:120px;
+  height:120px;
+  background: var(--na-blue);
+  opacity:.08;
+  border-radius:50%;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* ====== Responsive : on allège les formes sur mobile ====== */
+@media (max-width: 768px){
+  .main-section{
+    margin-left:16px;
+    margin-right:16px;
+  }
+  .main-section::before{
+    left:-40vw;
+    top:-24vw;
+    width:120vw;
+    height:120vw;
+    opacity:.09;
+  }
+  .main-section::after{
+    right:-18vw;
+    bottom:-12vw;
+    width:36vw;
+    height:36vw;
+    opacity:.35;
+  }
+  .services-grid::before{
+    width:92vw;
+    height:260px;
+    top:-30px;
+    opacity:1;
+  }
+  .contact-section::before{
+    right:-40vw;
+    top:-20vw;
+    width:100vw;
+    height:100vw;
+    opacity:.08;
+  }
+  .map-section::after{
+    width:80px; height:80px;
+    right:4vw; top:-14px;
+  }
+}
+
+/* ====== Décor blob derrière la grille des services ====== */
+.services-grid{
+  position: relative;
+  isolation: isolate; /* pour contenir les z-index */
+}
+
+.services-grid::before{
+  content:"";
+  position:absolute;
+  top: 170px;          /* décale vers le haut */
+  left: 550px;         /* décale vers la gauche */
+  width: 600px;        /* largeur du blob */
+  height: 600px;       /* hauteur du blob */
+  background: url("images/blobs/blob-haikei.svg") no-repeat center/contain;
+  z-index: -1;          /* passe derrière les cellules */
+  opacity: 0.8;        /* un peu transparent */
+  pointer-events: none; /* clics toujours accessibles */
+}
+
+/* ====== Bouton Appel ====== */
+.phone-call-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #28a745; /* vert bouton */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.phone-call-button:hover {
+  background-color: #218838; /* vert foncé au survol */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.phone-call-button svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+}
+
+
 </style>
+
 <body>
   <div class="container">
     <header class="center-header">
@@ -115,7 +358,6 @@ header h2 {
           </a>
         </div>
 
-
         <div class="service-cell">
           <div class="service-title-box">
             <h2>S’informer sur les aides financières </h2>
@@ -132,7 +374,6 @@ header h2 {
           </a>
         </div>
 
-      
         <div class="service-cell">
           <div class="service-title-box">
             <h2> Accompagnement après une hospitalisation</h2>
@@ -148,7 +389,6 @@ header h2 {
           </a>
         </div>
 
-      
         <div class="service-cell">
           <div class="service-title-box">
             <h2>Mieux comprendre ma pathologie</h2>
@@ -170,7 +410,7 @@ header h2 {
   <section class="search-section center-title" style="margin-top:40px; text-align: center;">
     <h2 class="center-title">BESOIN D'UN RENSEIGNEMENT PRÉCIS ?</h2>
       <input type="text" id="searchInput" placeholder="Tapez un mot-clé..." style="padding:10px; width:60%; max-width:400px; border-radius:8px; border:1px solid #ccc; margin:10px auto;">
-      <button onclick="searchSite()" style="padding:10px 20px; border-radius:8px; background-color:#1c274c; color:white; border:none;">Rechercher</button>
+      <button onclick="searchSite()" style="padding:10px 20px; border-radius:8px; background-color:#004aad; color:white; border:none;">Rechercher</button>
       <ul id="results" style="margin-top:15px; list-style:none; padding-left:0;"></ul>
   </section>
 
@@ -185,95 +425,104 @@ header h2 {
     <p>Prenez rendez-vous dès aujourd’hui par téléphone au :</p>
 
     <a href="tel:0605873735" class="phone-call-button">
-      06.05.87.37.35    
+      <!-- Icône téléphone -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 
+                1 0 011.11-.21c1.21.49 2.54.76 3.93.76a1 
+                1 0 011 1v3.5a1 1 0 01-1 1C10.61 
+                22.5 1.5 13.39 1.5 2.5a1 1 0 
+                011-1H6a1 1 0 011 1c0 1.39.26 
+                2.72.76 3.93a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+      </svg>
+      06.05.87.37.35
     </a>
+
 
     <p class="contact-text-1">Chez Nena Adom, nous nous engageons à fournir un service d'accompagnement de fin de vie exceptionnel, apportant soutien, confort, et compassion à chaque étape du chemin. Faites le choix de la tranquillité d'esprit en nous choisissant comme partenaire dans cette étape délicate de la vie. Contactez-nous dès aujourd'hui pour en savoir plus sur nos services et comment nous pouvons accompagner vos proches.</p>
   </div>
 
   <div class="contact-left">
     <h2 class="contact-title">ENVIE D’ÉCHANGER ?</h2>
-    <img src="images/accueil/cta-call-photo.jpg" alt="Illustration échange téléphone">
+    <img src="images/accueil/cta-picture .png" alt="Illustration échange téléphone">
   </div>
 </section>
-    <section class="partners-section">
-        <h2>NOS PARTENAIRES</h2>
-        <div class="partners-track">
-            <div class="partner-tooltipv2">
-                <a href="tel:0698332521" target="_blank">
-                    <img src="images/partenaires/sosmedecins.png" alt="Médecin Partenaire">
-                </a>
-                <div class="tooltip-textv2">
-                    En cas d'imprévu ou d'un pépin physique, appelez notre médecin partenaire, qui saura vous guider et vous permettre d'adopter les bons gestes dans les meilleurs délais.
-                </div>
-            </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0665957019" target="_blank">
-                    <img src="images/partenaires/logo-jek-services.png" alt="Jek Services">
-                </a>
-                <div class="tooltip-textv2">
-                    Avec nous, vous disposez d'un chauffeur expérimenté privé pour vous amener partout ou vous le souhaitez, que ce soit pour des rendez-vous médicaux ou pour tout autre sortie.        
-                </div>
-            </div>
+<section class="partners-section">
+  <h2>NOS PARTENAIRES</h2>
+  <div class="partners-track">
+      <div class="partner-tooltipv2">
+          <a href="tel:0698332521" target="_blank">
+              <img src="images/partenaires/sosmedecins.png" alt="Médecin Partenaire">
+          </a>
+          <div class="tooltip-textv2">
+              En cas d'imprévu ou d'un pépin physique, appelez notre médecin partenaire, qui saura vous guider et vous permettre d'adopter les bons gestes dans les meilleurs délais.
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0605873735" target="_blank">
-                    <img src="images/partenaires/sosmedecins.png" alt="Prothèse auditive">
-                </a>
-                <div class="tooltip-textv2">
-                    En cas de soucis auditif appuyez sur l'icone pour prendre contact avec notre partenaire
-                </div>
-            </div>
+      <div class="partner-tooltipv2">
+          <a href="tel:0665957019" target="_blank">
+              <img src="images/partenaires/logo-jek-services.png" alt="Jek Services">
+          </a>
+          <div class="tooltip-textv2">
+              Avec nous, vous disposez d'un chauffeur expérimenté privé pour vous amener partout ou vous le souhaitez, que ce soit pour des rendez-vous médicaux ou pour tout autre sortie.        
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0605873735" target="_blank">
-                    <img src="images/partenaires/sosmedecins.png" alt="Kinésithérapeute">
-                </a>
-                <div class="tooltip-textv2">
-                    Messages Messages Messages Messages Messages Messages Messages Messages
-                </div>
-            </div>
+      <div class="partner-tooltipv2">
+          <a href="tel:0605873735" target="_blank">
+              <img src="images/partenaires/sosmedecins.png" alt="Prothèse auditive">
+          </a>
+          <div class="tooltip-textv2">
+              En cas de soucis auditif appuyez sur l'icone pour prendre contact avec notre partenaire
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0605873735" target="_blank">
-                    <img src="images/partenaires/sosmedecins.png" alt="Pharmacie">
-                </a>
-                <div class="tooltip-textv2">
-                    Messages Messages Messages Messages Messages Messages Messages Messages
-                </div>
-            </div>
+      <div class="partner-tooltipv2">
+          <a href="tel:0605873735" target="_blank">
+              <img src="images/partenaires/sosmedecins.png" alt="Kinésithérapeute">
+          </a>
+          <div class="tooltip-textv2">
+              Messages Messages Messages Messages Messages Messages Messages Messages
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0605873735" target="_blank">
-                    <img src="images/partenaires/sosmedecins.png" alt="Infirmière IDEL">
-                </a>
-                <div class="tooltip-textv2">
-                    MessagesMessagesMessages MessagesMessagesMessagesMessagesMessages
-                </div>
-            </div>
+      <div class="partner-tooltipv2">
+          <a href="tel:0605873735" target="_blank">
+              <img src="images/partenaires/sosmedecins.png" alt="Pharmacie">
+          </a>
+          <div class="tooltip-textv2">
+              Messages Messages Messages Messages Messages Messages Messages Messages
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0698332521" target="_blank">
-                    <img src="images/partenaires/sos-oxygene-logo.png" alt="SOS Oxygène">
-                </a>
-                <div class="tooltip-textv2">
-                    Messages Messages Messages Messages Messages Messages Messages Messages
-                </div>
-            </div>
+      <div class="partner-tooltipv2">
+          <a href="tel:0605873735" target="_blank">
+              <img src="images/partenaires/sosmedecins.png" alt="Infirmière IDEL">
+          </a>
+          <div class="tooltip-textv2">
+              MessagesMessagesMessages MessagesMessagesMessagesMessagesMessages
+          </div>
+      </div>
 
-            <div class="partner-tooltipv2">
-                <a href="tel:0698332521" target="_blank">
-                    <img src="images/partenaires/logo-echoradom.png" alt="Echoradom">
-                </a>
-                <div class="tooltip-textv2">
-                    MessagesMessages MessagesMessages Messa gesMessagesMessagesMessages 66
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="partner-tooltipv2">
+          <a href="tel:0698332521" target="_blank">
+              <img src="images/partenaires/sos-oxygene-logo.png" alt="SOS Oxygène">
+          </a>
+          <div class="tooltip-textv2">
+              Messages Messages Messages Messages Messages Messages Messages Messages
+          </div>
+      </div>
 
-
+      <div class="partner-tooltipv2">
+          <a href="tel:0698332521" target="_blank">
+              <img src="images/partenaires/logo-echoradom.png" alt="Echoradom">
+          </a>
+          <div class="tooltip-textv2">
+              MessagesMessages MessagesMessages Messa gesMessagesMessagesMessages 66
+          </div>
+      </div>
+  </div>
+</section>
 
 <section class="map-section">
   <iframe

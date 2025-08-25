@@ -307,7 +307,6 @@ header h2 {
 }
 
 .service-title-box {
-  background: #ffffff;
   border-radius: 1px;
   padding: 2px 48px;
   font-weight: bold;
@@ -373,7 +372,7 @@ header h2 {
   width: 30%;
   height: 30%;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 4px;
   flex-shrink: 0;
 }
 
@@ -461,7 +460,7 @@ header h2 {
 }
 
 .contact-left img {
-  width: 700px;
+  width: 300px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -1757,7 +1756,6 @@ header h2 {
   .contact-left img {
     width: 90vw;
     max-width: 350px;
-    box-shadow: 0 8px 24px rgb(0, 0, 0,1);
   }
   .contact-right {
     order: 2;
@@ -2358,3 +2356,4 @@ transform: translateX(-50%) translateY(-100%);
 .toc-active {
   text-decoration: underline;
 }
+
