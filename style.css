@@ -450,7 +450,6 @@ header h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 60px;
   gap: 40px;
 }
 
@@ -565,7 +564,6 @@ header h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 60px;
   gap: 40px;
   flex-direction: row-reverse; /* pour mettre le texte à gauche, image à droite */
 }
