@@ -133,21 +133,7 @@ header h2 {
   isolation:isolate;
 }
 
-.services-grid::before{
-  content:"";
-  position:absolute;
-  top:-60px;
-  left:50%;
-  transform: translateX(-50%) rotate(-6deg);
-  width:min(1100px, 88vw);
-  height:360px;
-  background: radial-gradient(120% 120% at 15% 30%, rgba(0,74,173,.10) 0%, rgba(0,74,173,0) 60%),
-              radial-gradient(120% 120% at 85% 70%, rgba(255,235,164,.55) 0%, rgba(255,235,164,0) 60%);
-  border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
-  z-index:0;
-  pointer-events:none;
-  filter: blur(0.2px);
-}
+
 
 /* 3) Barre de recherche – petit accent jaune derrière le titre */
 .search-section{
@@ -269,26 +255,13 @@ header h2 {
     width:80px; height:80px;
     right:4vw; top:-14px;
   }
+
+  .phone-call-button {
+    width: 45vw;
+  }
 }
 
-/* ====== Décor blob derrière la grille des services ====== */
-.services-grid{
-  position: relative;
-  isolation: isolate; /* pour contenir les z-index */
-}
 
-.services-grid::before{
-  content:"";
-  position:absolute;
-  top: 170px;          /* décale vers le haut */
-  left: 550px;         /* décale vers la gauche */
-  width: 600px;        /* largeur du blob */
-  height: 600px;       /* hauteur du blob */
-  background: url("images/blobs/blob-haikei.svg") no-repeat center/contain;
-  z-index: -1;          /* passe derrière les cellules */
-  opacity: 0.8;        /* un peu transparent */
-  pointer-events: none; /* clics toujours accessibles */
-}
 
 /* ====== Bouton Appel ====== */
 .phone-call-button {
@@ -422,7 +395,7 @@ header h2 {
       Contactez-nous dès aujourd'hui pour discuter de la manière dont nous pouvons améliorer la qualité de vie de vos proches grâce à nos services d'aide à domicile.
     </p>
 
-    <p>Prenez rendez-vous dès aujourd’hui par téléphone au :</p>
+    <p>Prenez rendez-vous dès aujourd’hui par téléphone :</p>
 
     <a href="tel:0605873735" class="phone-call-button">
       <!-- Icône téléphone -->
@@ -434,7 +407,7 @@ header h2 {
                 011-1H6a1 1 0 011 1c0 1.39.26 
                 2.72.76 3.93a1 1 0 01-.21 1.11l-2.2 2.2z"/>
       </svg>
-      06.05.87.37.35
+      +33 6 05 87 37 35
     </a>
 
 
@@ -495,32 +468,6 @@ header h2 {
           </div>
       </div>
 
-      <div class="partner-tooltipv2">
-          <a href="tel:0605873735" target="_blank">
-              <img src="images/partenaires/sosmedecins.png" alt="Infirmière IDEL">
-          </a>
-          <div class="tooltip-textv2">
-              MessagesMessagesMessages MessagesMessagesMessagesMessagesMessages
-          </div>
-      </div>
-
-      <div class="partner-tooltipv2">
-          <a href="tel:0698332521" target="_blank">
-              <img src="images/partenaires/sos-oxygene-logo.png" alt="SOS Oxygène">
-          </a>
-          <div class="tooltip-textv2">
-              Messages Messages Messages Messages Messages Messages Messages Messages
-          </div>
-      </div>
-
-      <div class="partner-tooltipv2">
-          <a href="tel:0698332521" target="_blank">
-              <img src="images/partenaires/logo-echoradom.png" alt="Echoradom">
-          </a>
-          <div class="tooltip-textv2">
-              MessagesMessages MessagesMessages Messa gesMessagesMessagesMessages 66
-          </div>
-      </div>
   </div>
 </section>
 
