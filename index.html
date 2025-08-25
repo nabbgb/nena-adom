@@ -553,28 +553,14 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
 
   const mq = window.matchMedia('(max-width: 768px)');
   let running = false, rafId = null, lastTs = 0;
-  const SPEED = 40; // px/s – ajuste à ton goût
-  let originalWidth = 0;
+  const SPEED = 40; // px/s (ajuste si besoin)
+  let cycle = 0;    // distance avant que le motif se répète (début du 1er clone)
 
-  function itemTotalWidth(el){
-    const cs = getComputedStyle(el);
-    return el.getBoundingClientRect().width
-         + parseFloat(cs.marginLeft) + parseFloat(cs.marginRight);
-  }
+  function rebuild() {
+    // 1) nettoyer d'anciens clones
+    track.querySelectorAll('[data-clone="1"]').forEach(n => n.remove());
 
-  function measureOriginalWidth(){
-    const items = Array.from(track.children).filter(n => !n.hasAttribute('data-clone'));
-    return items.reduce((w, el) => w + itemTotalWidth(el), 0);
-  }
-
-  function cloneOnce(){
-    // Retire d’anciens clones si réinit
-    Array.from(track.querySelectorAll('[data-clone="1"]')).forEach(n => n.remove());
-
-    const items = Array.from(track.children);
-    originalWidth = items.reduce((w, el) => w + itemTotalWidth(el), 0);
-
-    // Si pas assez d’éléments, on duplique une fois la liste pour pouvoir boucler sans coupure
+    // 2) dupliquer tous les items une fois
     const originals = Array.from(track.children);
     originals.forEach(el => {
       const clone = el.cloneNode(true);
@@ -582,8 +568,13 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
       track.appendChild(clone);
     });
 
-    // Re-mesure la largeur originale (seulement les non-clones)
-    originalWidth = measureOriginalWidth();
+    // 3) forcer un reflow puis mesurer le point de boucle
+    void track.offsetWidth;
+    const firstClone = track.querySelector('[data-clone="1"]');
+    cycle = firstClone ? Math.round(firstClone.offsetLeft) : 0;
+
+    // 4) se replacer proprement dans le cycle (utile après resize/orientation)
+    if (cycle > 0) track.scrollLeft = track.scrollLeft % cycle;
   }
 
   function shouldRun(){
@@ -598,9 +589,9 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
 
     track.scrollLeft += SPEED * dt;
 
-    // Boucle sans “saut” : on retire la largeur originale quand on l’a dépassée
-    if (track.scrollLeft >= originalWidth) {
-      track.scrollLeft -= originalWidth;
+    // Boucle continue sans “reset visible”
+    if (cycle > 0 && track.scrollLeft >= cycle) {
+      track.scrollLeft -= cycle;
     }
 
     rafId = requestAnimationFrame(step);
@@ -608,13 +599,9 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
 
   function start(){
     if (running) return;
-    if (!mq.matches) { stop(); return; }
-
-    cloneOnce();
-
-    // Si la ligne ne dépasse pas la largeur, inutile de défiler
-    if (originalWidth <= track.clientWidth) { stop(); return; }
-
+    if (!shouldRun()) { stop(); return; }
+    track.style.scrollBehavior = 'auto'; // on s'assure d'aucune inertie CSS
+    rebuild();
     running = true;
     lastTs = 0;
     rafId = requestAnimationFrame(step);
@@ -626,29 +613,27 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
     rafId = null;
   }
 
-  // Pause pendant l’interaction tactile, reprise après un court délai
+  // Pause pendant interaction tactile, reprise ensuite
   let touchTimer = null;
   track.addEventListener('touchstart', () => {
     if (touchTimer) clearTimeout(touchTimer);
     stop();
   }, {passive:true});
-
   track.addEventListener('touchend', () => {
     if (touchTimer) clearTimeout(touchTimer);
-    touchTimer = setTimeout(() => { start(); }, 800);
+    touchTimer = setTimeout(() => start(), 600);
   }, {passive:true});
 
-  // Visibilité onglet
+  // Tab caché → pause / retour → reprise
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop();
-    else start();
+    if (document.hidden) stop(); else start();
   });
 
-  // Réagir aux changements de viewport
+  // Changement viewport/orientation
   if (mq.addEventListener) {
     mq.addEventListener('change', () => { stop(); track.scrollLeft = 0; start(); });
   } else {
-    // fallback anciens navigateurs
+    // fallback
     window.addEventListener('resize', () => { stop(); track.scrollLeft = 0; start(); });
   }
 
