@@ -218,6 +218,82 @@ header h2 {
   pointer-events:none;
 }
 
+/* ====== Couche décor FIXE (figée au scroll) ====== */
+.na-fixed-decor{
+  position: fixed;
+  inset: 0;
+  z-index: 0;            /* sous le contenu */
+  pointer-events: none;  /* jamais cliquable */
+}
+
+.na-fixed-decor .blob{
+  position: absolute;
+  will-change: transform;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.06));
+}
+
+/* GROSSE TACHE BLEUE EN HAUT-GAUCHE */
+.blob--tl{
+  width: 48vw; height: 48vw;
+  left: -18vw; top: -12vw;
+  background: var(--na-blue);
+  opacity: .085;
+  border-radius: 52% 48% 57% 43% / 53% 47% 52% 48%;
+  transform: rotate(-12deg);
+}
+
+/* PASTILLE JAUNE EN HAUT-DROITE */
+.blob--tr{
+  width: 24vw; height: 24vw;
+  right: -10vw; top: 8vh;
+  background: var(--na-yellow);
+  opacity: .35;
+  border-radius: 50%;
+  transform: rotate(6deg);
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.06));
+}
+
+/* GRAND VOILE BLEU FAIBLE OPACITÉ (CENTRE) */
+.blob--c1{
+  width: 60vw; height: 60vw;
+  left: 18vw; top: 42vh;
+  background: var(--na-blue);
+  opacity: .06;
+  border-radius: 46% 54% 50% 50% / 54% 46% 50% 50%;
+  transform: rotate(14deg);
+}
+
+/* BLOB BLEU EN BAS-DROITE */
+.blob--br{
+  width: 36vw; height: 36vw;
+  right: -12vw; bottom: -8vw;
+  background: var(--na-blue);
+  opacity: .09;
+  border-radius: 55% 45% 50% 50% / 44% 56% 50% 50%;
+  transform: rotate(-8deg);
+}
+
+/* PASTILLE JAUNE EN BAS-GAUCHE */
+.blob--bl{
+  width: 20vw; height: 20vw;
+  left: 6vw; bottom: 18vh;
+  background: var(--na-yellow);
+  opacity: .4;
+  border-radius: 50%;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,.06));
+}
+
+/* Le contenu passe AU-DESSUS des blobs */
+.container,
+.contact-section,
+.partners-section,
+.map-section,
+footer{
+  position: relative;
+  z-index: 1;
+}
+
 /* ====== Responsive : on allège les formes sur mobile ====== */
 @media (max-width: 768px){
   .main-section{
@@ -263,6 +339,31 @@ header h2 {
   .contact-right {
     margin-top:0px;
   }
+  /* Déco fixe – version mobile */
+  .na-fixed-decor .blob{ opacity: .09; } /* un chouïa plus visible sur petit écran */
+
+  .blob--tl{
+    width: 110vw; height: 110vw;
+    left: -45vw; top: -32vw;
+  }
+
+  .blob--tr{
+    width: 36vw; height: 36vw;
+    right: -16vw; top: 10vh;
+  }
+
+  .blob--c1{ display: none; } /* on allège pour perf/lecture */
+
+  .blob--br{
+    width: 70vw; height: 70vw;
+    right: -40vw; bottom: -26vw;
+  }
+
+  .blob--bl{
+    width: 44vw; height: 44vw;
+    left: -12vw; bottom: 18vh;
+  }
+
 }
 
 
@@ -294,11 +395,30 @@ header h2 {
   height: 22px;
   fill: white;
 }
+/* On coupe les anciens pseudo-éléments décoratifs */
+.main-section::before,
+.main-section::after,
+.search-section::before,
+.contact-section::before,
+.partners-section::before,
+.map-section::after{
+  content: none !important;
+}
 
 
 </style>
 
 <body>
+
+  <!-- DÉCOR FIXE (ne bouge pas au scroll) -->
+  <div class="na-fixed-decor" aria-hidden="true">
+    <span class="blob blob--tl"></span>
+    <span class="blob blob--tr"></span>
+    <span class="blob blob--c1"></span>
+    <span class="blob blob--br"></span>
+    <span class="blob blob--bl"></span>
+  </div>
+
   <div class="container">
     <header class="center-header">
       <h1>NENA ADOM</h1>
