@@ -296,7 +296,16 @@ footer{
 
 /* ====== Responsive : on allège les formes sur mobile ====== */
 @media (max-width: 768px){
+  .center-header {
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+
+  .center-header h2{
+    margin-bottom: 0;
+  }
   .main-section{
+    margin-top:0;
     margin-left:16px;
     margin-right:16px;
   }
@@ -343,8 +352,8 @@ footer{
   .na-fixed-decor .blob{ opacity: .09; } /* un chouïa plus visible sur petit écran */
 
   .blob--tl{
-    width: 110vw; height: 110vw;
-    left: -45vw; top: -32vw;
+    width: 55vw; height: 110vw;
+    left: -45vw; top: 32vw;
   }
 
   .blob--tr{
@@ -412,11 +421,11 @@ footer{
 
   <!-- DÉCOR FIXE (ne bouge pas au scroll) -->
   <div class="na-fixed-decor" aria-hidden="true">
-    <span class="blob blob--tl"></span>
     <span class="blob blob--tr"></span>
     <span class="blob blob--c1"></span>
     <span class="blob blob--br"></span>
     <span class="blob blob--bl"></span>
+    <span class="blob blob--tl"></span>
   </div>
 
   <div class="container">
