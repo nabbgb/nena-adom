@@ -440,6 +440,63 @@ footer a {
   }
 }
 
+/* ===========================
+   CTA CALL
+   =========================== */
+.cta-call {
+  background-color:none;
+  color: #000000;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cta-call h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.cta-call p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.cta-call-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1.2em;
+  background-color: #004aad;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-call-btn:hover {
+  background-color: #ffffff; 
+  color: #004aad;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cta-call {
+    padding: 35px 15px;
+  }
+  .cta-call h2 {
+    font-size: 1.6em;
+  }
+  .cta-call p {
+    font-size: 1em;
+  }
+  .cta-call-btn {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.1em;
+  }
+}
+
 
   </style>
 </head>
@@ -601,6 +658,13 @@ footer a {
     </div>
 
   </div>
+
+<!-- CTA APPEL -->
+<section class="cta-call">
+  <h2>N'hésitez plus !</h2>
+  <p>Appelez-nous pour bénéficier dès maintenant de nos services d'exception.</p>
+  <a href="tel:0605873735" class="cta-call-btn"> +33 6 05 87 37 35</a>
+</section>
 
   <script>
     // Pour la barre de recherche
