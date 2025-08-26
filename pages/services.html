@@ -112,27 +112,28 @@ h1, h2, h3 {
   align-items: flex-start;
   gap: 0;
   margin-left: 10px;
+  position: relative;
 }
 .service-section.reverse {
   flex-direction: row-reverse;
 }
 
 .service-number {
+  position: absolute;
+  left: -100px;         /* pousse le chiffre vers la gauche (valeur à régler) */
   font-family: 'Playfair Display', sans-serif;
   color: #15167b;
   font-size: 120px;
   font-weight: bold;
   line-height: 0.8;
-  flex-shrink: 0;
-  margin-right: -2px;
-  margin-top: -15px;
   z-index: 0;
-  position: relative;
 }
+
 .service-section.reverse .service-number {
-  margin-left: -1px;
-  margin-right: 0;
+  left: auto;          /* annule la gauche */
+  right: -100px;        /* pousse le chiffre vers la droite */
 }
+
 
 .service-content {
   flex: 1;
@@ -145,11 +146,14 @@ h1, h2, h3 {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 15px;
-  padding-left: 10px;
+  margin-left: -30px;
+  display: flex;              /* Ajout */
+  justify-content: flex-start; /* Normal: aligné à gauche */
 }
+
 .service-section.reverse .service-title {
-  padding-left: 0;
-  padding-right: 10px;
+  justify-content: flex-end;  /* En reverse: aligné à droite */
+  margin-right: -30px;        /* petit correctif comme pour content-wrapper */
 }
 
 .content-wrapper {
@@ -187,14 +191,14 @@ h1, h2, h3 {
   line-height: 1.7;
   color: #333;
   margin-left: 15px;
-  margin-right: 21px;
+  margin-right: -30px;
   padding-top: 0;
   padding-left: 20px;
   margin-top: 0;
 }
 .service-section.reverse .service-text {
   margin-right: 15px;
-  margin-left: 20px;
+  margin-left: -30px;
   padding-right: 20px;
   padding-left: 0;
   padding-top: 0;
@@ -415,6 +419,22 @@ footer a {
   }
 }
 
+@media (max-width: 600px) {
+  .service-image {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 0 12px 12px 0 !important;   /* 12px ONLY on the right (inner), 0 on the left (outer) */
+  }
+  .service-section.reverse .service-image {
+    float: right;
+    width: 120px;
+    height: 120px;
+    margin: 0 0 12px 12px !important;    /* 12px ONLY on the left (inner), 0 on the right (outer) */
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -468,13 +488,11 @@ footer a {
 
     <!-- Section 1 -->
     <div class="service-section">
-      <div class="service-number" style="margin-top: -40px; ">1</div>
+      <div class="service-number" style="margin-top: -40px;">1</div>
       <div class="service-content">
         <h2 class="service-title">Aide au lever, toilette, petit déjeuner</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <img src="../images/services/service-1.png" alt="Aide au lever">
-          </div>
+          <div class="service-image"><img src="../images/services/service-1.png" alt="Aide au lever"></div>
           <div class="service-text">
             La journée débute par l'intervention de l'auxiliaire de vie au domicile du patient, qui l'assiste dans sa toilette
             (douche en salle de bain ou toilette complète au lit et change si nécessaire), ainsi que pour se coiffer, s'habiller,
@@ -490,11 +508,9 @@ footer a {
     <div class="service-section reverse">
       <div class="service-number" style="margin-top: -35px;">2</div>
       <div class="service-content">
-        <h2 class="service-title" style="padding-left: 500px;">Courses, repas, ménage</h2>
+        <h2 class="service-title">Courses, repas, ménage</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <img src="../images/services/service-2-v2.jpg" alt="Courses">
-          </div>
+          <div class="service-image"><img src="../images/services/service-2-v2.jpg" alt="Courses"></div>
           <div class="service-text">
             Un menu hebdomadaire personnalisé est élaboré en tenant compte du régime alimentaire, des préférences et des besoins
             nutritionnels du patient. L'objectif est de stimuler l'appétit, de maintenir une alimentation équilibrée et de lui
@@ -512,10 +528,7 @@ footer a {
       <div class="service-content">
         <h2 class="service-title">Présence, accompagnement aux RDV</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <!-- Vérifie le chemin si besoin -->
-            <img src="../images/services/service-2.jpg" alt="Accompagnement RDV">
-          </div>
+          <div class="service-image"><img src="../images/services/service-2.jpg" alt="Accompagnement RDV"></div>
           <div class="service-text">
             Nous assurons le suivi des rendez-vous médicaux en coordination avec l'équipe soignante. Le patient est rappelé de ses
             RDV, le transport (ambulance ou VTC) est organisé, et il est accompagné par une auxiliaire selon la nature du rendez-vous.
@@ -532,11 +545,9 @@ footer a {
     <div class="service-section reverse">
       <div class="service-number" style="margin-top: -60px;">4</div>
       <div class="service-content">
-        <h2 class="service-title" style="padding-left: 380px;">Présence, stimulation : santé mentale et vie sociale</h2>
+        <h2 class="service-title">Présence, stimulation : santé mentale et vie sociale</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <img src="../images/services/service-4.jpg" alt="Stimulation">
-          </div>
+          <div class="service-image"><img src="../images/services/service-4.jpg" alt="Stimulation"></div>
           <div class="service-text">
             Notre équipe veille à la santé physique du patient mais nous savons que la stimulation mentale et sociale est tout aussi
             essentielle. C’est pourquoi la routine journalière personnalisée du patient comporte des activités de stimulation
@@ -554,9 +565,7 @@ footer a {
       <div class="service-content">
         <h2 class="service-title">Aide au coucher, toilette du soir, dîner</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <img src="../images/services/service-5.png" alt="Toilette du soir">
-          </div>
+          <div class="service-image"><img src="../images/services/service-5.png" alt="Toilette du soir"></div>
           <div class="service-text">
             En soirée, l’auxiliaire prépare un repas léger, aide à la prise des médicaments, puis accompagne le patient dans sa
             toilette du soir, le change de protection si nécessaire, et l’habillage en tenue de nuit. Pour garantir sa sécurité,
@@ -572,12 +581,9 @@ footer a {
     <div class="service-section reverse">
       <div class="service-number">6</div>
       <div class="service-content">
-        <h2 class="service-title" style="padding-left: 750px;">Garde de nuit</h2>
+        <h2 class="service-title">Garde de nuit</h2>
         <div class="content-wrapper">
-          <div class="service-image">
-            <!-- Vérifie le chemin si besoin -->
-            <img src="../images/services/service-6.jpg" alt="Garde de nuit">
-          </div>
+          <div class="service-image"><img src="../images/services/service-6.jpg" alt="Garde de nuit"></div>
           <div class="service-text">
             Selon le souhait du patient et son état de santé, une présence rassurante est assurée tout au long de la nuit, dans un
             environnement calme et sécurisé. L’auxiliaire de vie veille discrètement et intervient si nécessaire : en cas de lever
